@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* PatchcordApp.swift */; };
+		5023A0B42854B87D009563B8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B32854B87D009563B8 /* Persistence.swift */; };
+		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
+		5023A0B92854B87D009563B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B82854B87D009563B8 /* ContentView.swift */; };
+		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
+		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
+		5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0C82854B87E009563B8 /* PatchcordTests.swift */; };
+		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
+		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5023A0C52854B87E009563B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5023A0A62854B87D009563B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
+			remoteInfo = Patchcord;
+		};
+		5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5023A0A62854B87D009563B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
+			remoteInfo = Patchcord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5023A0AE2854B87D009563B8 /* Patchcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patchcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5023A0B12854B87D009563B8 /* PatchcordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordApp.swift; sourceTree = "<group>"; };
+		5023A0B32854B87D009563B8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
+		5023A0B82854B87D009563B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5023A0BC2854B87E009563B8 /* Patchcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
+		5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5023A0C82854B87E009563B8 /* PatchcordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordTests.swift; sourceTree = "<group>"; };
+		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
+		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5023A0AB2854B87D009563B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0C12854B87E009563B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0CB2854B87E009563B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5023A0A52854B87D009563B8 = {
+			isa = PBXGroup;
+			children = (
+				5023A0B02854B87D009563B8 /* Patchcord */,
+				5023A0C72854B87E009563B8 /* PatchcordTests */,
+				5023A0D12854B87E009563B8 /* PatchcordUITests */,
+				5023A0AF2854B87D009563B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5023A0AF2854B87D009563B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0AE2854B87D009563B8 /* Patchcord.app */,
+				5023A0C42854B87E009563B8 /* PatchcordTests.xctest */,
+				5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5023A0B02854B87D009563B8 /* Patchcord */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0B12854B87D009563B8 /* PatchcordApp.swift */,
+				5023A0B32854B87D009563B8 /* Persistence.swift */,
+				5023A0B82854B87D009563B8 /* ContentView.swift */,
+				5023A0BA2854B87E009563B8 /* Assets.xcassets */,
+				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
+				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
+				5023A0BD2854B87E009563B8 /* Preview Content */,
+			);
+			path = Patchcord;
+			sourceTree = "<group>";
+		};
+		5023A0BD2854B87E009563B8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5023A0C72854B87E009563B8 /* PatchcordTests */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0C82854B87E009563B8 /* PatchcordTests.swift */,
+			);
+			path = PatchcordTests;
+			sourceTree = "<group>";
+		};
+		5023A0D12854B87E009563B8 /* PatchcordUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0D22854B87E009563B8 /* PatchcordUITests.swift */,
+				5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */,
+			);
+			path = PatchcordUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5023A0AD2854B87D009563B8 /* Patchcord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5023A0D82854B87E009563B8 /* Build configuration list for PBXNativeTarget "Patchcord" */;
+			buildPhases = (
+				5023A0AA2854B87D009563B8 /* Sources */,
+				5023A0AB2854B87D009563B8 /* Frameworks */,
+				5023A0AC2854B87D009563B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Patchcord;
+			productName = Patchcord;
+			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5023A0C32854B87E009563B8 /* PatchcordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5023A0DB2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordTests" */;
+			buildPhases = (
+				5023A0C02854B87E009563B8 /* Sources */,
+				5023A0C12854B87E009563B8 /* Frameworks */,
+				5023A0C22854B87E009563B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5023A0C62854B87E009563B8 /* PBXTargetDependency */,
+			);
+			name = PatchcordTests;
+			productName = PatchcordTests;
+			productReference = 5023A0C42854B87E009563B8 /* PatchcordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5023A0CD2854B87E009563B8 /* PatchcordUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */;
+			buildPhases = (
+				5023A0CA2854B87E009563B8 /* Sources */,
+				5023A0CB2854B87E009563B8 /* Frameworks */,
+				5023A0CC2854B87E009563B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5023A0D02854B87E009563B8 /* PBXTargetDependency */,
+			);
+			name = PatchcordUITests;
+			productName = PatchcordUITests;
+			productReference = 5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5023A0A62854B87D009563B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					5023A0AD2854B87D009563B8 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					5023A0C32854B87E009563B8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 5023A0AD2854B87D009563B8;
+					};
+					5023A0CD2854B87E009563B8 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 5023A0AD2854B87D009563B8;
+					};
+				};
+			};
+			buildConfigurationList = 5023A0A92854B87D009563B8 /* Build configuration list for PBXProject "Patchcord" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5023A0A52854B87D009563B8;
+			productRefGroup = 5023A0AF2854B87D009563B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5023A0AD2854B87D009563B8 /* Patchcord */,
+				5023A0C32854B87E009563B8 /* PatchcordTests */,
+				5023A0CD2854B87E009563B8 /* PatchcordUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5023A0AC2854B87D009563B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */,
+				5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0C22854B87E009563B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0CC2854B87E009563B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5023A0AA2854B87D009563B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */,
+				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
+				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
+				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0C02854B87E009563B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5023A0CA2854B87E009563B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */,
+				5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5023A0C62854B87E009563B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
+			targetProxy = 5023A0C52854B87E009563B8 /* PBXContainerItemProxy */;
+		};
+		5023A0D02854B87E009563B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
+			targetProxy = 5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5023A0D62854B87E009563B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5023A0D72854B87E009563B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5023A0D92854B87E009563B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Patchcord/Patchcord.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Patchcord/Preview Content\"";
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.Patchcord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5023A0DA2854B87E009563B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Patchcord/Patchcord.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Patchcord/Preview Content\"";
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.Patchcord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5023A0DC2854B87E009563B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.PatchcordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patchcord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Patchcord";
+			};
+			name = Debug;
+		};
+		5023A0DD2854B87E009563B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.PatchcordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patchcord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Patchcord";
+			};
+			name = Release;
+		};
+		5023A0DF2854B87E009563B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.PatchcordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Patchcord;
+			};
+			name = Debug;
+		};
+		5023A0E02854B87E009563B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 828XSMPA74;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maksymbilan.apps.PatchcordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Patchcord;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5023A0A92854B87D009563B8 /* Build configuration list for PBXProject "Patchcord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5023A0D62854B87E009563B8 /* Debug */,
+				5023A0D72854B87E009563B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5023A0D82854B87E009563B8 /* Build configuration list for PBXNativeTarget "Patchcord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5023A0D92854B87E009563B8 /* Debug */,
+				5023A0DA2854B87E009563B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5023A0DB2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5023A0DC2854B87E009563B8 /* Debug */,
+				5023A0DD2854B87E009563B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5023A0DF2854B87E009563B8 /* Debug */,
+				5023A0E02854B87E009563B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */,
+			);
+			currentVersion = 5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */;
+			path = Patchcord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5023A0A62854B87D009563B8 /* Project object */;
+}
