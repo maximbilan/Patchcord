@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ndt7-client-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/m-lab/ndt7-client-ios",
+      "state" : {
+        "revision" : "f80494f45f95499b476bc2a018912c32a686db1d",
+        "version" : "0.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}

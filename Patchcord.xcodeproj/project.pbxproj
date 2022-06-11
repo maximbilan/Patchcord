@@ -16,6 +16,8 @@
 		5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0C82854B87E009563B8 /* PatchcordTests.swift */; };
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
+		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
+		5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0E42854BC91009563B8 /* NDT7Bridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
 		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5023A0E42854BC91009563B8 /* NDT7Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7Bridge.swift; sourceTree = "<group>"; };
+		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5023A0E32854BB27009563B8 /* NDT7 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,7 @@
 		5023A0B02854B87D009563B8 /* Patchcord */ = {
 			isa = PBXGroup;
 			children = (
+				5023A0E62854BDC1009563B8 /* Info.plist */,
 				5023A0B12854B87D009563B8 /* PatchcordApp.swift */,
 				5023A0B32854B87D009563B8 /* Persistence.swift */,
 				5023A0B82854B87D009563B8 /* ContentView.swift */,
@@ -106,6 +112,7 @@
 				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
 				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
 				5023A0BD2854B87E009563B8 /* Preview Content */,
+				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
 			);
 			path = Patchcord;
 			sourceTree = "<group>";
@@ -151,6 +158,9 @@
 			dependencies = (
 			);
 			name = Patchcord;
+			packageProductDependencies = (
+				5023A0E22854BB27009563B8 /* NDT7 */,
+			);
 			productName = Patchcord;
 			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 5023A0A52854B87D009563B8;
+			packageReferences = (
+				5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
+			);
 			productRefGroup = 5023A0AF2854B87D009563B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,6 +280,7 @@
 			files = (
 				5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
+				5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */,
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 			);
@@ -427,6 +441,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Patchcord/Info.plist;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -459,6 +474,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Patchcord/Info.plist;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -608,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/m-lab/ndt7-client-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5023A0E22854BB27009563B8 /* NDT7 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
+			productName = NDT7;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */ = {

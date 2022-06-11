@@ -16,6 +16,8 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    private let ndt7bridge = NDT7Bridge()
+
     var body: some View {
         NavigationView {
             List {
@@ -41,6 +43,9 @@ struct ContentView: View {
                 }
             }
             Text("Select an item")
+        }
+        .onAppear {
+            ndt7bridge.startTest()
         }
     }
 
