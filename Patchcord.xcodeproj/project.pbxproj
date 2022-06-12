@@ -18,6 +18,7 @@
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
 		5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0E42854BC91009563B8 /* NDT7Bridge.swift */; };
+		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
 		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5023A0E42854BC91009563B8 /* NDT7Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7Bridge.swift; sourceTree = "<group>"; };
-		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,15 +106,13 @@
 		5023A0B02854B87D009563B8 /* Patchcord */ = {
 			isa = PBXGroup;
 			children = (
-				5023A0E62854BDC1009563B8 /* Info.plist */,
-				5023A0B12854B87D009563B8 /* PatchcordApp.swift */,
-				5023A0B32854B87D009563B8 /* Persistence.swift */,
-				5023A0B82854B87D009563B8 /* ContentView.swift */,
-				5023A0BA2854B87E009563B8 /* Assets.xcassets */,
-				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
-				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
+				50EE81A128565F68008BCEC4 /* App */,
+				50EE819E28565E9F008BCEC4 /* Storage */,
+				50EE81A228565F90008BCEC4 /* Connection */,
+				50EE81A028565F58008BCEC4 /* Views */,
+				50EE819F28565EF3008BCEC4 /* Assets */,
 				5023A0BD2854B87E009563B8 /* Preview Content */,
-				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
+				50EE819D28565E25008BCEC4 /* Supporting Files */,
 			);
 			path = Patchcord;
 			sourceTree = "<group>";
@@ -140,6 +140,57 @@
 				5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */,
 			);
 			path = PatchcordUITests;
+			sourceTree = "<group>";
+		};
+		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0E62854BDC1009563B8 /* Info.plist */,
+				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50EE819E28565E9F008BCEC4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0B32854B87D009563B8 /* Persistence.swift */,
+				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		50EE819F28565EF3008BCEC4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0BA2854B87E009563B8 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		50EE81A028565F58008BCEC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0B82854B87D009563B8 /* ContentView.swift */,
+				50EE819B28565BCC008BCEC4 /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50EE81A128565F68008BCEC4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0B12854B87D009563B8 /* PatchcordApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		50EE81A228565F90008BCEC4 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
+			);
+			path = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +331,7 @@
 			files = (
 				5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
+				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */,
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
@@ -433,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patchcord/Patchcord.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Patchcord/Supporting Files/Patchcord.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Patchcord/Preview Content\"";
@@ -441,7 +493,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patchcord/Info.plist;
+				INFOPLIST_FILE = "Patchcord/Supporting Files/Info.plist";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -466,7 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Patchcord/Patchcord.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Patchcord/Supporting Files/Patchcord.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Patchcord/Preview Content\"";
@@ -474,7 +526,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Patchcord/Info.plist;
+				INFOPLIST_FILE = "Patchcord/Supporting Files/Info.plist";
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
