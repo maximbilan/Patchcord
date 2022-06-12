@@ -13,7 +13,8 @@ struct SceneState {
 
 extension SceneState {
     init() {
-        screens = [.root]
+        screens = [.connection(ConnectionState()),
+                   .history(HistoryState())]
     }
 }
 
@@ -25,12 +26,12 @@ extension SceneState {
         // Update visible screens
         if let action = action as? ScreenStateAction {
             switch action {
-                case .show(.root):
-                    screens = [.root]
-                case .show(.about):
-                    screens = [.root, .about]
-                case .dismiss(let screen):
-                    screens = screens.filter { $0 != screen }
+            case .show(.connection):
+                screens = [.connection(ConnectionState()), .history(HistoryState())]
+            case .show(.history):
+                screens = [.history(HistoryState()), .connection(ConnectionState())]
+            case .dismiss(let screen):
+                screens = screens.filter { $0 != screen }
             }
         }
 
@@ -43,19 +44,41 @@ extension SceneState {
 }
 
 enum ScreenState {
-//    case root(ConnectionState, HistoryState)
-    case root
-    case about
+
+    case connection(ConnectionState)
+    case history(HistoryState)
+//    case about
+}
+
+extension ScreenState {
+
+    static func == (lhs: ScreenState, rhs: ScreenState) -> Bool {
+        switch (lhs, rhs) {
+        case (.connection, .connection):
+            return true
+        case (.history, .history):
+            return true
+        default:
+            return false
+        }
+    }
+
+    static func != (lhs: ScreenState, rhs: ScreenState) -> Bool {
+        !(lhs == rhs)
+    }
+
 }
 
 extension ScreenState {
 
     static let reducer: Reducer<Self> = { state, action in
         switch state {
-            case .root:
-                return .root
-            case .about:
-                return .about
+        case .connection(let state):
+            return .connection(ConnectionState.reducer(state, action))
+        case .history(let state):
+            return .history(HistoryState.reducer(state, action))
+//        case .about:
+//            return .about
         }
     }
 }
@@ -75,6 +98,12 @@ extension ConnectionState {
     }
 }
 
+extension ConnectionState {
+    static let reducer: Reducer<Self> = { state, action in
+        return state
+    }
+}
+
 struct HistoryState {
     let isLoading: Bool
 }
@@ -82,5 +111,11 @@ struct HistoryState {
 extension HistoryState {
     init() {
         isLoading = false
+    }
+}
+
+extension HistoryState {
+    static let reducer: Reducer<Self> = { state, action in
+        return state
     }
 }

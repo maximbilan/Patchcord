@@ -168,8 +168,10 @@
 		50EE81A028565F58008BCEC4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				50EE81B3285676AF008BCEC4 /* Root */,
+				50EE81B4285676B8008BCEC4 /* Connection */,
+				50EE81B5285676C1008BCEC4 /* History */,
 				5023A0B82854B87D009563B8 /* ContentView.swift */,
-				50EE819B28565BCC008BCEC4 /* RootView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -216,6 +218,28 @@
 				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
 			);
 			path = Connection;
+			sourceTree = "<group>";
+		};
+		50EE81B3285676AF008BCEC4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				50EE819B28565BCC008BCEC4 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		50EE81B4285676B8008BCEC4 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		50EE81B5285676C1008BCEC4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
