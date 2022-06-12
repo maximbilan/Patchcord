@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* PatchcordApp.swift */; };
+		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B42854B87D009563B8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B32854B87D009563B8 /* Persistence.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0B92854B87D009563B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B82854B87D009563B8 /* ContentView.swift */; };
@@ -19,6 +19,8 @@
 		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
 		5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0E42854BC91009563B8 /* NDT7Bridge.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
+		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
+		50EE81AD2856673B008BCEC4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		5023A0AE2854B87D009563B8 /* Patchcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patchcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0B12854B87D009563B8 /* PatchcordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordApp.swift; sourceTree = "<group>"; };
+		5023A0B12854B87D009563B8 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5023A0B32854B87D009563B8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
 		5023A0B82854B87D009563B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 		5023A0E42854BC91009563B8 /* NDT7Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7Bridge.swift; sourceTree = "<group>"; };
 		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		50EE81AC2856673B008BCEC4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +110,10 @@
 		5023A0B02854B87D009563B8 /* Patchcord */ = {
 			isa = PBXGroup;
 			children = (
-				50EE81A128565F68008BCEC4 /* App */,
-				50EE819E28565E9F008BCEC4 /* Storage */,
-				50EE81A228565F90008BCEC4 /* Connection */,
-				50EE81A028565F58008BCEC4 /* Views */,
+				50EE81A128565F68008BCEC4 /* Core */,
+				50EE81AB2856646B008BCEC4 /* States */,
+				50EE81A028565F58008BCEC4 /* Screens */,
+				50EE81AE28566BFB008BCEC4 /* Middlewares */,
 				50EE819F28565EF3008BCEC4 /* Assets */,
 				5023A0BD2854B87E009563B8 /* Preview Content */,
 				50EE819D28565E25008BCEC4 /* Supporting Files */,
@@ -151,15 +155,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		50EE819E28565E9F008BCEC4 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				5023A0B32854B87D009563B8 /* Persistence.swift */,
-				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		50EE819F28565EF3008BCEC4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,24 +163,51 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		50EE81A028565F58008BCEC4 /* Views */ = {
+		50EE81A028565F58008BCEC4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				5023A0B82854B87D009563B8 /* ContentView.swift */,
 				50EE819B28565BCC008BCEC4 /* RootView.swift */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		50EE81A128565F68008BCEC4 /* App */ = {
+		50EE81A128565F68008BCEC4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				5023A0B12854B87D009563B8 /* PatchcordApp.swift */,
+				5023A0B12854B87D009563B8 /* App.swift */,
+				50EE81A628566126008BCEC4 /* Store.swift */,
 			);
-			path = App;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		50EE81A228565F90008BCEC4 /* Connection */ = {
+		50EE81AB2856646B008BCEC4 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				50EE81AC2856673B008BCEC4 /* AppState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		50EE81AE28566BFB008BCEC4 /* Middlewares */ = {
+			isa = PBXGroup;
+			children = (
+				50EE81B028566C33008BCEC4 /* Connection */,
+				50EE81AF28566C16008BCEC4 /* Persistance */,
+			);
+			path = Middlewares;
+			sourceTree = "<group>";
+		};
+		50EE81AF28566C16008BCEC4 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				5023A0B32854B87D009563B8 /* Persistence.swift */,
+				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		50EE81B028566C33008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
 				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
@@ -329,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5023A0B22854B87D009563B8 /* PatchcordApp.swift in Sources */,
+				5023A0B22854B87D009563B8 /* App.swift in Sources */,
+				50EE81AD2856673B008BCEC4 /* AppState.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
+				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */,
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
