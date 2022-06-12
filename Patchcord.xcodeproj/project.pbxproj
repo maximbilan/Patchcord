@@ -20,7 +20,8 @@
 		5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0E42854BC91009563B8 /* NDT7Bridge.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
-		50EE81AD2856673B008BCEC4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* AppState.swift */; };
+		50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* SceneState.swift */; };
+		50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81B1285673B3008BCEC4 /* Generic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,8 @@
 		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		50EE81AC2856673B008BCEC4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		50EE81AC2856673B008BCEC4 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
+		50EE81B1285673B3008BCEC4 /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5023A0B12854B87D009563B8 /* App.swift */,
+				50EE81B1285673B3008BCEC4 /* Generic.swift */,
 				50EE81A628566126008BCEC4 /* Store.swift */,
 			);
 			path = Core;
@@ -184,7 +187,7 @@
 		50EE81AB2856646B008BCEC4 /* States */ = {
 			isa = PBXGroup;
 			children = (
-				50EE81AC2856673B008BCEC4 /* AppState.swift */,
+				50EE81AC2856673B008BCEC4 /* SceneState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -352,7 +355,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
-				50EE81AD2856673B008BCEC4 /* AppState.swift in Sources */,
+				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
+				50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,

@@ -6,25 +6,20 @@
 //
 
 import SwiftUI
-import Combine
 
-enum Middlewares {}
-
-protocol Action {}
-
-typealias Reducer<State> = (State, Action) -> State
-typealias Middleware<State> = (State, Action) -> AnyPublisher<Action, Never>
+let store = Store(initial: SceneState(),
+                  reducer: SceneState.reducer,
+                  middlewares: [])
 
 @main
 struct PatchcordApp: App {
-    let persistenceController = PersistenceController.shared
-
-    
+//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(store)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
