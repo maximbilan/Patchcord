@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ConnectionView: View {
+    @EnvironmentObject var store: Store<SceneState>
+
     var body: some View {
         VStack {
             Text("Test connection")
             Divider()
             Button("Start") {
-
+                store.dispatch(ConnectionStateAction.start)
             }
         }
     }

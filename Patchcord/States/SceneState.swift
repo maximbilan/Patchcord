@@ -88,12 +88,6 @@ enum ScreenStateAction: Action {
     case dismiss(ScreenState)
 }
 
-extension ConnectionState {
-    static let reducer: Reducer<Self> = { state, action in
-        return state
-    }
-}
-
 struct HistoryState {
     let isLoading: Bool
 }
