@@ -88,16 +88,6 @@ enum ScreenStateAction: Action {
     case dismiss(ScreenState)
 }
 
-struct ConnectionState {
-    let isTesting: Bool
-}
-
-extension ConnectionState {
-    init() {
-        isTesting = false
-    }
-}
-
 extension ConnectionState {
     static let reducer: Reducer<Self> = { state, action in
         return state

@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     var body: some View {
         TabView {
-            ConnectionTestView()
+            ConnectionView()
                 .tabItem {
                     Label("Connection Test", systemImage: "antenna.radiowaves.left.and.right.circle.fill")
                 }
@@ -19,19 +19,6 @@ struct RootView: View {
                     Label("History", systemImage: "list.bullet.rectangle.fill")
                 }
         }
-
-    }
-}
-
-struct ConnectionTestView: View {
-    var body: some View {
-        Text("Test connection")
-    }
-}
-
-struct HistoryView: View {
-    var body: some View {
-        Text("History")
     }
 }
 
