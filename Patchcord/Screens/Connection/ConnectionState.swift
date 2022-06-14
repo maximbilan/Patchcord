@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ConnectionState {
-    let isTesting: Bool
-}
-
-extension ConnectionState {
-    init() {
-        isTesting = false
-    }
+enum ConnectionState {
+    case notStarted
+    case started
+    case downloading
+    case uploading
+    case finished
+    case canceled
+    case interrupted(Error?)
 }

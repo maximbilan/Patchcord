@@ -11,11 +11,9 @@ extension ConnectionState {
     static let reducer: Reducer<Self> = { state, action in
         switch action {
         case ConnectionStateAction.start:
-            return ConnectionState(isTesting: true)
-        case ConnectionStateAction.update:
-            return ConnectionState(isTesting: true)
-        case ConnectionStateAction.finish:
-            return ConnectionState(isTesting: false)
+            return ConnectionState.started
+        case ConnectionStateAction.cancel:
+            return ConnectionState.canceled
         default:
             return state
         }

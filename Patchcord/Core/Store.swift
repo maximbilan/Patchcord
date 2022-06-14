@@ -23,7 +23,7 @@ final class Store<State>: ObservableObject {
          middlewares: [Middleware<State>],
          runLoop: RunLoop = RunLoop.main) {
         self.state = state
-        self.queue = DispatchQueue(label: Bundle.main.bundleIdentifier ?? "Patchcord.queue", qos: .userInitiated)
+        self.queue = DispatchQueue(label: "Patchcord.mainQueue", qos: .userInitiated)
         self.reducer = reducer
         self.middlewares = middlewares
         self.runLoop = runLoop

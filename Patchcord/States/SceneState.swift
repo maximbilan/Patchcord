@@ -13,7 +13,7 @@ struct SceneState {
 
 extension SceneState {
     init() {
-        screens = [.connection(ConnectionState()),
+        screens = [.connection(ConnectionState.notStarted),
                    .history(HistoryState())]
     }
 }
@@ -27,9 +27,9 @@ extension SceneState {
         if let action = action as? ScreenStateAction {
             switch action {
             case .show(.connection):
-                screens = [.connection(ConnectionState()), .history(HistoryState())]
+                screens = [.connection(.notStarted), .history(HistoryState())]
             case .show(.history):
-                screens = [.history(HistoryState()), .connection(ConnectionState())]
+                screens = [.history(HistoryState()), .connection(.notStarted)]
             case .dismiss(let screen):
                 screens = screens.filter { $0 != screen }
             }
