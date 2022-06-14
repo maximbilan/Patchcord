@@ -7,8 +7,6 @@
 
 import Combine
 
-enum Middlewares {}
-
 protocol Action {}
 
 typealias Reducer<State> = (State, Action) -> State

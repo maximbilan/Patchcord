@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500687052857B7B0005A0520 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500687042857B7B0005A0520 /* ConnectionView.swift */; };
+		500687072857B8E6005A0520 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500687062857B8E6005A0520 /* HistoryView.swift */; };
+		500687092857B93D005A0520 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500687082857B93D005A0520 /* ConnectionState.swift */; };
+		5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006870A2857BBCB005A0520 /* ConnectionStateAction.swift */; };
+		5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */; };
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B42854B87D009563B8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B32854B87D009563B8 /* Persistence.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
@@ -42,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500687042857B7B0005A0520 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		500687062857B8E6005A0520 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		500687082857B93D005A0520 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		5006870A2857BBCB005A0520 /* ConnectionStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStateAction.swift; sourceTree = "<group>"; };
+		5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStateReducer.swift; sourceTree = "<group>"; };
 		5023A0AE2854B87D009563B8 /* Patchcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patchcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0B12854B87D009563B8 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5023A0B32854B87D009563B8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -231,6 +241,10 @@
 		50EE81B4285676B8008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				500687082857B93D005A0520 /* ConnectionState.swift */,
+				5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */,
+				5006870A2857BBCB005A0520 /* ConnectionStateAction.swift */,
+				500687042857B7B0005A0520 /* ConnectionView.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		50EE81B5285676C1008BCEC4 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				500687062857B8E6005A0520 /* HistoryView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -383,9 +398,14 @@
 				50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
+				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
+				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
+				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
+				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
 				5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */,
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
+				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
