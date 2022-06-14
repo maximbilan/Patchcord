@@ -9,6 +9,5 @@ import Foundation
 
 enum ConnectionStateAction: Action {
     case start
-    case update
-    case finish
+    case cancel
 }

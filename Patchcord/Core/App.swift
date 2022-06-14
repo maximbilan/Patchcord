@@ -7,19 +7,19 @@
 
 import SwiftUI
 
+// For history
+// let persistenceController = PersistenceController.shared
+
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
-                  middlewares: [])
+                  middlewares: [ConnectionMiddleware.shared.middleware])
 
 @main
 struct PatchcordApp: App {
-//    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(store)
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
