@@ -104,37 +104,37 @@ extension ConnectionMiddleware: NDT7TestInteraction {
             let mbit = numBytes / 125000
             let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
             switch kind {
-                case .download:
-                    queue.async { [weak self] in
-                        self?.downloadSpeed = rounded
-                    }
-                case .upload:
-                    queue.async { [weak self] in
-                        self?.uploadSpeed = rounded
-                    }
+            case .download:
+                queue.async { [weak self] in
+                    self?.downloadSpeed = rounded
+                }
+            case .upload:
+                queue.async { [weak self] in
+                    self?.uploadSpeed = rounded
+                }
             }
         } else if origin == .server,
                   let elapsedTime = measurement.tcpInfo?.elapsedTime,
                   elapsedTime >= 1000000 {
             let seconds = elapsedTime / 1000000
             switch kind {
-                case .download:
-                    if let numBytes = measurement.tcpInfo?.bytesSent {
-                        let mbit = numBytes / 125000
-                        let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
-                        queue.async { [weak self] in
-                            self?.downloadSpeed = rounded
-                        }
+            case .download:
+                if let numBytes = measurement.tcpInfo?.bytesSent {
+                    let mbit = numBytes / 125000
+                    let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
+                    queue.async { [weak self] in
+                        self?.downloadSpeed = rounded
                     }
-                case .upload:
-                    if let numBytes = measurement.tcpInfo?.bytesReceived {
-                        let mbit = numBytes / 125000
-                        let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
-                        uploadSpeed = rounded
-                        queue.async { [weak self] in
-                            self?.uploadSpeed = rounded
-                        }
+                }
+            case .upload:
+                if let numBytes = measurement.tcpInfo?.bytesReceived {
+                    let mbit = numBytes / 125000
+                    let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
+                    uploadSpeed = rounded
+                    queue.async { [weak self] in
+                        self?.uploadSpeed = rounded
                     }
+                }
             }
         }
     }
@@ -145,7 +145,6 @@ extension ConnectionMiddleware: NDT7TestInteraction {
     }
 
 }
-
 
 fileprivate extension Double {
     func rounded(toPlaces places: Int) -> Double {
