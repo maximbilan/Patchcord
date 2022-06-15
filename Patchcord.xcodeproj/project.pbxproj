@@ -22,7 +22,12 @@
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
-		5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0E42854BC91009563B8 /* NDT7Bridge.swift */; };
+		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
+		502556802859A7A300642B30 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567F2859A7A300642B30 /* ScreenState.swift */; };
+		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
+		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
+		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
+		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
@@ -66,8 +71,13 @@
 		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
 		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5023A0E42854BC91009563B8 /* NDT7Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7Bridge.swift; sourceTree = "<group>"; };
 		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5025567D2859A77500642B30 /* SceneStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStateReducer.swift; sourceTree = "<group>"; };
+		5025567F2859A7A300642B30 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
+		502556812859A7C700642B30 /* ScreenStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateReducer.swift; sourceTree = "<group>"; };
+		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
+		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
+		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -202,6 +212,10 @@
 			isa = PBXGroup;
 			children = (
 				50EE81AC2856673B008BCEC4 /* SceneState.swift */,
+				5025567D2859A77500642B30 /* SceneStateReducer.swift */,
+				5025567F2859A7A300642B30 /* ScreenState.swift */,
+				502556812859A7C700642B30 /* ScreenStateReducer.swift */,
+				502556832859A7EE00642B30 /* ScreenStateAction.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -227,7 +241,6 @@
 		50EE81B028566C33008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				5023A0E42854BC91009563B8 /* NDT7Bridge.swift */,
 				5097ED732858F214007F8209 /* ConnectionMiddleware.swift */,
 			);
 			path = Connection;
@@ -255,6 +268,8 @@
 		50EE81B5285676C1008BCEC4 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				502556852859A81D00642B30 /* HistoryState.swift */,
+				502556872859A83700642B30 /* HistoryStateReducer.swift */,
 				500687062857B8E6005A0520 /* HistoryView.swift */,
 			);
 			path = History;
@@ -397,9 +412,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
+				5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
+				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */,
 				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
+				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
 				5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */,
@@ -407,10 +425,12 @@
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
-				5023A0E52854BC91009563B8 /* NDT7Bridge.swift in Sources */,
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
+				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
+				502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
+				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
