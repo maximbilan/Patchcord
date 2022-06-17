@@ -11,7 +11,7 @@ import Combine
 struct PersistenceMiddleware {
     static let shared = PersistenceMiddleware()
 
-    private let container: NSPersistentCloudKitContainer
+    let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Patchcord")

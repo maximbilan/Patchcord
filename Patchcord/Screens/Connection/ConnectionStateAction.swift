@@ -11,6 +11,7 @@ enum ConnectionStateAction: Action {
     case startTest
     case cancelTest
     case saveResults(ConnectionTestResult)
+    case resultSaved
 }
 
 struct ConnectionTestResult {

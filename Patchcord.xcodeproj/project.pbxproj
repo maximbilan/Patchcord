@@ -28,6 +28,10 @@
 		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
+		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
+		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
+		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
+		505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		50D62EE8285A4B3600ABD6FB /* PersistenceMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* PersistenceMiddleware.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
@@ -79,6 +83,10 @@
 		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
+		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
+		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
+		505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRepository+TestResults.swift"; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* PersistenceMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceMiddleware.swift; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -172,6 +180,16 @@
 			path = PatchcordUITests;
 			sourceTree = "<group>";
 		};
+		505F4D94285CB8C9006989B1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */,
+				505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */,
+				505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +243,7 @@
 		50EE81AE28566BFB008BCEC4 /* Middlewares */ = {
 			isa = PBXGroup;
 			children = (
+				505F4D94285CB8C9006989B1 /* CoreData */,
 				50EE81B028566C33008BCEC4 /* Connection */,
 				50EE81AF28566C16008BCEC4 /* Persistance */,
 			);
@@ -273,6 +292,7 @@
 			children = (
 				502556852859A81D00642B30 /* HistoryState.swift */,
 				502556872859A83700642B30 /* HistoryStateReducer.swift */,
+				505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */,
 				500687062857B8E6005A0520 /* HistoryView.swift */,
 			);
 			path = History;
@@ -414,8 +434,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */,
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
 				5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */,
+				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* PersistenceMiddleware.swift in Sources */,
@@ -425,6 +447,7 @@
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
 				5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */,
+				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
@@ -432,6 +455,7 @@
 				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
+				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
 				502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,

@@ -9,10 +9,12 @@ import Foundation
 
 struct HistoryState {
     let isLoading: Bool
+    let results: [Test]
 }
 
 extension HistoryState {
     init() {
         isLoading = false
+        results = []
     }
 }
