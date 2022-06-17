@@ -10,9 +10,9 @@ import Foundation
 extension ConnectionState {
     static let reducer: Reducer<Self> = { state, action in
         switch action {
-        case ConnectionStateAction.start:
+        case ConnectionStateAction.startTest:
             return ConnectionState.started
-        case ConnectionStateAction.cancel:
+        case ConnectionStateAction.cancelTest:
             return ConnectionState.canceled
         default:
             return state

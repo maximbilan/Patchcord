@@ -27,9 +27,9 @@ final class ConnectionMiddleware: ObservableObject {
 
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         switch action {
-        case ConnectionStateAction.start:
+        case ConnectionStateAction.startTest:
             start()
-        case ConnectionStateAction.cancel:
+        case ConnectionStateAction.cancelTest:
             cancel()
         default:
             break

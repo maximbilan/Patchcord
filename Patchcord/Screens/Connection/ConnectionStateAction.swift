@@ -8,6 +8,6 @@
 import Foundation
 
 enum ConnectionStateAction: Action {
-    case start
-    case cancel
+    case startTest
+    case cancelTest
 }

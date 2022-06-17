@@ -19,7 +19,7 @@ struct ConnectionView: View {
                     Text("Test connection")
                     Divider()
                     Button("Start") {
-                        store.dispatch(ConnectionStateAction.start)
+                        store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
             case .started:
@@ -27,7 +27,7 @@ struct ConnectionView: View {
                     Text("Starting...")
                     Divider()
                     Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancel)
+                        store.dispatch(ConnectionStateAction.cancelTest)
                     }
                 }
             case .downloading:
@@ -40,7 +40,7 @@ struct ConnectionView: View {
                     }
                     Divider()
                     Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancel)
+                        store.dispatch(ConnectionStateAction.cancelTest)
                     }
                 }
             case .uploading:
@@ -53,7 +53,7 @@ struct ConnectionView: View {
                     }
                     Divider()
                     Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancel)
+                        store.dispatch(ConnectionStateAction.cancelTest)
                     }
                 }
             case .finished:
@@ -73,7 +73,7 @@ struct ConnectionView: View {
                     }
                     Divider()
                     Button("Run again") {
-                        store.dispatch(ConnectionStateAction.start)
+                        store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
             default:
@@ -81,7 +81,7 @@ struct ConnectionView: View {
                     Text("Something wrong!")
                     Divider()
                     Button("Try again") {
-                        store.dispatch(ConnectionStateAction.start)
+                        store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
             }
