@@ -8,6 +8,7 @@
 import Combine
 
 protocol Action {}
+enum Middlewares {}
 
 typealias Reducer<State> = (State, Action) -> State
 typealias Middleware<State> = (State, Action) -> AnyPublisher<Action, Never>

@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-// For history
-// let persistenceController = PersistenceController.shared
-
+let persistance = PersistenceMiddleware.shared
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
-                  middlewares: [ConnectionMiddleware.shared.middleware])
+                  middlewares: [ConnectionMiddleware.shared.middleware,
+                                Middlewares.testResults])
 
 @main
 struct PatchcordApp: App {

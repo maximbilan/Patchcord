@@ -9,6 +9,13 @@ import Foundation
 
 extension HistoryState {
     static let reducer: Reducer<Self> = { state, action in
-        return state
+        switch action {
+        case HistoryStateAction.fetchHistory:
+            return HistoryState(isLoading: true, results: [])
+        case HistoryStateAction.didReceiveTests(let tests):
+            return HistoryState(isLoading: false, results: tests)
+        default:
+            return state
+        }
     }
 }

@@ -8,6 +8,13 @@
 import Foundation
 
 enum ConnectionStateAction: Action {
-    case start
-    case cancel
+    case startTest
+    case cancelTest
+    case saveResults(ConnectionTestResult)
+    case resultSaved
+}
+
+struct ConnectionTestResult {
+    let downloadSpeed: Double
+    let uploadSpeed: Double
 }
