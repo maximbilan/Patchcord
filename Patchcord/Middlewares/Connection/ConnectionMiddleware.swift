@@ -48,7 +48,19 @@ fileprivate extension ConnectionMiddleware {
         ndt7Test = NDT7Test(settings: settings)
         ndt7Test?.delegate = self
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
-            self?.updateState(error != nil ? .interrupted(error) : .finished)
+            if let error = error {
+                self?.updateState(.interrupted(error))
+            } else {
+                if let downloadSpeed = self?.downloadSpeed, let uploadSpeed = self?.uploadSpeed {
+                    let result = ConnectionTestResult(downloadSpeed: downloadSpeed, uploadSpeed: uploadSpeed)
+                    self?.queue.async {
+                        self?.state = .finished
+                        store.dispatch(ConnectionStateAction.saveResults(result))
+                    }
+                } else {
+                    self?.updateState(.finished)
+                }
+            }
         }
 
         updateState(.started)

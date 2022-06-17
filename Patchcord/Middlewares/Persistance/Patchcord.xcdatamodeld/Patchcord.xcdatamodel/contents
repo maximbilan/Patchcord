@@ -4,9 +4,9 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
-        <attribute name="downloadResult" optional="YES" attributeType="String"/>
+        <attribute name="downloadResult" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="uploadResult" optional="YES" attributeType="String"/>
+        <attribute name="uploadResult" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>

@@ -29,6 +29,34 @@ struct PersistenceMiddleware {
     }
 
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
+        switch action {
+        case ConnectionStateAction.saveResults(let result):
+            save(result)
+            break
+        default:
+            break
+        }
         return Empty().eraseToAnyPublisher()
     }
+}
+
+fileprivate extension PersistenceMiddleware {
+
+    func save(_ result: ConnectionTestResult) {
+        let backgroundContext = container.newBackgroundContext()
+        backgroundContext.perform {
+            let test = Test(context: backgroundContext)
+            test.downloadResult = result.downloadSpeed
+            test.uploadResult = result.uploadSpeed
+            test.timestamp = Date()
+
+            do {
+                try backgroundContext.save()
+            } catch {
+                let nsError = error as NSError
+                print("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+
 }
