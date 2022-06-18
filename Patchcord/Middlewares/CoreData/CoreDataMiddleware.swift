@@ -25,6 +25,12 @@ extension Middlewares {
                     .map { HistoryStateAction.didReceiveTests($0) }
                     .ignoreError()
                     .eraseToAnyPublisher()
+        case HistoryStateAction.deleteItems(let offsets):
+                return testResultsRepository
+                    .delete(offsets)
+                    .map { HistoryStateAction.fetchHistory }
+                    .ignoreError()
+                    .eraseToAnyPublisher()
         default:
             return Empty().eraseToAnyPublisher()
         }

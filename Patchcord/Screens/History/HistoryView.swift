@@ -18,11 +18,14 @@ struct HistoryView: View {
                     List {
                         ForEach(state.results) { result in
                             VStack(alignment: .leading) {
-                                Text(result.timestamp!, formatter: itemFormatter)
-                                Text("\(result.downloadResult)")
-                                Text("\(result.downloadResult)")
+                                if let timestamp = result.timestamp {
+                                    Text(timestamp, formatter: itemFormatter)
+                                    Text("\(result.downloadResult)")
+                                    Text("\(result.downloadResult)")
+                                }
                             }
                         }
+                        .onDelete(perform: deleteItems(offsets:))
                     }
                 } else {
                     Text("Loading...")
@@ -33,7 +36,13 @@ struct HistoryView: View {
             store.dispatch(HistoryStateAction.fetchHistory)
         }
     }
+
+    private func deleteItems(offsets: IndexSet) {
+        store.dispatch(HistoryStateAction.deleteItems(offsets))
+    }
 }
+
+
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()

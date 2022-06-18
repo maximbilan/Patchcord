@@ -69,4 +69,27 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
         }
         .eraseToAnyPublisher()
     }
+
+    func delete(_ offsets: IndexSet) -> AnyPublisher<Void, Error> {
+        Deferred { [context] in
+            Future { [self] promise in
+                context.perform {
+                    do {
+                        let itemsToDelete = offsets.map { self.fetchedItems[$0] }
+                        self.fetchedItems.remove(atOffsets: offsets)
+                        for entity in itemsToDelete {
+                            context.delete(entity)
+                        }
+                        try context.save()
+                        promise(.success(()))
+                    } catch {
+                        promise(.failure(error))
+                    }
+                }
+            }
+        }
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
+    }
+
 }
