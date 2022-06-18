@@ -14,8 +14,11 @@ extension Middlewares {
     static let testResults: Middleware<SceneState> = { state, action in
         switch action {
         case ConnectionStateAction.saveResults(let result):
-            testResultsRepository.save(result)
-            return Empty().eraseToAnyPublisher()
+            return testResultsRepository
+                    .save(result)
+                    .map { HistoryStateAction.didReceiveTests(testResultsRepository.fetchedItems + [$0]) }
+                    .ignoreError()
+                    .eraseToAnyPublisher()
         case HistoryStateAction.fetchHistory:
             return testResultsRepository
                     .fetch()

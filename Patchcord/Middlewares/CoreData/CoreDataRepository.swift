@@ -16,16 +16,18 @@ enum RepositoryError: Error {
 class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
     private let context: NSManagedObjectContext
     private let dispatchQueue: DispatchQueue
+    private(set) var fetchedItems: [Entity]
 
     init(context: NSManagedObjectContext, dispatchQueue: DispatchQueue = DispatchQueue.main) {
         self.context = context
         self.dispatchQueue = dispatchQueue
+        self.fetchedItems = []
     }
 
     func fetch(sortDescriptors: [NSSortDescriptor] = [],
                predicate: NSPredicate? = nil) -> AnyPublisher<[Entity], Error> {
         Deferred { [context] in
-            Future { promise in
+            Future { [self] promise in
                 context.perform {
                     let request = Entity.fetchRequest()
                     request.sortDescriptors = sortDescriptors
@@ -33,11 +35,14 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
                     do {
                         let results = try context.fetch(request) as? [Entity]
                         if let results = results {
+                            self.fetchedItems = results
                             promise(.success(results))
                         } else {
+                            self.fetchedItems = []
                             promise(.failure(RepositoryError.noObjects))
                         }
                     } catch {
+                        self.fetchedItems = []
                         promise(.failure(error))
                     }
                 }

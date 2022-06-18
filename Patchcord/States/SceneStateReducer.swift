@@ -30,7 +30,7 @@ extension SceneState {
         return SceneState(screens: screens)
     }
 
-    func screenState<State>(for screen: ScreenState) -> State? {
+    func screenState<State>(for screen: Screen) -> State? {
         return screens
             .compactMap {
                 switch ($0, screen) {

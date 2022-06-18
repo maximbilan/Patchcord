@@ -9,20 +9,19 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var store: Store<SceneState>
-
-    private var state: HistoryState? {
-        store.state.screenState(for: .history(HistoryState()))
-    }
+    private var state: HistoryState? { store.state.screenState(for: .history) }
 
     var body: some View {
         ZStack {
             if let state = state {
-                if state.isLoading {
+                if !state.isLoading {
                     List {
                         ForEach(state.results) { result in
-                            Text(result.timestamp!, formatter: itemFormatter)
-//                            Text(result.downloadSpeed)
-//                            Text(result.uploadSpeed)
+                            VStack(alignment: .leading) {
+                                Text(result.timestamp!, formatter: itemFormatter)
+                                Text("\(result.downloadResult)")
+                                Text("\(result.downloadResult)")
+                            }
                         }
                     }
                 } else {
