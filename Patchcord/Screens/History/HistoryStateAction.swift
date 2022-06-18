@@ -9,6 +9,6 @@ import Foundation
 
 enum HistoryStateAction: Action {
     case fetchHistory
-    case didReceiveTests([Test])
+    case didReceiveTests([TestResult])
     case deleteItems(IndexSet)
 }

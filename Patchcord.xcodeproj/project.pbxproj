@@ -31,11 +31,13 @@
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
 		505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
+		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
+		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
 		50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* SceneState.swift */; };
-		50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81B1285673B3008BCEC4 /* Generic.swift */; };
+		50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81B1285673B3008BCEC4 /* Generics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +86,13 @@
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
 		505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRepository+TestResults.swift"; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
+		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		50EE81AC2856673B008BCEC4 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
-		50EE81B1285673B3008BCEC4 /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
+		50EE81B1285673B3008BCEC4 /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,9 +183,11 @@
 		505F4D94285CB8C9006989B1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				50D62EE7285A4B3600ABD6FB /* Persistence.swift */,
 				505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */,
 				505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */,
 				505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */,
+				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -217,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				5023A0B12854B87D009563B8 /* App.swift */,
-				50EE81B1285673B3008BCEC4 /* Generic.swift */,
+				50EE81B1285673B3008BCEC4 /* Generics.swift */,
 				50EE81A628566126008BCEC4 /* Store.swift */,
 			);
 			path = Core;
@@ -226,6 +232,7 @@
 		50EE81AB2856646B008BCEC4 /* States */ = {
 			isa = PBXGroup;
 			children = (
+				509C0E14285E581100F2E58F /* Screen.swift */,
 				50EE81AC2856673B008BCEC4 /* SceneState.swift */,
 				5025567D2859A77500642B30 /* SceneStateReducer.swift */,
 				5025567F2859A7A300642B30 /* ScreenState.swift */,
@@ -240,18 +247,8 @@
 			children = (
 				505F4D94285CB8C9006989B1 /* CoreData */,
 				50EE81B028566C33008BCEC4 /* Connection */,
-				50EE81AF28566C16008BCEC4 /* Persistance */,
 			);
 			path = Middlewares;
-			sourceTree = "<group>";
-		};
-		50EE81AF28566C16008BCEC4 /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				50D62EE7285A4B3600ABD6FB /* Persistence.swift */,
-				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
-			);
-			path = Persistance;
 			sourceTree = "<group>";
 		};
 		50EE81B028566C33008BCEC4 /* Connection */ = {
@@ -273,6 +270,7 @@
 		50EE81B4285676B8008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				509C0E16285E587B00F2E58F /* TestState.swift */,
 				500687082857B93D005A0520 /* ConnectionState.swift */,
 				5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */,
 				5006870A2857BBCB005A0520 /* ConnectionStateAction.swift */,
@@ -432,10 +430,11 @@
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
 				5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */,
 				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
+				509C0E17285E587B00F2E58F /* TestState.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */,
-				50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */,
+				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
 				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
@@ -451,6 +450,7 @@
 				502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */,
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
+				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

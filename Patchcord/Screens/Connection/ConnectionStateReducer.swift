@@ -8,16 +8,26 @@
 import Foundation
 
 extension ConnectionState {
+
     static let reducer: Reducer<Self> = { state, action in
         switch action {
         case ConnectionStateAction.startTest:
-            return ConnectionState(testState: .started, downloadSpeed: nil, uploadSpeed: nil, server: nil, serverLocation: nil)
+            return ConnectionState(testState: .started,
+                                   downloadSpeed: nil,
+                                   uploadSpeed: nil,
+                                   server: nil,
+                                   serverLocation: nil)
         case ConnectionStateAction.cancelTest:
-            return ConnectionState(testState: .canceled, downloadSpeed: nil, uploadSpeed: nil, server: nil, serverLocation: nil)
+            return ConnectionState(testState: .canceled,
+                                   downloadSpeed: nil,
+                                   uploadSpeed: nil,
+                                   server: nil,
+                                   serverLocation: nil)
         case ConnectionStateAction.refreshScreen(let state):
             return state
         default:
             return state
         }
     }
+
 }

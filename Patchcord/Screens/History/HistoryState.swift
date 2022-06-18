@@ -9,7 +9,7 @@ import Foundation
 
 struct HistoryState {
     let isLoading: Bool
-    let results: [Test]
+    let results: [TestResult]
 }
 
 extension HistoryState {

@@ -15,8 +15,7 @@ extension ScreenState {
             return .connection(ConnectionState.reducer(state, action))
         case .history(let state):
             return .history(HistoryState.reducer(state, action))
-                //        case .about:
-                //            return .about
         }
     }
+
 }

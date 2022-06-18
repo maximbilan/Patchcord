@@ -8,10 +8,8 @@
 import Foundation
 
 enum ScreenState {
-
     case connection(ConnectionState)
     case history(HistoryState)
-    //    case about
 }
 
 extension ScreenState {
