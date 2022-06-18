@@ -13,9 +13,7 @@
 		5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006870A2857BBCB005A0520 /* ConnectionStateAction.swift */; };
 		5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */; };
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
-		5023A0B42854B87D009563B8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B32854B87D009563B8 /* Persistence.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
-		5023A0B92854B87D009563B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B82854B87D009563B8 /* ContentView.swift */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
 		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
 		5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0C82854B87E009563B8 /* PatchcordTests.swift */; };
@@ -65,9 +63,7 @@
 		5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStateReducer.swift; sourceTree = "<group>"; };
 		5023A0AE2854B87D009563B8 /* Patchcord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Patchcord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0B12854B87D009563B8 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		5023A0B32854B87D009563B8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
-		5023A0B82854B87D009563B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5023A0BC2854B87E009563B8 /* Patchcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
 		5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -213,7 +209,6 @@
 				50EE81B3285676AF008BCEC4 /* Root */,
 				50EE81B4285676B8008BCEC4 /* Connection */,
 				50EE81B5285676C1008BCEC4 /* History */,
-				5023A0B82854B87D009563B8 /* ContentView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -253,7 +248,6 @@
 		50EE81AF28566C16008BCEC4 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				5023A0B32854B87D009563B8 /* Persistence.swift */,
 				50D62EE7285A4B3600ABD6FB /* PersistenceMiddleware.swift */,
 				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
 			);
@@ -442,7 +436,6 @@
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* PersistenceMiddleware.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generic.swift in Sources */,
-				5023A0B42854B87D009563B8 /* Persistence.swift in Sources */,
 				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
@@ -452,7 +445,6 @@
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
-				5023A0B92854B87D009563B8 /* ContentView.swift in Sources */,
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
