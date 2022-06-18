@@ -10,13 +10,13 @@ import Combine
 
 extension CoreDataRepository {
 
-    func save(_ result: ConnectionTestResult) -> AnyPublisher<Entity, Error> {
+    func save(_ state: ConnectionState) -> AnyPublisher<Entity, Error> {
         return add { entity in
             guard let test = entity as? Test else {
                 return
             }
-            test.downloadResult = result.downloadSpeed
-            test.uploadResult = result.uploadSpeed
+            test.downloadResult = state.downloadSpeed ?? 0
+            test.uploadResult = state.uploadSpeed ?? 0
             test.timestamp = Date()
         }
     }

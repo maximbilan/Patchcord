@@ -11,9 +11,9 @@ extension ConnectionState {
     static let reducer: Reducer<Self> = { state, action in
         switch action {
         case ConnectionStateAction.startTest:
-            return ConnectionState.started
+            return ConnectionState(testState: .started, downloadSpeed: nil, uploadSpeed: nil, server: nil, serverLocation: nil)
         case ConnectionStateAction.cancelTest:
-            return ConnectionState.canceled
+            return ConnectionState(testState: .canceled, downloadSpeed: nil, uploadSpeed: nil, server: nil, serverLocation: nil)
         default:
             return state
         }
