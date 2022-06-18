@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let persistance = PersistenceMiddleware.shared
+let persistance = Persistence.shared
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
                   middlewares: [ConnectionMiddleware.shared.middleware,

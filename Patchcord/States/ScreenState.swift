@@ -16,7 +16,7 @@ enum ScreenState {
 
 extension ScreenState {
 
-    static func == (lhs: ScreenState, rhs: ScreenState) -> Bool {
+    static func == (lhs: ScreenState, rhs: Screen) -> Bool {
         switch (lhs, rhs) {
             case (.connection, .connection):
                 return true
@@ -27,7 +27,15 @@ extension ScreenState {
         }
     }
 
-    static func != (lhs: ScreenState, rhs: ScreenState) -> Bool {
+    static func == (lhs: Screen, rhs: ScreenState) -> Bool {
+        rhs == lhs
+    }
+
+    static func != (lhs: Screen, rhs: ScreenState) -> Bool {
+        !(lhs == rhs)
+    }
+
+    static func != (lhs: ScreenState, rhs: Screen) -> Bool {
         !(lhs == rhs)
     }
 

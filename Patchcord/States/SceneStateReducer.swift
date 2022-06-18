@@ -16,9 +16,11 @@ extension SceneState {
         if let action = action as? ScreenStateAction {
             switch action {
                 case .show(.connection):
-                    screens = [.connection(.notStarted), .history(HistoryState())]
+                    screens = [.connection(ConnectionState()),
+                               .history(HistoryState())]
                 case .show(.history):
-                    screens = [.history(HistoryState()), .connection(.notStarted)]
+                    screens = [.history(HistoryState()),
+                               .connection(ConnectionState())]
                 case .dismiss(let screen):
                     screens = screens.filter { $0 != screen }
             }
@@ -30,16 +32,16 @@ extension SceneState {
         return SceneState(screens: screens)
     }
 
-    func screenState<State>(for screen: ScreenState) -> State? {
+    func screenState<State>(for screen: Screen) -> State? {
         return screens
             .compactMap {
                 switch ($0, screen) {
-                    case (.connection(let state), .connection):
-                        return state as? State
-                    case (.history(let state), .history):
-                        return state as? State
-                    default:
-                        return nil
+                case (.connection(let state), .connection):
+                    return state as? State
+                case (.history(let state), .history):
+                    return state as? State
+                default:
+                    return nil
                 }
             }
             .first

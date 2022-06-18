@@ -7,7 +7,12 @@
 
 import Foundation
 
+enum Screen {
+    case connection
+    case history
+}
+
 enum ScreenStateAction: Action {
-    case show(ScreenState)
-    case dismiss(ScreenState)
+    case show(Screen)
+    case dismiss(Screen)
 }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ConnectionView: View {
-    @ObservedObject var connection = ConnectionMiddleware.shared
     @EnvironmentObject var store: Store<SceneState>
+    private var state: ConnectionState? { store.state.screenState(for: .connection) }
 
     var body: some View {
         VStack {
-            switch connection.state {
+            switch state?.testState {
             case .notStarted, .canceled:
                 Group {
                     Text("Test connection")
@@ -33,7 +33,7 @@ struct ConnectionView: View {
             case .downloading:
                 Group {
                     Text("Downloading speed")
-                    if let downloadSpeed = connection.downloadSpeed {
+                    if let downloadSpeed = state?.downloadSpeed {
                         Text("\(downloadSpeed) Mbit/s")
                     } else {
                         Text("... Mbit/s")
@@ -46,7 +46,7 @@ struct ConnectionView: View {
             case .uploading:
                 Group {
                     Text("Uploading speed")
-                    if let uploadSpeed = connection.uploadSpeed {
+                    if let uploadSpeed = state?.uploadSpeed {
                         Text("\(uploadSpeed) Mbit/s")
                     } else {
                         Text("... Mbit/s")
@@ -59,14 +59,14 @@ struct ConnectionView: View {
             case .finished:
                 Group {
                     Text("Downloading speed")
-                    if let downloadSpeed = connection.downloadSpeed {
+                    if let downloadSpeed = state?.downloadSpeed {
                         Text("\(downloadSpeed) Mbit/s")
                     } else {
                         Text("... Mbit/s")
                     }
                     Divider()
                     Text("Uploading speed")
-                    if let uploadSpeed = connection.uploadSpeed {
+                    if let uploadSpeed = state?.uploadSpeed {
                         Text("\(uploadSpeed) Mbit/s")
                     } else {
                         Text("... Mbit/s")

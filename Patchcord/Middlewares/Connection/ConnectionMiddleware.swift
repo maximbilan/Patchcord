@@ -14,12 +14,22 @@ final class ConnectionMiddleware: ObservableObject {
 
     private let queue: DispatchQueue
     private var ndt7Test: NDT7Test?
-
-    @Published var state: ConnectionState = .notStarted
-    @Published var downloadSpeed: Double?
-    @Published var uploadSpeed: Double?
-    @Published var server: String?
-    @Published var serverLocation: String?
+    private var state: TestState = .notStarted {
+        didSet {
+            dispatchData()
+        }
+    }
+    private var connectionState: ConnectionState {
+        ConnectionState(testState: state,
+                        downloadSpeed: downloadSpeed,
+                        uploadSpeed: uploadSpeed,
+                        server: server,
+                        serverLocation: serverLocation)
+    }
+    private var downloadSpeed: Double?
+    private var uploadSpeed: Double?
+    private var server: String?
+    private var serverLocation: String?
 
     init() {
         queue = DispatchQueue.main
@@ -49,38 +59,26 @@ fileprivate extension ConnectionMiddleware {
         ndt7Test?.delegate = self
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
             if let error = error {
-                self?.updateState(.interrupted(error))
+                self?.state = .interrupted(error)
             } else {
-                if let downloadSpeed = self?.downloadSpeed, let uploadSpeed = self?.uploadSpeed {
-                    let result = ConnectionTestResult(downloadSpeed: downloadSpeed, uploadSpeed: uploadSpeed)
-                    self?.queue.async {
-                        self?.state = .finished
-                        store.dispatch(ConnectionStateAction.saveResults(result))
-                    }
-                } else {
-                    self?.updateState(.finished)
-                }
+                self?.state = .finished
+                self?.saveData()
             }
         }
 
-        updateState(.started)
+        state = .started
     }
 
     func reset() {
-        state = .notStarted
         downloadSpeed = nil
         uploadSpeed = nil
+        state = .notStarted
+
     }
 
     func cancel() {
         ndt7Test?.cancel()
-        updateState(.canceled)
-    }
-
-    func updateState(_ state: ConnectionState) {
-        queue.async { [weak self] in
-            self?.state = state
-        }
+        state = .canceled
     }
 
 }
@@ -90,21 +88,17 @@ extension ConnectionMiddleware: NDT7TestInteraction {
     func test(kind: NDT7TestConstants.Kind, running: Bool) {
         switch kind {
         case .download:
-            updateState(.downloading)
+            state = .downloading
         case .upload:
-            updateState(.uploading)
+            state = .uploading
         }
     }
 
     func measurement(origin: NDT7TestConstants.Origin, kind: NDT7TestConstants.Kind, measurement: NDT7Measurement) {
         if let currentServer = ndt7Test?.settings.currentServer {
-            queue.async { [weak self] in
-                self?.server = currentServer.machine
-            }
+            server = currentServer.machine
             if let country = currentServer.location?.country, let city = currentServer.location?.city {
-                queue.async { [weak self] in
-                    self?.serverLocation = "\(city), \(country)"
-                }
+                serverLocation = "\(city), \(country)"
             }
         }
 
@@ -117,13 +111,9 @@ extension ConnectionMiddleware: NDT7TestInteraction {
             let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
             switch kind {
             case .download:
-                queue.async { [weak self] in
-                    self?.downloadSpeed = rounded
-                }
+                downloadSpeed = rounded
             case .upload:
-                queue.async { [weak self] in
-                    self?.uploadSpeed = rounded
-                }
+                uploadSpeed = rounded
             }
         } else if origin == .server,
                   let elapsedTime = measurement.tcpInfo?.elapsedTime,
@@ -134,26 +124,42 @@ extension ConnectionMiddleware: NDT7TestInteraction {
                 if let numBytes = measurement.tcpInfo?.bytesSent {
                     let mbit = numBytes / 125000
                     let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
-                    queue.async { [weak self] in
-                        self?.downloadSpeed = rounded
-                    }
+                    downloadSpeed = rounded
                 }
             case .upload:
                 if let numBytes = measurement.tcpInfo?.bytesReceived {
                     let mbit = numBytes / 125000
                     let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
                     uploadSpeed = rounded
-                    queue.async { [weak self] in
-                        self?.uploadSpeed = rounded
-                    }
                 }
             }
         }
+
+        dispatchData()
     }
 
     func error(kind: NDT7TestConstants.Kind, error: NSError) {
         ndt7Test?.cancel()
-        updateState(.interrupted(error))
+        state = .interrupted(error)
+    }
+
+}
+
+/// Dispatches
+fileprivate extension ConnectionMiddleware {
+
+    func dispatchInQueue(_ action: ConnectionStateAction) {
+        queue.async {
+            store.dispatch(action)
+        }
+    }
+
+    func saveData() {
+        dispatchInQueue(ConnectionStateAction.saveResults(connectionState))
+    }
+
+    func dispatchData() {
+        dispatchInQueue(ConnectionStateAction.refreshScreen(connectionState))
     }
 
 }

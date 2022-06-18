@@ -9,21 +9,23 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var store: Store<SceneState>
-
-    private var state: HistoryState? {
-        store.state.screenState(for: .history(HistoryState()))
-    }
+    private var state: HistoryState? { store.state.screenState(for: .history) }
 
     var body: some View {
         ZStack {
             if let state = state {
-                if state.isLoading {
+                if !state.isLoading {
                     List {
                         ForEach(state.results) { result in
-                            Text(result.timestamp!, formatter: itemFormatter)
-//                            Text(result.downloadSpeed)
-//                            Text(result.uploadSpeed)
+                            VStack(alignment: .leading) {
+                                if let timestamp = result.timestamp {
+                                    Text(timestamp, formatter: itemFormatter)
+                                    Text("\(result.downloadResult)")
+                                    Text("\(result.downloadResult)")
+                                }
+                            }
                         }
+                        .onDelete(perform: deleteItems(offsets:))
                     }
                 } else {
                     Text("Loading...")
@@ -33,6 +35,10 @@ struct HistoryView: View {
         .onAppear {
             store.dispatch(HistoryStateAction.fetchHistory)
         }
+    }
+
+    private func deleteItems(offsets: IndexSet) {
+        store.dispatch(HistoryStateAction.deleteItems(offsets))
     }
 }
 

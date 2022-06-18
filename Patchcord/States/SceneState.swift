@@ -13,7 +13,7 @@ struct SceneState {
 
 extension SceneState {
     init() {
-        screens = [.connection(ConnectionState.notStarted),
+        screens = [.connection(ConnectionState()),
                    .history(HistoryState())]
     }
 }
