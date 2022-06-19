@@ -17,15 +17,15 @@ extension NDT7Measurement {
     static let downloadMeasurementJSON = """
 {
  "AppInfo": {
-   "ElapsedTime": 12341,
-   "NumBytes": 12342,
+   "ElapsedTime": 123410000,
+   "NumBytes": 123420000,
  },
  "BBRInfo": {
-   "ElapsedTime": 123,
-   "BW": 456,
-   "MinRTT": 789,
-   "CwndGain":739,
-   "PacingGain":724
+   "ElapsedTime": 12300000,
+   "BW": 4560000,
+   "MinRTT": 7890000,
+   "CwndGain":7390000,
+   "PacingGain":7240000
  },
 "ConnectionInfo": {
   "Client": "1.2.3.4:5678",
@@ -35,17 +35,17 @@ extension NDT7Measurement {
  "Origin": "server",
  "Test": "download",
  "TCPInfo": {
-   "BusyTime": 1234,
-   "BytesAcked": 12345,
-   "BytesReceived": 12346,
-   "BytesSent": 12347,
-   "BytesRetrans": 12348,
-   "ElapsedTime": 12349,
-   "MinRTT": 12340,
-   "RTT": 123411,
-   "RTTVar": 123412,
-   "RWndLimited": 123413,
-   "SndBufLimited": 123414
+   "BusyTime": 12340000,
+   "BytesAcked": 123450000,
+   "BytesReceived": 123460000,
+   "BytesSent": 123470000,
+   "BytesRetrans": 123480000,
+   "ElapsedTime": 123490000,
+   "MinRTT": 123400000,
+   "RTT": 1234110000,
+   "RTTVar": 1234120000,
+   "RWndLimited": 1234130000,
+   "SndBufLimited": 1234140000
  }
 }
 """
@@ -53,35 +53,35 @@ extension NDT7Measurement {
     static let uploadMeasurementJSON = """
 {
  "AppInfo": {
-   "ElapsedTime": 12341,
-   "NumBytes": 12342,
+   "ElapsedTime": 1234100000,
+   "NumBytes": 1234200000,
  },
  "BBRInfo": {
-   "ElapsedTime": 123,
-   "BW": 456,
-   "MinRTT": 789,
-   "CwndGain":739,
-   "PacingGain":724
+   "ElapsedTime": 12300000,
+   "BW": 45600000,
+   "MinRTT": 78000009,
+   "CwndGain":73900000,
+   "PacingGain":72400000
  },
 "ConnectionInfo": {
   "Client": "1.2.3.4:5678",
   "Server": "[::1]:2345",
   "UUID": "<platform-specific-string>"
 },
- "Origin": "server",
+ "Origin": "client",
  "Test": "upload",
  "TCPInfo": {
-   "BusyTime": 1234,
-   "BytesAcked": 12345,
-   "BytesReceived": 12346,
-   "BytesSent": 12347,
-   "BytesRetrans": 12348,
-   "ElapsedTime": 12349,
-   "MinRTT": 12340,
-   "RTT": 123411,
-   "RTTVar": 123412,
-   "RWndLimited": 123413,
-   "SndBufLimited": 123414
+   "BusyTime": 123400000,
+   "BytesAcked": 1234500000,
+   "BytesReceived": 9877300000,
+   "BytesSent": 9878300000,
+   "BytesRetrans": 1234800000,
+   "ElapsedTime": 1234900000,
+   "MinRTT": 1234000000,
+   "RTT": 12341100000,
+   "RTTVar": 12341200000,
+   "RWndLimited": 12341300000,
+   "SndBufLimited": 12341400000
  }
 }
 """

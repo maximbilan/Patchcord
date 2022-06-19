@@ -9,7 +9,8 @@ import Combine
 import SwiftUI
 import NDT7
 
-class ConnectionMiddleware: ObservableObject {
+class ConnectionMiddleware {
+    private var connectedStore: Store<SceneState>?
     private let queue: DispatchQueue
     private var ndt7Test: NDT7TestDependency?
     private var state: TestState = .notStarted {
@@ -47,6 +48,10 @@ class ConnectionMiddleware: ObservableObject {
             break
         }
         return Empty().eraseToAnyPublisher()
+    }
+
+    func connectStore(_ store: Store<SceneState>) {
+        self.connectedStore = store
     }
 
 }
@@ -149,10 +154,10 @@ fileprivate extension ConnectionMiddleware {
 
     func dispatchInQueue(_ action: ConnectionStateAction) {
         if ProcessInfo.isRunningTests {
-            store.dispatch(action)
+            connectedStore?.dispatch(action)
         } else {
-            queue.async {
-                store.dispatch(action)
+            queue.async { [weak self] in
+                self?.connectedStore?.dispatch(action)
             }
         }
     }
@@ -168,8 +173,10 @@ fileprivate extension ConnectionMiddleware {
 }
 
 fileprivate extension Double {
+
     func rounded(toPlaces places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+
 }

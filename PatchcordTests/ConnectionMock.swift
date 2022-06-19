@@ -9,8 +9,16 @@
 
 final class ConnectionMock: ConnectionMiddleware {
 
+    private var latestTest: NDT7TestStub?
+
     override func createTest() -> NDT7TestDependency {
-        NDT7TestDependency(delegate: self)
+        let test = NDT7TestStub(delegate: self)
+        latestTest = test
+        return test
+    }
+
+    func finish() {
+        latestTest?.finish()
     }
 
 }
