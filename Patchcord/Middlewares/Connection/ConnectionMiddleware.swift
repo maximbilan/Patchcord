@@ -10,8 +10,6 @@ import SwiftUI
 import NDT7
 
 class ConnectionMiddleware: ObservableObject {
-    static let shared = ConnectionMiddleware()
-
     private let queue: DispatchQueue
     private var ndt7Test: NDT7TestDependency?
     private var state: TestState = .notStarted {
