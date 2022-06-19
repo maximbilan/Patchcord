@@ -10,10 +10,12 @@ import SwiftUI
 let persistance = Persistence()
 let connection = ConnectionMiddleware()
 let coreData = CoreDataMiddleware(context: persistance.container.viewContext)
+let logger = Logger()
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
                   middlewares: [connection.middleware,
-                                coreData.middleware])
+                                coreData.middleware,
+                                logger.middleware])
 
 @main
 struct PatchcordApp: App {

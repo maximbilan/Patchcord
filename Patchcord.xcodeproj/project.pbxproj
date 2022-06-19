@@ -35,6 +35,7 @@
 		505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FEB285F4568002C1007 /* ConnectionMock.swift */; };
 		505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */; };
 		505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */; };
+		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -96,6 +97,7 @@
 		505F6FEB285F4568002C1007 /* ConnectionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMock.swift; sourceTree = "<group>"; };
 		505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7MeasurementStubs.swift; sourceTree = "<group>"; };
 		505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerMiddleware.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		505F6FF1285F9055002C1007 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		50EE81AE28566BFB008BCEC4 /* Middlewares */ = {
 			isa = PBXGroup;
 			children = (
+				505F6FF1285F9055002C1007 /* Logger */,
 				505F4D94285CB8C9006989B1 /* CoreData */,
 				50EE81B028566C33008BCEC4 /* Connection */,
 			);
@@ -472,6 +483,7 @@
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
+				505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */,
 				50FAAC83285EEF8400D7D14D /* ProcessInfo+Extensions.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
