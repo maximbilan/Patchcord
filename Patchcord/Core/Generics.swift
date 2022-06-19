@@ -7,7 +7,16 @@
 
 import Combine
 
-protocol Action {}
+protocol Action {
+    var animated: Bool { get }
+}
+
+extension Action {
+    var animated: Bool {
+        true
+    }
+}
+
 enum Middlewares {}
 
 typealias Reducer<State> = (State, Action) -> State
