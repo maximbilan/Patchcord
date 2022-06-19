@@ -8,10 +8,11 @@
 import SwiftUI
 
 let persistance = Persistence.shared
+let coreDataMiddleware = CoreDataMiddleware(context: persistance.container.viewContext)
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
                   middlewares: [ConnectionMiddleware.shared.middleware,
-                                Middlewares.testResults])
+                                coreDataMiddleware.middleware])
 
 @main
 struct PatchcordApp: App {
