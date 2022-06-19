@@ -16,7 +16,6 @@
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
 		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
-		5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0C82854B87E009563B8 /* PatchcordTests.swift */; };
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
@@ -30,6 +29,14 @@
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
 		505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */; };
+		505F6FE8285F4276002C1007 /* NDT7TestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FE7285F4276002C1007 /* NDT7TestStub.swift */; };
+		505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */; };
+		505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FEB285F4568002C1007 /* ConnectionMock.swift */; };
+		505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */; };
+		505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */; };
+		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
+		505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF4285F9F66002C1007 /* ConnectionTests.swift */; };
+		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -71,7 +78,6 @@
 		5023A0BC2854B87E009563B8 /* Patchcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
 		5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0C82854B87E009563B8 /* PatchcordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordTests.swift; sourceTree = "<group>"; };
 		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
 		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -86,6 +92,14 @@
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
 		505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRepository+TestResults.swift"; sourceTree = "<group>"; };
+		505F6FE7285F4276002C1007 /* NDT7TestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7TestStub.swift; sourceTree = "<group>"; };
+		505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7TestDependency.swift; sourceTree = "<group>"; };
+		505F6FEB285F4568002C1007 /* ConnectionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMock.swift; sourceTree = "<group>"; };
+		505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7MeasurementStubs.swift; sourceTree = "<group>"; };
+		505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerMiddleware.swift; sourceTree = "<group>"; };
+		505F6FF4285F9F66002C1007 /* ConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
+		505F6FF6285F9F91002C1007 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -169,7 +183,9 @@
 		5023A0C72854B87E009563B8 /* PatchcordTests */ = {
 			isa = PBXGroup;
 			children = (
-				5023A0C82854B87E009563B8 /* PatchcordTests.swift */,
+				505F6FF8285F9FBE002C1007 /* Generics */,
+				505F6FF4285F9F66002C1007 /* ConnectionTests.swift */,
+				505F6FF6285F9F91002C1007 /* CoreDataTests.swift */,
 			);
 			path = PatchcordTests;
 			sourceTree = "<group>";
@@ -193,6 +209,24 @@
 				5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		505F6FF1285F9055002C1007 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		505F6FF8285F9FBE002C1007 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				505F6FEB285F4568002C1007 /* ConnectionMock.swift */,
+				505F6FE7285F4276002C1007 /* NDT7TestStub.swift */,
+				505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */,
+			);
+			path = Generics;
 			sourceTree = "<group>";
 		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
@@ -248,6 +282,7 @@
 		50EE81AE28566BFB008BCEC4 /* Middlewares */ = {
 			isa = PBXGroup;
 			children = (
+				505F6FF1285F9055002C1007 /* Logger */,
 				505F4D94285CB8C9006989B1 /* CoreData */,
 				50EE81B028566C33008BCEC4 /* Connection */,
 			);
@@ -258,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				5097ED732858F214007F8209 /* ConnectionMiddleware.swift */,
+				505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -297,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				50FAAC82285EEF8400D7D14D /* ProcessInfo+Extensions.swift */,
+				505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,10 +489,12 @@
 				5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */,
 				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
+				505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
+				505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */,
 				50FAAC83285EEF8400D7D14D /* ProcessInfo+Extensions.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
@@ -463,6 +502,7 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
+				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +510,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */,
+				505F6FE8285F4276002C1007 /* NDT7TestStub.swift in Sources */,
+				505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */,
+				505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */,
+				505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */,
+				505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

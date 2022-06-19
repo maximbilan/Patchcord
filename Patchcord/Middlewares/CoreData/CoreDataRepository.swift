@@ -28,7 +28,7 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
                predicate: NSPredicate? = nil) -> AnyPublisher<[Entity], Error> {
         Deferred { [context] in
             Future { [self] promise in
-                context.perform {
+                context.perform(async: !ProcessInfo.isRunningTests) {
                     let request = Entity.fetchRequest()
                     request.sortDescriptors = sortDescriptors
                     request.predicate = predicate
@@ -55,7 +55,7 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
     func add(_ body: @escaping (inout Entity) -> Void) -> AnyPublisher<Entity, Error> {
         Deferred { [context] in
             Future { promise in
-                context.perform {
+                context.perform(async: !ProcessInfo.isRunningTests) {
                     var entity = Entity(context: context)
                     body(&entity)
                     do {
@@ -73,7 +73,7 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
     func delete(_ offsets: IndexSet) -> AnyPublisher<Void, Error> {
         Deferred { [context] in
             Future { [self] promise in
-                context.perform {
+                context.perform(async: !ProcessInfo.isRunningTests) {
                     do {
                         let itemsToDelete = offsets.map { self.fetchedItems[$0] }
                         self.fetchedItems.remove(atOffsets: offsets)

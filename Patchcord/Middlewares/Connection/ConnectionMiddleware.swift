@@ -9,11 +9,10 @@ import Combine
 import SwiftUI
 import NDT7
 
-final class ConnectionMiddleware: ObservableObject {
-    static let shared = ConnectionMiddleware()
-
+class ConnectionMiddleware {
+    private var connectedStore: Store<SceneState>?
     private let queue: DispatchQueue
-    private var ndt7Test: NDT7Test?
+    private var ndt7Test: NDT7TestDependency?
     private var state: TestState = .notStarted {
         didSet {
             dispatchData()
@@ -35,6 +34,10 @@ final class ConnectionMiddleware: ObservableObject {
         queue = DispatchQueue.main
     }
 
+    func createTest() -> NDT7TestDependency {
+        NDT7TestDependency(delegate: self)
+    }
+
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         switch action {
         case ConnectionStateAction.startTest:
@@ -47,6 +50,10 @@ final class ConnectionMiddleware: ObservableObject {
         return Empty().eraseToAnyPublisher()
     }
 
+    func connectStore(_ store: Store<SceneState>) {
+        self.connectedStore = store
+    }
+
 }
 
 fileprivate extension ConnectionMiddleware {
@@ -54,9 +61,7 @@ fileprivate extension ConnectionMiddleware {
     func start() {
         reset()
 
-        let settings = NDT7Settings()
-        ndt7Test = NDT7Test(settings: settings)
-        ndt7Test?.delegate = self
+        ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
             if let error = error {
                 self?.state = .interrupted(error)
@@ -73,7 +78,6 @@ fileprivate extension ConnectionMiddleware {
         downloadSpeed = nil
         uploadSpeed = nil
         state = .notStarted
-
     }
 
     func cancel() {
@@ -95,7 +99,7 @@ extension ConnectionMiddleware: NDT7TestInteraction {
     }
 
     func measurement(origin: NDT7TestConstants.Origin, kind: NDT7TestConstants.Kind, measurement: NDT7Measurement) {
-        if let currentServer = ndt7Test?.settings.currentServer {
+        if let currentServer = ndt7Test?.test.settings.currentServer {
             server = currentServer.machine
             if let country = currentServer.location?.country, let city = currentServer.location?.city {
                 serverLocation = "\(city), \(country)"
@@ -149,8 +153,12 @@ extension ConnectionMiddleware: NDT7TestInteraction {
 fileprivate extension ConnectionMiddleware {
 
     func dispatchInQueue(_ action: ConnectionStateAction) {
-        queue.async {
-            store.dispatch(action)
+        if ProcessInfo.isRunningTests {
+            connectedStore?.dispatch(action)
+        } else {
+            queue.async { [weak self] in
+                self?.connectedStore?.dispatch(action)
+            }
         }
     }
 
@@ -165,8 +173,10 @@ fileprivate extension ConnectionMiddleware {
 }
 
 fileprivate extension Double {
+
     func rounded(toPlaces places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+
 }

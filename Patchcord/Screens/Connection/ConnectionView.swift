@@ -86,6 +86,9 @@ struct ConnectionView: View {
                 }
             }
         }
+        .onAppear {
+            connection.connectStore(store)
+        }
     }
 }
 

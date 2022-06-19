@@ -8,15 +8,21 @@
 import CoreData
 import Combine
 
-extension Middlewares {
-    private static let testResultsRepository = CoreDataRepository<TestResult>(context: persistance.container.viewContext)
+final class CoreDataMiddleware {
+    let context: NSManagedObjectContext
+    let testResultsRepository: CoreDataRepository<TestResult>
 
-    static let testResults: Middleware<SceneState> = { state, action in
+    init(context: NSManagedObjectContext) {
+        self.context = context
+        self.testResultsRepository = CoreDataRepository<TestResult>(context: context)
+    }
+
+    func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         switch action {
         case ConnectionStateAction.saveResults(let result):
             return testResultsRepository
                     .save(result)
-                    .map { HistoryStateAction.didReceiveTests(testResultsRepository.fetchedItems + [$0]) }
+                    .map { HistoryStateAction.didReceiveTests(self.testResultsRepository.fetchedItems + [$0]) }
                     .ignoreError()
                     .eraseToAnyPublisher()
         case HistoryStateAction.fetchHistory:
@@ -26,7 +32,7 @@ extension Middlewares {
                     .ignoreError()
                     .eraseToAnyPublisher()
         case HistoryStateAction.deleteItems(let offsets):
-                return testResultsRepository
+            return testResultsRepository
                     .delete(offsets)
                     .map { HistoryStateAction.fetchHistory }
                     .ignoreError()
@@ -35,5 +41,4 @@ extension Middlewares {
             return Empty().eraseToAnyPublisher()
         }
     }
-
 }

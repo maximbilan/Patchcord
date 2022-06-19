@@ -9,8 +9,6 @@ import CoreData
 import Combine
 
 struct Persistence {
-    static let shared = Persistence()
-
     let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {

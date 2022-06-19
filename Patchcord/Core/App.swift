@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-let persistance = Persistence.shared
+let persistance = Persistence()
+let connection = ConnectionMiddleware()
+let coreData = CoreDataMiddleware(context: persistance.container.viewContext)
+let logger = Logger()
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
-                  middlewares: [ConnectionMiddleware.shared.middleware,
-                                Middlewares.testResults])
+                  middlewares: [connection.middleware,
+                                coreData.middleware,
+                                logger.middleware])
 
 @main
 struct PatchcordApp: App {
