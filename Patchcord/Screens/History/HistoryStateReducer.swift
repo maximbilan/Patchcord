@@ -8,6 +8,7 @@
 import Foundation
 
 extension HistoryState {
+
     static let reducer: Reducer<Self> = { state, action in
         switch action {
         case HistoryStateAction.fetchHistory:
@@ -18,4 +19,5 @@ extension HistoryState {
             return state
         }
     }
+
 }

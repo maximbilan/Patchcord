@@ -12,8 +12,25 @@ struct SceneState {
 }
 
 extension SceneState {
+
     init() {
         screens = [.connection(ConnectionState()),
                    .history(HistoryState())]
     }
+
+    func screenState<State>(for screen: Screen) -> State? {
+        return screens
+            .compactMap {
+                switch ($0, screen) {
+                    case (.connection(let state), .connection):
+                        return state as? State
+                    case (.history(let state), .history):
+                        return state as? State
+                    default:
+                        return nil
+                }
+            }
+            .first
+    }
+
 }

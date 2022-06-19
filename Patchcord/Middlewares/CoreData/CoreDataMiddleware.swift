@@ -9,7 +9,7 @@ import CoreData
 import Combine
 
 extension Middlewares {
-    private static let testResultsRepository = CoreDataRepository<Test>(context: persistance.container.viewContext)
+    private static let testResultsRepository = CoreDataRepository<TestResult>(context: persistance.container.viewContext)
 
     static let testResults: Middleware<SceneState> = { state, action in
         switch action {
@@ -36,12 +36,4 @@ extension Middlewares {
         }
     }
 
-}
-
-extension Publisher {
-    func ignoreError() -> AnyPublisher<Output, Never> {
-        self
-            .catch { _ in Empty() }
-            .eraseToAnyPublisher()
-    }
 }

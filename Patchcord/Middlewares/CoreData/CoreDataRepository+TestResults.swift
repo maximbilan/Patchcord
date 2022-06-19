@@ -12,11 +12,11 @@ extension CoreDataRepository {
 
     func save(_ state: ConnectionState) -> AnyPublisher<Entity, Error> {
         return add { entity in
-            guard let test = entity as? Test else {
+            guard let test = entity as? TestResult else {
                 return
             }
-            test.downloadResult = state.downloadSpeed ?? 0
-            test.uploadResult = state.uploadSpeed ?? 0
+            test.downloadSpeed = state.downloadSpeed ?? 0
+            test.uploadSpeed = state.uploadSpeed ?? 0
             test.timestamp = Date()
         }
     }

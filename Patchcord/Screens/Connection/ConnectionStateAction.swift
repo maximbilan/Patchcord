@@ -13,3 +13,9 @@ enum ConnectionStateAction: Action {
     case refreshScreen(ConnectionState)
     case saveResults(ConnectionState)
 }
+
+extension ConnectionStateAction {
+    var animated: Bool {
+        return false
+    }
+}

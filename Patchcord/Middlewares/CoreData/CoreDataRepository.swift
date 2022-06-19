@@ -88,7 +88,7 @@ class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
                 }
             }
         }
-        .receive(on: DispatchQueue.main)
+        .receive(on: dispatchQueue)
         .eraseToAnyPublisher()
     }
 

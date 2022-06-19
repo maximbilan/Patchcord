@@ -20,8 +20,8 @@ struct HistoryView: View {
                             VStack(alignment: .leading) {
                                 if let timestamp = result.timestamp {
                                     Text(timestamp, formatter: itemFormatter)
-                                    Text("\(result.downloadResult)")
-                                    Text("\(result.downloadResult)")
+                                    Text("\(result.downloadSpeed)")
+                                    Text("\(result.uploadSpeed)")
                                 }
                             }
                         }

@@ -57,7 +57,11 @@ final class Store<State>: ObservableObject {
                 .store(in: &tasks, key: key)
         }
 
-        withAnimation {
+        if action.animated {
+            withAnimation {
+                state = newState
+            }
+        } else {
             state = newState
         }
     }
