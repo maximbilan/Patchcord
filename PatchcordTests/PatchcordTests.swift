@@ -82,7 +82,7 @@ final class PatchcordTests: XCTestCase {
 //        store.dispatch(HistoryStateAction.fetchHistory)
         let historyState1: HistoryState! = store.state.screenState(for: .history)
         XCTAssertFalse(historyState1.isLoading)
-        XCTAssertFalse(historyState1.results.isEmpty)
+        XCTAssertEqual(historyState1.results.count, 1)
 
 //        store.dispatch(ConnectionStateAction.saveResults(ConnectionState(testState: .finished,
 //                                                                         downloadSpeed: 33,
