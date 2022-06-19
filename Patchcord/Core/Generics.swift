@@ -5,6 +5,7 @@
 //  Created by Maksym Bilan on 12.06.2022.
 //
 
+import Foundation
 import Combine
 
 protocol Action {
@@ -13,7 +14,7 @@ protocol Action {
 
 extension Action {
     var animated: Bool {
-        true
+        !ProcessInfo.isRunningTests
     }
 }
 
