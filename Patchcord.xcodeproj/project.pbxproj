@@ -30,6 +30,10 @@
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
 		505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */; };
+		505F6FE8285F4276002C1007 /* NDT7TestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FE7285F4276002C1007 /* NDT7TestStub.swift */; };
+		505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */; };
+		505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FEB285F4568002C1007 /* ConnectionMock.swift */; };
+		505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -86,6 +90,10 @@
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
 		505F4D99285CBB5E006989B1 /* CoreDataRepository+TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataRepository+TestResults.swift"; sourceTree = "<group>"; };
+		505F6FE7285F4276002C1007 /* NDT7TestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7TestStub.swift; sourceTree = "<group>"; };
+		505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7TestDependency.swift; sourceTree = "<group>"; };
+		505F6FEB285F4568002C1007 /* ConnectionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMock.swift; sourceTree = "<group>"; };
+		505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDT7MeasurementStubs.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -170,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				5023A0C82854B87E009563B8 /* PatchcordTests.swift */,
+				505F6FE7285F4276002C1007 /* NDT7TestStub.swift */,
+				505F6FEB285F4568002C1007 /* ConnectionMock.swift */,
+				505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */,
 			);
 			path = PatchcordTests;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				5097ED732858F214007F8209 /* ConnectionMiddleware.swift */,
+				505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
+				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505F6FE8285F4276002C1007 /* NDT7TestStub.swift in Sources */,
+				505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */,
 				5023A0C92854B87E009563B8 /* PatchcordTests.swift in Sources */,
+				505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

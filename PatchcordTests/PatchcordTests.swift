@@ -6,30 +6,51 @@
 //
 
 import XCTest
+import NDT7
+@testable import Patchcord
 
 final class PatchcordTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testConnection() {
+        let persistance = Persistence(inMemory: true)
+        let connection = ConnectionMock()
+        let coreData = CoreDataMiddleware(context: persistance.container.viewContext)
+        let store = Store(initial: SceneState(),
+                          reducer: SceneState.reducer,
+                          middlewares: [connection.middleware, coreData.middleware])
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        let connectionNotStarted: ConnectionState! = store.state.screenState(for: .connection)
+        let historyInitialState: HistoryState! = store.state.screenState(for: .history)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+        // Tests initial states
+        XCTAssertEqual(connectionNotStarted.testState, TestState.notStarted)
+        XCTAssertFalse(historyInitialState.isLoading)
+        XCTAssertTrue(historyInitialState.results.isEmpty)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+        // Starts a test
+        store.dispatch(ConnectionStateAction.startTest)
+
+        // Tests that the test has been started
+        let connectionStarted: ConnectionState! = store.state.screenState(for: .connection)
+        XCTAssertEqual(connectionStarted.testState, TestState.started)
+
+        connection.test(kind: .download, running: true)
+
+//        let measurement1 = NDT7Measurement.measurement(from: NDT7Measurement.downloadMeasurementJSON)
+//        connection.measurement(origin: .server, kind: .download, measurement: measurement1)
+
+        let connectionDownloading: ConnectionState! = store.state.screenState(for: .connection)
+        XCTAssertEqual(connectionDownloading.testState, TestState.downloading)
+//        XCTAssertEqual(connectionDownloading.downloadSpeed, 0)
+
+//        connection.test(kind: .upload, running: true)
+
+//        let measurement2 = NDT7Measurement.measurement(from: NDT7Measurement.uploadMeasurementJSON)
+//        connection.measurement(origin: .server, kind: .upload, measurement: measurement2)
+
+//        XCTAssertEqual(connectionDownloading.testState, TestState.uploading)
+//        XCTAssertEqual(connectionDownloading.uploadSpeed, 0)
+
     }
 
 }

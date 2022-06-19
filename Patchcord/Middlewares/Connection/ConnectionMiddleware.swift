@@ -9,11 +9,11 @@ import Combine
 import SwiftUI
 import NDT7
 
-final class ConnectionMiddleware: ObservableObject {
+class ConnectionMiddleware: ObservableObject {
     static let shared = ConnectionMiddleware()
 
     private let queue: DispatchQueue
-    private var ndt7Test: NDT7Test?
+    private var ndt7Test: NDT7TestDependency?
     private var state: TestState = .notStarted {
         didSet {
             dispatchData()
@@ -35,6 +35,10 @@ final class ConnectionMiddleware: ObservableObject {
         queue = DispatchQueue.main
     }
 
+    func createTest() -> NDT7TestDependency {
+        NDT7TestDependency(delegate: self)
+    }
+
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         switch action {
         case ConnectionStateAction.startTest:
@@ -54,9 +58,7 @@ fileprivate extension ConnectionMiddleware {
     func start() {
         reset()
 
-        let settings = NDT7Settings()
-        ndt7Test = NDT7Test(settings: settings)
-        ndt7Test?.delegate = self
+        ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
             if let error = error {
                 self?.state = .interrupted(error)
@@ -73,7 +75,6 @@ fileprivate extension ConnectionMiddleware {
         downloadSpeed = nil
         uploadSpeed = nil
         state = .notStarted
-
     }
 
     func cancel() {
@@ -95,7 +96,7 @@ extension ConnectionMiddleware: NDT7TestInteraction {
     }
 
     func measurement(origin: NDT7TestConstants.Origin, kind: NDT7TestConstants.Kind, measurement: NDT7Measurement) {
-        if let currentServer = ndt7Test?.settings.currentServer {
+        if let currentServer = ndt7Test?.test.settings.currentServer {
             server = currentServer.machine
             if let country = currentServer.location?.country, let city = currentServer.location?.city {
                 serverLocation = "\(city), \(country)"
@@ -149,8 +150,12 @@ extension ConnectionMiddleware: NDT7TestInteraction {
 fileprivate extension ConnectionMiddleware {
 
     func dispatchInQueue(_ action: ConnectionStateAction) {
-        queue.async {
+        if ProcessInfo.isRunningTests {
             store.dispatch(action)
+        } else {
+            queue.async {
+                store.dispatch(action)
+            }
         }
     }
 
