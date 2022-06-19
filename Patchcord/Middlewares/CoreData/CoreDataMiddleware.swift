@@ -10,7 +10,7 @@ import Combine
 
 final class CoreDataMiddleware {
     let context: NSManagedObjectContext
-    private let testResultsRepository: CoreDataRepository<TestResult>
+    let testResultsRepository: CoreDataRepository<TestResult>
 
     init(context: NSManagedObjectContext) {
         self.context = context

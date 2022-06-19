@@ -38,8 +38,12 @@ final class Store<State>: ObservableObject {
             return
         }
 
-        queue.sync {
+        if ProcessInfo.isRunningTests {
             dispatch(state, action)
+        } else {
+            queue.sync {
+                dispatch(state, action)
+            }
         }
     }
 
