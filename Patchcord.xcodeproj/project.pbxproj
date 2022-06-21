@@ -18,7 +18,6 @@
 		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
-		5023A0E32854BB27009563B8 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 5023A0E22854BB27009563B8 /* NDT7 */; };
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
 		502556802859A7A300642B30 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567F2859A7A300642B30 /* ScreenState.swift */; };
 		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
@@ -37,6 +36,7 @@
 		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
 		505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF4285F9F66002C1007 /* ConnectionTests.swift */; };
 		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
+		508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 508D2A792862505B00A05C57 /* NDT7 */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5023A0E32854BB27009563B8 /* NDT7 in Frameworks */,
+				508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,7 @@
 			);
 			name = Patchcord;
 			packageProductDependencies = (
-				5023A0E22854BB27009563B8 /* NDT7 */,
+				508D2A792862505B00A05C57 /* NDT7 */,
 			);
 			productName = Patchcord;
 			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
@@ -430,7 +430,7 @@
 			);
 			mainGroup = 5023A0A52854B87D009563B8;
 			packageReferences = (
-				5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
+				508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
 			);
 			productRefGroup = 5023A0AF2854B87D009563B8 /* Products */;
 			projectDirPath = "";
@@ -850,20 +850,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
+		508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/m-lab/ndt7-client-ios";
+			repositoryURL = "https://github.com/maximbilan/ndt7-client-ios";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5023A0E22854BB27009563B8 /* NDT7 */ = {
+		508D2A792862505B00A05C57 /* NDT7 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5023A0E12854BB27009563B8 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
+			package = 508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
 			productName = NDT7;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -3,10 +3,10 @@
     {
       "identity" : "ndt7-client-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/m-lab/ndt7-client-ios",
+      "location" : "https://github.com/maximbilan/ndt7-client-ios",
       "state" : {
-        "revision" : "f80494f45f95499b476bc2a018912c32a686db1d",
-        "version" : "0.0.3"
+        "branch" : "master",
+        "revision" : "6c8355a3d796bd18a48d2cb4ee3e8a3932f98184"
       }
     }
   ],
