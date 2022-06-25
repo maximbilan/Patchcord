@@ -11,10 +11,12 @@ let persistance = Persistence()
 let connection = ConnectionMiddleware()
 let coreData = CoreDataMiddleware(context: persistance.container.viewContext)
 let logger = Logger()
+let gatewayMonitor = GatewayMonitor()
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
                   middlewares: [connection.middleware,
                                 coreData.middleware,
+                                gatewayMonitor.middleware,
                                 logger.middleware])
 
 @main

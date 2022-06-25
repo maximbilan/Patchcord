@@ -42,6 +42,7 @@
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
 		50EE50B62867336600C61080 /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50B52867336600C61080 /* SwiftyPing */; };
+		50EE50BB2867340200C61080 /* GatewayMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE50BA2867340200C61080 /* GatewayMonitor.swift */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
 		50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* SceneState.swift */; };
@@ -105,6 +106,7 @@
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		50EE50BA2867340200C61080 /* GatewayMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayMonitor.swift; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		50EE81AC2856673B008BCEC4 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 			path = Generics;
 			sourceTree = "<group>";
 		};
+		50EE50B92867340200C61080 /* GatewayMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				50EE50BA2867340200C61080 /* GatewayMonitor.swift */,
+			);
+			path = GatewayMonitor;
+			sourceTree = "<group>";
+		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +297,7 @@
 				505F6FF1285F9055002C1007 /* Logger */,
 				505F4D94285CB8C9006989B1 /* CoreData */,
 				50EE81B028566C33008BCEC4 /* Connection */,
+				50EE50B92867340200C61080 /* GatewayMonitor */,
 			);
 			path = Middlewares;
 			sourceTree = "<group>";
@@ -482,6 +493,7 @@
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
 				5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */,
 				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
+				50EE50BB2867340200C61080 /* GatewayMonitor.swift in Sources */,
 				509C0E17285E587B00F2E58F /* TestState.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
