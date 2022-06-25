@@ -9,6 +9,7 @@
 #define Gateway_h
 
 #include <stdio.h>
+#include "route.h"
 
 int getdefaultgateway(in_addr_t * addr);
 

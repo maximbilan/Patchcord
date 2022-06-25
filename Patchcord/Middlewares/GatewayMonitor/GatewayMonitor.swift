@@ -22,19 +22,12 @@ final class GatewayMonitor {
     }
 
     private func find() {
-
-        let ipC = getGatewayIP()
-
-        print(ipC)
-
-
-//        let f = factorial(5)
-//        print(f)
-
-        let ipAddress = UIDevice.current.getIP()
-        print(ipAddress)
-
-        let a = 1
+        if let gateway = getGatewayIP() {
+            print(gateway)
+        }
+        if let ipAddress = UIDevice.current.getIP() {
+            print(ipAddress)
+        }
     }
 
 }

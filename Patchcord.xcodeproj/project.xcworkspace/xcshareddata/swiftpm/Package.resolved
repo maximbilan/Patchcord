@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "swift-public-ip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HackingGate/Swift-Public-IP",
+      "state" : {
+        "revision" : "20765a3eb03d3800df93b6fd13bf55c9ac8c8278",
+        "version" : "0.0.2"
+      }
+    },
+    {
       "identity" : "swiftyping",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/samiyr/SwiftyPing",
