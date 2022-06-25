@@ -7,6 +7,7 @@
 
 import Combine
 import UIKit
+import Gateway
 
 final class GatewayMonitor {
 
@@ -21,12 +22,32 @@ final class GatewayMonitor {
     }
 
     private func find() {
+
+        let ipC = getGatewayIP()
+
+        print(ipC)
+
+
+//        let f = factorial(5)
+//        print(f)
+
         let ipAddress = UIDevice.current.getIP()
         print(ipAddress)
+
+        let a = 1
     }
 
 }
 
+func getGatewayIP() -> String? {
+    var gatewayaddr = in_addr()
+    let r = getdefaultgateway(&gatewayaddr.s_addr)
+    if r >= 0 {
+        return String(cString: inet_ntoa(gatewayaddr))
+    } else {
+        return nil
+    }
+}
 
 extension UIDevice {
 

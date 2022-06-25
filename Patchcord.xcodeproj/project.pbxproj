@@ -43,6 +43,7 @@
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
 		50EE50B62867336600C61080 /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50B52867336600C61080 /* SwiftyPing */; };
 		50EE50BB2867340200C61080 /* GatewayMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE50BA2867340200C61080 /* GatewayMonitor.swift */; };
+		50EE50CA28674F3800C61080 /* Gateway in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50C928674F3800C61080 /* Gateway */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
 		50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* SceneState.swift */; };
@@ -107,6 +108,7 @@
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		50EE50BA2867340200C61080 /* GatewayMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayMonitor.swift; sourceTree = "<group>"; };
+		50EE50C128673C3700C61080 /* Gateway */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Gateway; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		50EE81AC2856673B008BCEC4 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EE50CA28674F3800C61080 /* Gateway in Frameworks */,
 				50EE50B62867336600C61080 /* SwiftyPing in Frameworks */,
 				508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */,
 			);
@@ -144,10 +147,12 @@
 		5023A0A52854B87D009563B8 = {
 			isa = PBXGroup;
 			children = (
+				50EE50C028673C3700C61080 /* Packages */,
 				5023A0B02854B87D009563B8 /* Patchcord */,
 				5023A0C72854B87E009563B8 /* PatchcordTests */,
 				5023A0D12854B87E009563B8 /* PatchcordUITests */,
 				5023A0AF2854B87D009563B8 /* Products */,
+				50EE50C228673D1500C61080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +244,21 @@
 				50EE50BA2867340200C61080 /* GatewayMonitor.swift */,
 			);
 			path = GatewayMonitor;
+			sourceTree = "<group>";
+		};
+		50EE50C028673C3700C61080 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				50EE50C128673C3700C61080 /* Gateway */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		50EE50C228673D1500C61080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
@@ -370,6 +390,7 @@
 			packageProductDependencies = (
 				508D2A792862505B00A05C57 /* NDT7 */,
 				50EE50B52867336600C61080 /* SwiftyPing */,
+				50EE50C928674F3800C61080 /* Gateway */,
 			);
 			productName = Patchcord;
 			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
@@ -894,6 +915,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */;
 			productName = SwiftyPing;
+		};
+		50EE50C928674F3800C61080 /* Gateway */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Gateway;
 		};
 /* End XCSwiftPackageProductDependency section */
 
