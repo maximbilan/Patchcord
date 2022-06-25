@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftIPConfig
 
 struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>
@@ -58,6 +59,15 @@ struct ConnectionView: View {
                 }
             case .finished:
                 Group {
+                    if let ip = SwiftIPConfig.getIP() {
+                        Text("IP Address: \(ip)")
+                    }
+                    if let router = SwiftIPConfig.getGatewayIP() {
+                        Text("Router: \(router)")
+                    }
+                    if let subnetMask = SwiftIPConfig.getNetmask() {
+                        Text("Subnet Mask: \(subnetMask)")
+                    }
                     Text("Downloading speed")
                     if let downloadSpeed = state?.downloadSpeed {
                         Text("\(downloadSpeed) Mbit/s")
