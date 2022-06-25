@@ -36,11 +36,14 @@
 		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
 		505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF4285F9F66002C1007 /* ConnectionTests.swift */; };
 		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
+		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
 		508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 508D2A792862505B00A05C57 /* NDT7 */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
+		50EE50B62867336600C61080 /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50B52867336600C61080 /* SwiftyPing */; };
+		50EE50CD2867577400C61080 /* SwiftPublicIP in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50CC2867577400C61080 /* SwiftPublicIP */; };
 		50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE819B28565BCC008BCEC4 /* RootView.swift */; };
 		50EE81A728566126008BCEC4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81A628566126008BCEC4 /* Store.swift */; };
 		50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EE81AC2856673B008BCEC4 /* SceneState.swift */; };
@@ -116,6 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EE50B62867336600C61080 /* SwiftyPing in Frameworks */,
+				50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */,
+				50EE50CD2867577400C61080 /* SwiftPublicIP in Frameworks */,
 				508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +150,7 @@
 				5023A0C72854B87E009563B8 /* PatchcordTests */,
 				5023A0D12854B87E009563B8 /* PatchcordUITests */,
 				5023A0AF2854B87D009563B8 /* Products */,
+				50EE50C228673D1500C61080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +234,13 @@
 				505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */,
 			);
 			path = Generics;
+			sourceTree = "<group>";
+		};
+		50EE50C228673D1500C61080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		50EE819D28565E25008BCEC4 /* Supporting Files */ = {
@@ -356,6 +370,9 @@
 			name = Patchcord;
 			packageProductDependencies = (
 				508D2A792862505B00A05C57 /* NDT7 */,
+				50EE50B52867336600C61080 /* SwiftyPing */,
+				50EE50CC2867577400C61080 /* SwiftPublicIP */,
+				50750D4D2867699E009DED05 /* SwiftIPConfig */,
 			);
 			productName = Patchcord;
 			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
@@ -431,6 +448,9 @@
 			mainGroup = 5023A0A52854B87D009563B8;
 			packageReferences = (
 				508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
+				50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */,
+				50EE50CB2867577400C61080 /* XCRemoteSwiftPackageReference "Swift-Public-IP" */,
+				50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */,
 			);
 			productRefGroup = 5023A0AF2854B87D009563B8 /* Products */;
 			projectDirPath = "";
@@ -850,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maximbilan/SwiftIPConfig";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maximbilan/ndt7-client-ios";
@@ -858,13 +886,44 @@
 				kind = branch;
 			};
 		};
+		50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/samiyr/SwiftyPing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+		50EE50CB2867577400C61080 /* XCRemoteSwiftPackageReference "Swift-Public-IP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HackingGate/Swift-Public-IP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		50750D4D2867699E009DED05 /* SwiftIPConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;
+			productName = SwiftIPConfig;
+		};
 		508D2A792862505B00A05C57 /* NDT7 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 508D2A782862505B00A05C57 /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
 			productName = NDT7;
+		};
+		50EE50B52867336600C61080 /* SwiftyPing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */;
+			productName = SwiftyPing;
+		};
+		50EE50CC2867577400C61080 /* SwiftPublicIP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50EE50CB2867577400C61080 /* XCRemoteSwiftPackageReference "Swift-Public-IP" */;
+			productName = SwiftPublicIP;
 		};
 /* End XCSwiftPackageProductDependency section */
 
