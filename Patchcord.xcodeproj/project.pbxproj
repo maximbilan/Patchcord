@@ -107,7 +107,6 @@
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		50EE50C128673C3700C61080 /* Gateway */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Gateway; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		50EE81AC2856673B008BCEC4 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 		5023A0A52854B87D009563B8 = {
 			isa = PBXGroup;
 			children = (
-				50EE50C028673C3700C61080 /* Packages */,
 				5023A0B02854B87D009563B8 /* Patchcord */,
 				5023A0C72854B87E009563B8 /* PatchcordTests */,
 				5023A0D12854B87E009563B8 /* PatchcordUITests */,
@@ -236,14 +234,6 @@
 				505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */,
 			);
 			path = Generics;
-			sourceTree = "<group>";
-		};
-		50EE50C028673C3700C61080 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				50EE50C128673C3700C61080 /* Gateway */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		50EE50C228673D1500C61080 /* Frameworks */ = {
