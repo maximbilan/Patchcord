@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/maximbilan/SwiftIPConfig",
       "state" : {
-        "branch" : "main",
-        "revision" : "a01bc47db98d0304d1b5bdc1c9549e748d3b6885"
+        "revision" : "d5fb1aafe6209ed456a49fbd153e59862a85fe59",
+        "version" : "0.1.0"
       }
     },
     {
