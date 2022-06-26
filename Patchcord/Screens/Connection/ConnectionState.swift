@@ -9,10 +9,10 @@ import Foundation
 
 struct ConnectionState {
     let testState: TestState
-    let downloadSpeed: Double?
-    let uploadSpeed: Double?
-    let server: String?
-    let serverLocation: String?
+    var downloadSpeed: Double?
+    var uploadSpeed: Double?
+    var server: String?
+    var serverLocation: String?
 }
 
 extension ConnectionState {
