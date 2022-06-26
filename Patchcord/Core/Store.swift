@@ -8,6 +8,7 @@
 import Combine
 import SwiftUI
 
+/// Redux store ♻️
 final class Store<State>: ObservableObject {
     var isEnabled = true
 

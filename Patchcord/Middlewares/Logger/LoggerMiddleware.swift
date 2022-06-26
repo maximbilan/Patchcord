@@ -8,7 +8,7 @@
 import Combine
 
 /// Middleware that logs in the console all states ✍️
-final class Logger {
+final class LoggerMiddleware {
 
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         let stateDescription = "\(state)".replacingOccurrences(of: "Patchcord.", with: "")

@@ -16,12 +16,12 @@ extension ScreenState {
 
     static func == (lhs: ScreenState, rhs: Screen) -> Bool {
         switch (lhs, rhs) {
-            case (.connection, .connection):
-                return true
-            case (.history, .history):
-                return true
-            default:
-                return false
+        case (.connection, .connection):
+            return true
+        case (.history, .history):
+            return true
+        default:
+            return false
         }
     }
 

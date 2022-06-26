@@ -22,12 +22,12 @@ extension SceneState {
         return screens
             .compactMap {
                 switch ($0, screen) {
-                    case (.connection(let state), .connection):
-                        return state as? State
-                    case (.history(let state), .history):
-                        return state as? State
-                    default:
-                        return nil
+                case (.connection(let state), .connection):
+                    return state as? State
+                case (.history(let state), .history):
+                    return state as? State
+                default:
+                    return nil
                 }
             }
             .first
