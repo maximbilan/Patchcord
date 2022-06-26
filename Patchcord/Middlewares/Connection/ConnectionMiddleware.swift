@@ -96,7 +96,7 @@ fileprivate extension ConnectionMiddleware {
                 self?.state = .interrupted(error)
             } else {
                 self?.state = .finishedSpeedTest
-                self?.saveData(deadline: .now() + 0.5)
+                self?.saveData(deadline: .now() + 1.0)
             }
         }
 
