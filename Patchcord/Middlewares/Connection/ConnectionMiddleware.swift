@@ -114,7 +114,7 @@ fileprivate extension ConnectionMiddleware {
                 self?.state = .interrupted(error)
             } else {
                 self?.state = .finishedSpeedTest
-//                self?.saveData(deadline: .now() + 1.0)
+                self?.saveData()
             }
         }
 
@@ -210,7 +210,7 @@ extension ConnectionMiddleware: NDT7TestInteraction {
 /// Dispatches
 fileprivate extension ConnectionMiddleware {
 
-    func dispatchInQueue(_ action: ConnectionStateAction, deadline: DispatchTime) {
+    func dispatchInQueue(_ action: ConnectionStateAction) {
         if ProcessInfo.isRunningTests {
             connectedStore?.dispatch(action)
         } else {
@@ -220,12 +220,12 @@ fileprivate extension ConnectionMiddleware {
         }
     }
 
-    func saveData(deadline: DispatchTime = .now()) {
-        dispatchInQueue(ConnectionStateAction.saveResults(connectionState), deadline: deadline)
+    func saveData() {
+        dispatchInQueue(ConnectionStateAction.saveResults(connectionState))
     }
 
-    func dispatchData(deadline: DispatchTime = .now()) {
-        dispatchInQueue(ConnectionStateAction.refreshScreen(connectionState), deadline: deadline)
+    func dispatchData() {
+        dispatchInQueue(ConnectionStateAction.refreshScreen(connectionState))
     }
 
 }
