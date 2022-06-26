@@ -36,6 +36,7 @@
 		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
 		505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF4285F9F66002C1007 /* ConnectionTests.swift */; };
 		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
+		506A0B622868801100FD2A24 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 506A0B612868801100FD2A24 /* SwiftIPConfig */; };
 		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
 		508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 508D2A792862505B00A05C57 /* NDT7 */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
@@ -130,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506A0B622868801100FD2A24 /* SwiftIPConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +394,9 @@
 				5023A0C62854B87E009563B8 /* PBXTargetDependency */,
 			);
 			name = PatchcordTests;
+			packageProductDependencies = (
+				506A0B612868801100FD2A24 /* SwiftIPConfig */,
+			);
 			productName = PatchcordTests;
 			productReference = 5023A0C42854B87E009563B8 /* PatchcordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -905,6 +910,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		506A0B612868801100FD2A24 /* SwiftIPConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;
+			productName = SwiftIPConfig;
+		};
 		50750D4D2867699E009DED05 /* SwiftIPConfig */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;
