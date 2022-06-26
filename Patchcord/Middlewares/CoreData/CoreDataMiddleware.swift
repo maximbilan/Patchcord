@@ -27,7 +27,7 @@ final class CoreDataMiddleware {
                     .eraseToAnyPublisher()
         case HistoryStateAction.fetchHistory:
             return testResultsRepository
-                    .fetch()
+                    .fetch(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)])
                     .map { HistoryStateAction.didReceiveTests($0) }
                     .ignoreError()
                     .eraseToAnyPublisher()
