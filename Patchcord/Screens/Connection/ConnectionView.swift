@@ -23,7 +23,7 @@ struct ConnectionView: View {
                         store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
-            case .started:
+            case .started, .fetchingPublicIP, .pinging:
                 Group {
                     Text("Starting...")
                     Divider()
@@ -31,8 +31,35 @@ struct ConnectionView: View {
                         store.dispatch(ConnectionStateAction.cancelTest)
                     }
                 }
+            case .startedSpeedTest:
+                Group {
+                    Text("Starting speed test...")
+                    if let ping = state?.ping {
+                        Text("Ping: \(ping * 1000) ms")
+                    }
+                    if let jitter = state?.jitter {
+                        Text("Jitter: \(jitter * 1000) ms")
+                    }
+                    if let packetLoss = state?.packetLoss {
+                        Text("Packet loss: \(packetLoss) %")
+                    }
+                    Divider()
+                    Button("Cancel") {
+                        store.dispatch(ConnectionStateAction.cancelTest)
+                    }
+                }
             case .downloading:
                 Group {
+                    if let ping = state?.ping {
+                        Text("Ping: \(ping * 1000) ms")
+                    }
+                    if let jitter = state?.jitter {
+                        Text("Jitter: \(jitter * 1000) ms")
+                    }
+                    if let packetLoss = state?.packetLoss {
+                        Text("Packet loss: \(packetLoss) %")
+                    }
+                    Divider()
                     Text("Downloading speed")
                     if let downloadSpeed = state?.downloadSpeed {
                         Text("\(downloadSpeed) Mbit/s")
@@ -46,6 +73,16 @@ struct ConnectionView: View {
                 }
             case .uploading:
                 Group {
+                    if let ping = state?.ping {
+                        Text("Ping: \(ping * 1000) ms")
+                    }
+                    if let jitter = state?.jitter {
+                        Text("Jitter: \(jitter * 1000) ms")
+                    }
+                    if let packetLoss = state?.packetLoss {
+                        Text("Packet loss: \(packetLoss) %")
+                    }
+                    Divider()
                     Text("Uploading speed")
                     if let uploadSpeed = state?.uploadSpeed {
                         Text("\(uploadSpeed) Mbit/s")
@@ -57,30 +94,52 @@ struct ConnectionView: View {
                         store.dispatch(ConnectionStateAction.cancelTest)
                     }
                 }
-            case .finished:
+            case .finishedSpeedTest:
                 Group {
-                    if let ip = SwiftIPConfig.getIP() {
-                        Text("IP Address: \(ip)")
+                    Group {
+                        if let ping = state?.ping {
+                            Text("Ping: \(ping * 1000) ms")
+                        }
+                        if let jitter = state?.jitter {
+                            Text("Jitter: \(jitter * 1000) ms")
+                        }
+                        if let packetLoss = state?.packetLoss {
+                            Text("Packet loss: \(packetLoss) %")
+                        }
                     }
-                    if let router = SwiftIPConfig.getGatewayIP() {
-                        Text("Router: \(router)")
-                    }
-                    if let subnetMask = SwiftIPConfig.getNetmask() {
-                        Text("Subnet Mask: \(subnetMask)")
-                    }
-                    Text("Downloading speed")
-                    if let downloadSpeed = state?.downloadSpeed {
-                        Text("\(downloadSpeed) Mbit/s")
-                    } else {
-                        Text("... Mbit/s")
-                    }
+
                     Divider()
-                    Text("Uploading speed")
-                    if let uploadSpeed = state?.uploadSpeed {
-                        Text("\(uploadSpeed) Mbit/s")
-                    } else {
-                        Text("... Mbit/s")
+
+                    Group {
+                        if let ip = SwiftIPConfig.getIP() {
+                            Text("IP Address: \(ip)")
+                        }
+                        if let router = SwiftIPConfig.getGatewayIP() {
+                            Text("Router: \(router)")
+                        }
+                        if let subnetMask = SwiftIPConfig.getNetmask() {
+                            Text("Subnet Mask: \(subnetMask)")
+                        }
                     }
+
+                    Divider()
+
+                    Group {
+                        Text("Downloading speed")
+                        if let downloadSpeed = state?.downloadSpeed {
+                            Text("\(downloadSpeed) Mbit/s")
+                        } else {
+                            Text("... Mbit/s")
+                        }
+                        Divider()
+                        Text("Uploading speed")
+                        if let uploadSpeed = state?.uploadSpeed {
+                            Text("\(uploadSpeed) Mbit/s")
+                        } else {
+                            Text("... Mbit/s")
+                        }
+                    }
+
                     Divider()
                     Button("Run again") {
                         store.dispatch(ConnectionStateAction.startTest)
