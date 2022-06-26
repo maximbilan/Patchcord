@@ -40,8 +40,9 @@ class ConnectionMiddleware {
     private var jitter: TimeInterval?
     private var packetLoss: Double?
 
-    init(ipConfig: IPConfig = IPConfig()) {
-        queue = DispatchQueue.main
+    init(queue: DispatchQueue = DispatchQueue.main,
+         ipConfig: IPConfig = IPConfig()) {
+        self.queue = queue
         self.ipConfig = ipConfig
     }
 
@@ -86,6 +87,10 @@ fileprivate extension ConnectionMiddleware {
     }
 
     func startPinging() {
+        guard state != .canceled else {
+            return
+        }
+
         let host = publicIP ?? "8.8.8.8"
         pingManager = createPingManager(with: host)
         pingManager?.delegate = self
@@ -101,11 +106,15 @@ fileprivate extension ConnectionMiddleware {
 
         ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
+            guard self?.state != .canceled else {
+                return
+            }
+
             if let error = error {
                 self?.state = .interrupted(error)
             } else {
                 self?.state = .finishedSpeedTest
-                self?.saveData(deadline: .now() + 1.0)
+//                self?.saveData(deadline: .now() + 1.0)
             }
         }
 
@@ -123,9 +132,9 @@ fileprivate extension ConnectionMiddleware {
     }
 
     func cancel() {
-        state = .canceled
-        ndt7Test?.cancel()
         pingManager?.stop()
+        ndt7Test?.cancel()
+        state = .canceled
     }
 
 }
@@ -186,7 +195,9 @@ extension ConnectionMiddleware: NDT7TestInteraction {
             }
         }
 
-        dispatchData()
+        if state != .canceled || state != .finishedSpeedTest {
+            dispatchData()
+        }
     }
 
     func error(kind: NDT7TestConstants.Kind, error: NSError) {
@@ -203,7 +214,7 @@ fileprivate extension ConnectionMiddleware {
         if ProcessInfo.isRunningTests {
             connectedStore?.dispatch(action)
         } else {
-            queue.asyncAfter(deadline: deadline) { [weak self] in
+            queue.async { [weak self] in
                 self?.connectedStore?.dispatch(action)
             }
         }
