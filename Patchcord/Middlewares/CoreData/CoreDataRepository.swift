@@ -13,6 +13,7 @@ enum RepositoryError: Error {
     case noObjects
 }
 
+/// Repository that provides working with Entity in the database 🧰
 class CoreDataRepository<Entity: NSManagedObject>: ObservableObject {
     private let context: NSManagedObjectContext
     private let dispatchQueue: DispatchQueue

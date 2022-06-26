@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 import NDT7
 
+/// Middleware that pefrorms all connection tests. Like speed test, ping, fetching public IP, etc 📡🛰
 class ConnectionMiddleware {
     private var connectedStore: Store<SceneState>?
     private let queue: DispatchQueue
