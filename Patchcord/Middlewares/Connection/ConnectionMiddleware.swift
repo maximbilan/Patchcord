@@ -95,6 +95,10 @@ fileprivate extension ConnectionMiddleware {
     }
 
     func startSpeedTest() {
+        guard state == .pinging else {
+            return
+        }
+
         ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
             if let error = error {
@@ -119,9 +123,9 @@ fileprivate extension ConnectionMiddleware {
     }
 
     func cancel() {
+        state = .canceled
         ndt7Test?.cancel()
         pingManager?.stop()
-        state = .canceled
     }
 
 }
