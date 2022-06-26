@@ -8,7 +8,7 @@
 import SwiftIPConfig
 import SwiftPublicIP
 
-final class IPConfig {
+class IPConfig {
 
     func getIP() -> String? {
         SwiftIPConfig.getIP()

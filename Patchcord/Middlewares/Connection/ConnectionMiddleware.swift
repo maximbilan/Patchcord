@@ -48,6 +48,10 @@ class ConnectionMiddleware {
         NDT7TestDependency(delegate: self)
     }
 
+    func createPingManager(with host: String) -> PingManager {
+        PingManager(host: host)
+    }
+
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
         switch action {
         case ConnectionStateAction.startTest:
@@ -82,9 +86,9 @@ fileprivate extension ConnectionMiddleware {
 
     func startPinging() {
         let host = publicIP ?? "8.8.8.8"
-        pingManager = PingManager(host: host)
-        pingManager?.start()
+        pingManager = createPingManager(with: host)
         pingManager?.delegate = self
+        pingManager?.start()
 
         state = .pinging
     }
@@ -115,6 +119,7 @@ fileprivate extension ConnectionMiddleware {
 
     func cancel() {
         ndt7Test?.cancel()
+        pingManager?.stop()
         state = .canceled
     }
 

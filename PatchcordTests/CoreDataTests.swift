@@ -19,7 +19,7 @@ final class CoreDataTests: XCTestCase {
         let exp1 = expectation(description: "Adds the first test state")
         let exp2 = expectation(description: "Adds the second test state")
 
-        coreData.testResultsRepository.save(ConnectionState(testState: .finished,
+        coreData.testResultsRepository.save(ConnectionState(testState: .finishedSpeedTest,
                                                             downloadSpeed: 99,
                                                             uploadSpeed: 99,
                                                             server: "Starlink",
@@ -37,7 +37,7 @@ final class CoreDataTests: XCTestCase {
         }
         .store(in: &bag)
 
-        coreData.testResultsRepository.save(ConnectionState(testState: .finished,
+        coreData.testResultsRepository.save(ConnectionState(testState: .finishedSpeedTest,
                                                             downloadSpeed: 33,
                                                             uploadSpeed: 33,
                                                             server: "Space X",

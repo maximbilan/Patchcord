@@ -13,7 +13,7 @@ final class ConnectionTests: XCTestCase {
 
     func testStates() {
         let persistance = Persistence(inMemory: true)
-        let connection = ConnectionMock()
+        let connection = ConnectionMock(ipConfig: IPConfigStub())
         let coreData = CoreDataMiddleware(context: persistance.container.newBackgroundContext())
         let logger = Logger()
         let store = Store(initial: SceneState(),
@@ -64,7 +64,7 @@ final class ConnectionTests: XCTestCase {
         // Tests finishing up
         connection.finish()
         let connectionFinished: ConnectionState! = store.state.screenState(for: .connection)
-        XCTAssertEqual(connectionFinished.testState, TestState.finished)
+        XCTAssertEqual(connectionFinished.testState, TestState.finishedSpeedTest)
     }
 
 }

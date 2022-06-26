@@ -20,7 +20,7 @@ struct PingResult {
     let packetLoss: Double?
 }
 
-final class PingManager {
+class PingManager {
     private let queue: DispatchQueue
     private let host: String
     private(set) var tester: SwiftyPing?
