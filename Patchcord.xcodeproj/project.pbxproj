@@ -38,7 +38,7 @@
 		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
 		506A0B622868801100FD2A24 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 506A0B612868801100FD2A24 /* SwiftIPConfig */; };
 		506A0B64286881B900FD2A24 /* IPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B63286881B900FD2A24 /* IPConfig.swift */; };
-		506A0B66286882E500FD2A24 /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B65286882E500FD2A24 /* Ping.swift */; };
+		506A0B66286882E500FD2A24 /* PingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B65286882E500FD2A24 /* PingManager.swift */; };
 		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
 		508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 508D2A792862505B00A05C57 /* NDT7 */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
@@ -107,7 +107,7 @@
 		505F6FF4285F9F66002C1007 /* ConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
 		505F6FF6285F9F91002C1007 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		506A0B63286881B900FD2A24 /* IPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfig.swift; sourceTree = "<group>"; };
-		506A0B65286882E500FD2A24 /* Ping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
+		506A0B65286882E500FD2A24 /* PingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingManager.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 				5097ED732858F214007F8209 /* ConnectionMiddleware.swift */,
 				505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */,
 				506A0B63286881B900FD2A24 /* IPConfig.swift */,
-				506A0B65286882E500FD2A24 /* Ping.swift */,
+				506A0B65286882E500FD2A24 /* PingManager.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -515,7 +515,7 @@
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
-				506A0B66286882E500FD2A24 /* Ping.swift in Sources */,
+				506A0B66286882E500FD2A24 /* PingManager.swift in Sources */,
 				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,

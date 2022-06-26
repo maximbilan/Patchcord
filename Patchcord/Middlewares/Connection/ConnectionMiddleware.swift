@@ -12,6 +12,8 @@ import NDT7
 class ConnectionMiddleware {
     private var connectedStore: Store<SceneState>?
     private let queue: DispatchQueue
+    private let ipConfig: IPConfig
+    private var pingManager: PingManager?
     private var ndt7Test: NDT7TestDependency?
     private var state: TestState = .notStarted {
         didSet {
@@ -23,15 +25,23 @@ class ConnectionMiddleware {
                         downloadSpeed: downloadSpeed,
                         uploadSpeed: uploadSpeed,
                         server: server,
-                        serverLocation: serverLocation)
+                        serverLocation: serverLocation,
+                        ping: ping,
+                        jitter: jitter,
+                        packetLoss: packetLoss)
     }
+    private var publicIP: String?
     private var downloadSpeed: Double?
     private var uploadSpeed: Double?
     private var server: String?
     private var serverLocation: String?
+    private var ping: TimeInterval?
+    private var jitter: TimeInterval?
+    private var packetLoss: Double?
 
-    init() {
+    init(ipConfig: IPConfig = IPConfig()) {
         queue = DispatchQueue.main
+        self.ipConfig = ipConfig
     }
 
     func createTest() -> NDT7TestDependency {
@@ -60,23 +70,46 @@ fileprivate extension ConnectionMiddleware {
 
     func start() {
         reset()
+        state = .started
 
+        ipConfig.getPublicIP { [weak self] publicIP in
+            self?.publicIP = publicIP
+            self?.startPinging()
+        }
+
+        state = .fetchingPublicIP
+    }
+
+    func startPinging() {
+        let host = publicIP ?? "8.8.8.8"
+        pingManager = PingManager(host: host)
+        pingManager?.start()
+        pingManager?.delegate = self
+
+        state = .pinging
+    }
+
+    func startSpeedTest() {
         ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
             if let error = error {
                 self?.state = .interrupted(error)
             } else {
-                self?.state = .finished
+                self?.state = .finishedSpeedTest
                 self?.saveData()
             }
         }
 
-        state = .started
+        state = .startedSpeedTest
     }
 
     func reset() {
+        pingManager = nil
         downloadSpeed = nil
         uploadSpeed = nil
+        ping = nil
+        jitter = nil
+        packetLoss = nil
         state = .notStarted
     }
 
@@ -168,6 +201,25 @@ fileprivate extension ConnectionMiddleware {
 
     func dispatchData() {
         dispatchInQueue(ConnectionStateAction.refreshScreen(connectionState))
+    }
+
+}
+
+extension ConnectionMiddleware: PingDelegate {
+
+    func pingDidRecieve(_ duration: TimeInterval) {
+    }
+
+    func pingDidFinish(_ result: PingResult?) {
+        ping = result?.ping
+        jitter = result?.jitter
+        packetLoss = result?.packetLoss
+
+        startSpeedTest()
+    }
+
+    func pingDidFail(_ error: Error) {
+        startSpeedTest()
     }
 
 }

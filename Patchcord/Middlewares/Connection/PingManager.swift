@@ -20,7 +20,7 @@ struct PingResult {
     let packetLoss: Double?
 }
 
-final class Ping {
+final class PingManager {
     private let queue: DispatchQueue
     private let host: String
     private(set) var tester: SwiftyPing?
@@ -37,7 +37,7 @@ final class Ping {
 
     func start() {
         tester = try? SwiftyPing(host: host,
-                                 configuration: PingConfiguration(interval: Ping.pingInterval, with: Ping.timeoutInterval),
+                                 configuration: PingConfiguration(interval: PingManager.pingInterval, with: PingManager.timeoutInterval),
                                  queue: queue)
         tester?.observer = { [weak self] response in
             let duration = response.duration
@@ -51,7 +51,7 @@ final class Ping {
             }
             self?.delegate?.pingDidFinish(PingResult(ping: ping, jitter: jitter, packetLoss: result.packetLoss))
         }
-        tester?.targetCount = Ping.targetCount
+        tester?.targetCount = PingManager.targetCount
         do {
             try tester?.startPinging()
         } catch {
