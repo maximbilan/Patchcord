@@ -10,8 +10,14 @@ import SwiftyPing
 
 protocol PingDelegate: AnyObject {
     func pingDidRecieve(_ duration: TimeInterval)
-    func pingDidFinish(_ result: PingResult)
+    func pingDidFinish(_ result: PingResult?)
     func pingDidFail(_ error: Error)
+}
+
+struct PingResult {
+    let ping: TimeInterval
+    let jitter: TimeInterval
+    let packetLoss: Double?
 }
 
 final class Ping {
@@ -39,7 +45,11 @@ final class Ping {
             self?.delegate?.pingDidRecieve(duration)
         }
         tester?.finished = { [weak self] result in
-            self?.delegate?.pingDidFinish(result)
+            guard let ping = result.roundtrip?.average, let jitter = result.roundtrip?.standardDeviation else {
+                self?.delegate?.pingDidFinish(nil)
+                return
+            }
+            self?.delegate?.pingDidFinish(PingResult(ping: ping, jitter: jitter, packetLoss: result.packetLoss))
         }
         tester?.targetCount = Ping.targetCount
         do {
