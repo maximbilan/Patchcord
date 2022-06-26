@@ -36,6 +36,12 @@
 		505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */; };
 		505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF4285F9F66002C1007 /* ConnectionTests.swift */; };
 		505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F6FF6285F9F91002C1007 /* CoreDataTests.swift */; };
+		506A0B622868801100FD2A24 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 506A0B612868801100FD2A24 /* SwiftIPConfig */; };
+		506A0B64286881B900FD2A24 /* IPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B63286881B900FD2A24 /* IPConfig.swift */; };
+		506A0B66286882E500FD2A24 /* PingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B65286882E500FD2A24 /* PingManager.swift */; };
+		506A0B682868AD8B00FD2A24 /* IPConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */; };
+		506A0B6A2868AE6B00FD2A24 /* PingManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */; };
+		506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */; };
 		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
 		508D2A7A2862505B00A05C57 /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 508D2A792862505B00A05C57 /* NDT7 */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
@@ -103,6 +109,11 @@
 		505F6FF2285F9065002C1007 /* LoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerMiddleware.swift; sourceTree = "<group>"; };
 		505F6FF4285F9F66002C1007 /* ConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
 		505F6FF6285F9F91002C1007 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		506A0B63286881B900FD2A24 /* IPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfig.swift; sourceTree = "<group>"; };
+		506A0B65286882E500FD2A24 /* PingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingManager.swift; sourceTree = "<group>"; };
+		506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfigMock.swift; sourceTree = "<group>"; };
+		506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingManagerMock.swift; sourceTree = "<group>"; };
+		506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -130,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506A0B622868801100FD2A24 /* SwiftIPConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +244,8 @@
 				505F6FEB285F4568002C1007 /* ConnectionMock.swift */,
 				505F6FE7285F4276002C1007 /* NDT7TestStub.swift */,
 				505F6FED285F4D0F002C1007 /* NDT7MeasurementStubs.swift */,
+				506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */,
+				506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */,
 			);
 			path = Generics;
 			sourceTree = "<group>";
@@ -308,6 +322,8 @@
 			children = (
 				5097ED732858F214007F8209 /* ConnectionMiddleware.swift */,
 				505F6FE9285F436D002C1007 /* NDT7TestDependency.swift */,
+				506A0B63286881B900FD2A24 /* IPConfig.swift */,
+				506A0B65286882E500FD2A24 /* PingManager.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
@@ -348,6 +364,7 @@
 			children = (
 				50FAAC82285EEF8400D7D14D /* ProcessInfo+Extensions.swift */,
 				505F6FEF285F759F002C1007 /* NSManagedObjectContext+Extensions.swift */,
+				506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +409,9 @@
 				5023A0C62854B87E009563B8 /* PBXTargetDependency */,
 			);
 			name = PatchcordTests;
+			packageProductDependencies = (
+				506A0B612868801100FD2A24 /* SwiftIPConfig */,
+			);
 			productName = PatchcordTests;
 			productReference = 5023A0C42854B87E009563B8 /* PatchcordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -496,6 +516,7 @@
 			files = (
 				505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */,
 				5023A0B22854B87D009563B8 /* App.swift in Sources */,
+				506A0B64286881B900FD2A24 /* IPConfig.swift in Sources */,
 				5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */,
 				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
 				509C0E17285E587B00F2E58F /* TestState.swift in Sources */,
@@ -503,6 +524,7 @@
 				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
+				506A0B66286882E500FD2A24 /* PingManager.swift in Sources */,
 				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
@@ -522,6 +544,7 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
+				506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */,
 				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +557,8 @@
 				505F6FF5285F9F66002C1007 /* ConnectionTests.swift in Sources */,
 				505F6FF7285F9F91002C1007 /* CoreDataTests.swift in Sources */,
 				505F6FEE285F4D0F002C1007 /* NDT7MeasurementStubs.swift in Sources */,
+				506A0B6A2868AE6B00FD2A24 /* PingManagerMock.swift in Sources */,
+				506A0B682868AD8B00FD2A24 /* IPConfigMock.swift in Sources */,
 				505F6FEC285F4568002C1007 /* ConnectionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -905,6 +930,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		506A0B612868801100FD2A24 /* SwiftIPConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;
+			productName = SwiftIPConfig;
+		};
 		50750D4D2867699E009DED05 /* SwiftIPConfig */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;

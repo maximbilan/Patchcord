@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-let persistance = Persistence()
+/// Local storage 💾
+let persistence = Persistence()
+let coreData = CoreDataMiddleware(context: persistence.container.viewContext)
+
+/// Connection tests 🛰
 let connection = ConnectionMiddleware()
-let coreData = CoreDataMiddleware(context: persistance.container.viewContext)
-let logger = Logger()
+
+/// Logging 🧯
+let logger = LoggerMiddleware()
+
+/// Redux store ♻️
 let store = Store(initial: SceneState(),
                   reducer: SceneState.reducer,
                   middlewares: [connection.middleware,

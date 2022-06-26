@@ -5,9 +5,10 @@
 //  Created by Maksym Bilan on 15.06.2022.
 //
 
-import CoreData
 import Combine
+import CoreData
 
+/// Persistence - loads and sets up the Core Data storage (+ iCloud) 💿 ☁️
 struct Persistence {
     let container: NSPersistentCloudKitContainer
 

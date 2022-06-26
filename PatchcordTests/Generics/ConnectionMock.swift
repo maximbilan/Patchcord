@@ -17,6 +17,10 @@ final class ConnectionMock: ConnectionMiddleware {
         return test
     }
 
+    override func createPingManager(with host: String) -> PingManager {
+        PingManagerMock(host: "8.8.8.8")
+    }
+
     func finish() {
         latestTest?.finish()
     }

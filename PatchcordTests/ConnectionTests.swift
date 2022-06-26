@@ -12,10 +12,11 @@ import NDT7
 final class ConnectionTests: XCTestCase {
 
     func testStates() {
+        // Initializes the app components
         let persistance = Persistence(inMemory: true)
-        let connection = ConnectionMock()
+        let connection = ConnectionMock(ipConfig: IPConfigMock())
         let coreData = CoreDataMiddleware(context: persistance.container.newBackgroundContext())
-        let logger = Logger()
+        let logger = LoggerMiddleware()
         let store = Store(initial: SceneState(),
                           reducer: SceneState.reducer,
                           middlewares: [connection.middleware,
@@ -24,10 +25,9 @@ final class ConnectionTests: XCTestCase {
                           runLoop: RunLoop())
         connection.connectStore(store)
 
+        // Tests initial states
         let connectionNotStarted: ConnectionState! = store.state.screenState(for: .connection)
         let historyInitialState: HistoryState! = store.state.screenState(for: .history)
-
-        // Tests initial states
         XCTAssertEqual(connectionNotStarted.testState, TestState.notStarted)
         XCTAssertFalse(historyInitialState.isLoading)
         XCTAssertTrue(historyInitialState.results.isEmpty)
@@ -64,7 +64,7 @@ final class ConnectionTests: XCTestCase {
         // Tests finishing up
         connection.finish()
         let connectionFinished: ConnectionState! = store.state.screenState(for: .connection)
-        XCTAssertEqual(connectionFinished.testState, TestState.finished)
+        XCTAssertEqual(connectionFinished.testState, TestState.finishedSpeedTest)
     }
 
 }

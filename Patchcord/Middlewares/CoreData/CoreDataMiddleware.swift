@@ -8,6 +8,7 @@
 import CoreData
 import Combine
 
+/// Middleware that handles all operations with the local database 💾
 final class CoreDataMiddleware {
     let context: NSManagedObjectContext
     let testResultsRepository: CoreDataRepository<TestResult>
@@ -27,7 +28,7 @@ final class CoreDataMiddleware {
                     .eraseToAnyPublisher()
         case HistoryStateAction.fetchHistory:
             return testResultsRepository
-                    .fetch()
+                    .fetch(sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)])
                     .map { HistoryStateAction.didReceiveTests($0) }
                     .ignoreError()
                     .eraseToAnyPublisher()

@@ -12,14 +12,14 @@ import Combine
 final class CoreDataTests: XCTestCase {
 
     func testOperations() {
-        var bag = Set<AnyCancellable>()
+        // Initializes Core Data middleware
         let persistance = Persistence(inMemory: true)
         let coreData = CoreDataMiddleware(context: persistance.container.newBackgroundContext())
+        var bag = Set<AnyCancellable>()
 
+        // Tests saving of the connection result to Core Data storage
         let exp1 = expectation(description: "Adds the first test state")
-        let exp2 = expectation(description: "Adds the second test state")
-
-        coreData.testResultsRepository.save(ConnectionState(testState: .finished,
+        coreData.testResultsRepository.save(ConnectionState(testState: .finishedSpeedTest,
                                                             downloadSpeed: 99,
                                                             uploadSpeed: 99,
                                                             server: "Starlink",
@@ -37,7 +37,9 @@ final class CoreDataTests: XCTestCase {
         }
         .store(in: &bag)
 
-        coreData.testResultsRepository.save(ConnectionState(testState: .finished,
+        // Tests saving of the connection result to Core Data storage
+        let exp2 = expectation(description: "Adds the second test state")
+        coreData.testResultsRepository.save(ConnectionState(testState: .finishedSpeedTest,
                                                             downloadSpeed: 33,
                                                             uploadSpeed: 33,
                                                             server: "Space X",
@@ -57,8 +59,8 @@ final class CoreDataTests: XCTestCase {
 
         wait(for: [exp1, exp2], timeout: 1)
 
+        // Tests fetching saved connection results from Core Data storage
         let exp3 = expectation(description: "Fetches stored entities")
-
         coreData.testResultsRepository.fetch().sink { completion in
             switch completion {
                 case .finished:
@@ -73,8 +75,8 @@ final class CoreDataTests: XCTestCase {
 
         wait(for: [exp3], timeout: 1)
 
+        // Tests removing connection results from Core Data storage
         let exp4 = expectation(description: "Removes one of the entities")
-
         let indexSet: IndexSet = [1]
         coreData.testResultsRepository.delete(indexSet).sink { completion in
             switch completion {

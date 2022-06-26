@@ -13,8 +13,10 @@ struct HistoryState {
 }
 
 extension HistoryState {
+
     init() {
         isLoading = false
         results = []
     }
+
 }
