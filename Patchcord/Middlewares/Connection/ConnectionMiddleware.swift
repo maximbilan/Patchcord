@@ -106,6 +106,8 @@ fileprivate extension ConnectionMiddleware {
 
         ndt7Test = createTest()
         ndt7Test?.startTest(download: true, upload: true) { [weak self] error in
+            self?.ndt7Test?.reset()
+
             guard self?.state != .canceled else {
                 return
             }
