@@ -21,8 +21,13 @@ class NDT7TestDependency {
         test.startTest(download: download, upload: upload, completion)
     }
 
+    func reset() {
+        test.delegate = nil
+    }
+
     func cancel() {
         test.cancel()
+        reset()
     }
 
 }
