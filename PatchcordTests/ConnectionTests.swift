@@ -41,9 +41,12 @@ final class ConnectionTests: XCTestCase {
 
         store.dispatch(ConnectionStateAction.cancelTest)
 
-        // Tests that the test has been started
+        // Tests that the test has been canceled
         let connectionCanceled: ConnectionState! = store.state.screenState(for: .connection)
         XCTAssertEqual(connectionCanceled.testState, TestState.canceled)
+
+        // Starts testing again
+        store.dispatch(ConnectionStateAction.startTest)
 
         // Tests downloading speed
         connection.test(kind: .download, running: true)

@@ -91,12 +91,12 @@ fileprivate extension ConnectionMiddleware {
             return
         }
 
+        state = .pinging
+
         let host = publicIP ?? "8.8.8.8"
         pingManager = createPingManager(with: host)
         pingManager?.delegate = self
         pingManager?.start()
-
-        state = .pinging
     }
 
     func startSpeedTest() {
