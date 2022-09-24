@@ -46,7 +46,7 @@
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
-		50AE3FBA28DF581000735DCD /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 50AE3FB928DF581000735DCD /* NDT7 */; };
+		50AE3FBD28DF5BF500735DCD /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 50AE3FBC28DF5BF500735DCD /* NDT7 */; };
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
 		50EE50B62867336600C61080 /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50B52867336600C61080 /* SwiftyPing */; };
 		50EE50CD2867577400C61080 /* SwiftPublicIP in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50CC2867577400C61080 /* SwiftPublicIP */; };
@@ -131,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50EE50B62867336600C61080 /* SwiftyPing in Frameworks */,
-				50AE3FBA28DF581000735DCD /* NDT7 in Frameworks */,
+				50AE3FBD28DF5BF500735DCD /* NDT7 in Frameworks */,
 				50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */,
 				50EE50CD2867577400C61080 /* SwiftPublicIP in Frameworks */,
 			);
@@ -389,7 +389,7 @@
 				50EE50B52867336600C61080 /* SwiftyPing */,
 				50EE50CC2867577400C61080 /* SwiftPublicIP */,
 				50750D4D2867699E009DED05 /* SwiftIPConfig */,
-				50AE3FB928DF581000735DCD /* NDT7 */,
+				50AE3FBC28DF5BF500735DCD /* NDT7 */,
 			);
 			productName = Patchcord;
 			productReference = 5023A0AE2854B87D009563B8 /* Patchcord.app */;
@@ -470,7 +470,7 @@
 				50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */,
 				50EE50CB2867577400C61080 /* XCRemoteSwiftPackageReference "Swift-Public-IP" */,
 				50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */,
-				50AE3FB828DF581000735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
+				50AE3FBB28DF5BF500735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */,
 			);
 			productRefGroup = 5023A0AF2854B87D009563B8 /* Products */;
 			projectDirPath = "";
@@ -903,12 +903,12 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		50AE3FB828DF581000735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
+		50AE3FBB28DF5BF500735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/m-lab/ndt7-client-ios";
+			repositoryURL = "https://github.com/maximbilan/ndt7-client-ios.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.4;
+				branch = master;
+				kind = branch;
 			};
 		};
 		50EE50B42867336600C61080 /* XCRemoteSwiftPackageReference "SwiftyPing" */ = {
@@ -940,9 +940,9 @@
 			package = 50750D4C2867699E009DED05 /* XCRemoteSwiftPackageReference "SwiftIPConfig" */;
 			productName = SwiftIPConfig;
 		};
-		50AE3FB928DF581000735DCD /* NDT7 */ = {
+		50AE3FBC28DF5BF500735DCD /* NDT7 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50AE3FB828DF581000735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
+			package = 50AE3FBB28DF5BF500735DCD /* XCRemoteSwiftPackageReference "ndt7-client-ios" */;
 			productName = NDT7;
 		};
 		50EE50B52867336600C61080 /* SwiftyPing */ = {
