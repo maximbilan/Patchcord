@@ -7,7 +7,7 @@
 
 import Combine
 
-/// Middleware that logs in the console all states ✍️
+/// Middleware that logs all states in the console ✍️
 final class LoggerMiddleware {
 
     func middleware(state: SceneState, action: Action) -> AnyPublisher<Action, Never> {
