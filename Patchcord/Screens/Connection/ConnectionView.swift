@@ -17,11 +17,6 @@ struct ConnectionView: View {
             switch state?.testState {
             case .notStarted, .canceled:
                 Group {
-//                    Text("Test connection")
-//                    Divider()
-//                    Button("Start") {
-//                        store.dispatch(ConnectionStateAction.startTest)
-//                    }
                     ConnectionStartButton {
                         store.dispatch(ConnectionStateAction.startTest)
                     }
