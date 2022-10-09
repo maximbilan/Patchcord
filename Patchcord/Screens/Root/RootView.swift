@@ -12,11 +12,11 @@ struct RootView: View {
         TabView {
             ConnectionView()
                 .tabItem {
-                    Label("Connection Test", systemImage: "antenna.radiowaves.left.and.right.circle.fill")
+                    Label(Strings.speed, systemImage: "antenna.radiowaves.left.and.right.circle.fill")
                 }
             HistoryView()
                 .tabItem {
-                    Label("History", systemImage: "list.bullet.rectangle.fill")
+                    Label(Strings.results, systemImage: "list.bullet.rectangle.fill")
                 }
         }
     }
