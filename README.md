@@ -1,6 +1,6 @@
 # Patchcord
 
-The app that tests your internet connection and show your network data. No ads, no tracking.
+The app that tests your internet connection and show your network data. No ads, no tracking. The app uses [MLab](https://www.measurementlab.net/) servers.
 The project built with SwiftUI + Combine using Redux pattern. 
 
 ## Roadmap
