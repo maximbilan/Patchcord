@@ -24,7 +24,7 @@
 		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
-		5032C2AC28F32BEA0034B929 /* ConnectionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032C2AB28F32BEA0034B929 /* ConnectionStartView.swift */; };
+		5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
@@ -99,7 +99,7 @@
 		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
-		5032C2AB28F32BEA0034B929 /* ConnectionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStartView.swift; sourceTree = "<group>"; };
+		5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStartButton.swift; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		5032C2AA28F32BD70034B929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5032C2AB28F32BEA0034B929 /* ConnectionStartView.swift */,
+				5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,7 +567,7 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
-				5032C2AC28F32BEA0034B929 /* ConnectionStartView.swift in Sources */,
+				5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */,
 				506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */,
 				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);

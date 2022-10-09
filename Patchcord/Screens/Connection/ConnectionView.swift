@@ -22,7 +22,7 @@ struct ConnectionView: View {
 //                    Button("Start") {
 //                        store.dispatch(ConnectionStateAction.startTest)
 //                    }
-                    ConnectionStartView {
+                    ConnectionStartButton {
                         store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
