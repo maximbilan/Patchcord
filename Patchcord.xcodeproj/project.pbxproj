@@ -114,6 +114,7 @@
 		506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfigMock.swift; sourceTree = "<group>"; };
 		506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingManagerMock.swift; sourceTree = "<group>"; };
 		506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
+		5073C4C6290EFBB5001E7827 /* Patchcord.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
 		507BC37928F32C9D0052686F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				5023A0E62854BDC1009563B8 /* Info.plist */,
+				5073C4C6290EFBB5001E7827 /* Patchcord.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
