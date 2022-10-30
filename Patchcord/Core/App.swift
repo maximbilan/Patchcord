@@ -24,6 +24,7 @@ let store = Store(initial: SceneState(),
                                 coreData.middleware,
                                 logger.middleware])
 
+/// App Instance 📱
 @main
 struct PatchcordApp: App {
     var body: some Scene {

@@ -15,7 +15,6 @@
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
-		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
@@ -24,6 +23,7 @@
 		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
+		5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
@@ -42,7 +42,9 @@
 		506A0B682868AD8B00FD2A24 /* IPConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */; };
 		506A0B6A2868AE6B00FD2A24 /* PingManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */; };
 		506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */; };
+		5073C4C9290EFC34001E7827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5073C4C8290EFC34001E7827 /* Preview Assets.xcassets */; };
 		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
+		507BC37A28F32C9D0052686F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BC37928F32C9D0052686F /* Strings.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -84,8 +86,6 @@
 		5023A0B12854B87D009563B8 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
 		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5023A0BC2854B87E009563B8 /* Patchcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
-		5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
@@ -97,6 +97,7 @@
 		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
+		5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStartButton.swift; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
@@ -114,6 +115,9 @@
 		506A0B672868AD8B00FD2A24 /* IPConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfigMock.swift; sourceTree = "<group>"; };
 		506A0B692868AE6B00FD2A24 /* PingManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingManagerMock.swift; sourceTree = "<group>"; };
 		506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
+		5073C4C6290EFBB5001E7827 /* Patchcord.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
+		5073C4C8290EFC34001E7827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		507BC37928F32C9D0052686F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -184,19 +188,12 @@
 				50EE81AB2856646B008BCEC4 /* States */,
 				50EE81A028565F58008BCEC4 /* Screens */,
 				50EE81AE28566BFB008BCEC4 /* Middlewares */,
+				5073C4C7290EFC34001E7827 /* Preview Content */,
+				507BC37828F32C8B0052686F /* Localization */,
 				50EE819F28565EF3008BCEC4 /* Assets */,
-				5023A0BD2854B87E009563B8 /* Preview Content */,
 				50EE819D28565E25008BCEC4 /* Supporting Files */,
 			);
 			path = Patchcord;
-			sourceTree = "<group>";
-		};
-		5023A0BD2854B87E009563B8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5023A0C72854B87E009563B8 /* PatchcordTests */ = {
@@ -216,6 +213,14 @@
 				5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */,
 			);
 			path = PatchcordUITests;
+			sourceTree = "<group>";
+		};
+		5032C2AA28F32BD70034B929 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		505F4D94285CB8C9006989B1 /* CoreData */ = {
@@ -250,6 +255,22 @@
 			path = Generics;
 			sourceTree = "<group>";
 		};
+		5073C4C7290EFC34001E7827 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5073C4C8290EFC34001E7827 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		507BC37828F32C8B0052686F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				507BC37928F32C9D0052686F /* Strings.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		50EE50C228673D1500C61080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				5023A0E62854BDC1009563B8 /* Info.plist */,
-				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
+				5073C4C6290EFBB5001E7827 /* Patchcord.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -339,6 +360,7 @@
 		50EE81B4285676B8008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
+				5032C2AA28F32BD70034B929 /* Views */,
 				509C0E16285E587B00F2E58F /* TestState.swift */,
 				500687082857B93D005A0520 /* ConnectionState.swift */,
 				5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */,
@@ -488,7 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */,
+				5073C4C9290EFC34001E7827 /* Preview Assets.xcassets in Resources */,
 				5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +554,7 @@
 				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				507BC37A28F32C9D0052686F /* Strings.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
@@ -544,6 +567,7 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
+				5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */,
 				506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */,
 				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);

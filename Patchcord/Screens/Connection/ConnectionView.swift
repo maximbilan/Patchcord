@@ -17,15 +17,29 @@ struct ConnectionView: View {
             switch state?.testState {
             case .notStarted, .canceled:
                 Group {
-                    Text("Test connection")
-                    Divider()
-                    Button("Start") {
+                    ConnectionStartButton {
                         store.dispatch(ConnectionStateAction.startTest)
                     }
                 }
-            case .started, .fetchingPublicIP, .pinging:
+            case .started:
                 Group {
                     Text("Starting...")
+                    Divider()
+                    Button("Cancel") {
+                        store.dispatch(ConnectionStateAction.cancelTest)
+                    }
+                }
+            case .fetchingPublicIP:
+                Group {
+                    Text("Fetching public IP...")
+                    Divider()
+                    Button("Cancel") {
+                        store.dispatch(ConnectionStateAction.cancelTest)
+                    }
+                }
+            case .pinging:
+                Group {
+                    Text("Pinging...")
                     Divider()
                     Button("Cancel") {
                         store.dispatch(ConnectionStateAction.cancelTest)
