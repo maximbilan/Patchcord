@@ -15,7 +15,6 @@
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
-		5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */; };
 		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
 		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
@@ -86,8 +85,6 @@
 		5023A0B12854B87D009563B8 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
 		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5023A0BC2854B87E009563B8 /* Patchcord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
-		5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
@@ -190,18 +187,9 @@
 				50EE81AE28566BFB008BCEC4 /* Middlewares */,
 				507BC37828F32C8B0052686F /* Localization */,
 				50EE819F28565EF3008BCEC4 /* Assets */,
-				5023A0BD2854B87E009563B8 /* Preview Content */,
 				50EE819D28565E25008BCEC4 /* Supporting Files */,
 			);
 			path = Patchcord;
-			sourceTree = "<group>";
-		};
-		5023A0BD2854B87E009563B8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5023A0BE2854B87E009563B8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		5023A0C72854B87E009563B8 /* PatchcordTests */ = {
@@ -282,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				5023A0E62854BDC1009563B8 /* Info.plist */,
-				5023A0BC2854B87E009563B8 /* Patchcord.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -510,7 +497,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5023A0BF2854B87E009563B8 /* Preview Assets.xcassets in Resources */,
 				5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
