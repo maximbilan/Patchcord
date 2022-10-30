@@ -22,13 +22,6 @@ extension ConnectionState {
 
     init() {
         testState = .notStarted
-        downloadSpeed = nil
-        uploadSpeed = nil
-        server = nil
-        serverLocation = nil
-        ping = nil
-        jitter = nil
-        packetLoss = nil
     }
 
 }
