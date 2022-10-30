@@ -93,7 +93,7 @@ fileprivate extension ConnectionMiddleware {
 
         state = .pinging
 
-        let host = publicIP ?? "8.8.8.8"
+        let host = "1.1.1.1"
         pingManager = createPingManager(with: host)
         pingManager?.delegate = self
         pingManager?.start()
