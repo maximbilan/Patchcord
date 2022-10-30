@@ -26,9 +26,9 @@ class PingManager {
     private(set) var tester: SwiftyPing?
     weak var delegate: PingDelegate?
 
-    private static let pingInterval: TimeInterval = 0.5
-    private static let timeoutInterval: TimeInterval = 3.0
-    private static let targetCount: Int = 10
+    private static let pingInterval: TimeInterval = 1.0
+    private static let timeoutInterval: TimeInterval = 1.0
+    private static let targetCount: Int = 5
 
     init(host: String, queue: DispatchQueue = DispatchQueue.global()) {
         self.host = host
