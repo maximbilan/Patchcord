@@ -26,6 +26,7 @@
 		5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */; };
 		50579E002A17BE9C0048BECE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50579DFF2A17BE9C0048BECE /* Colors.swift */; };
 		50579E032A17C4150048BECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50579E022A17C4150048BECE /* LaunchScreen.storyboard */; };
+		50579E052A17C74A0048BECE /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50579E042A17C74A0048BECE /* BackgroundView.swift */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
@@ -102,6 +103,7 @@
 		5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStartButton.swift; sourceTree = "<group>"; };
 		50579DFF2A17BE9C0048BECE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50579E022A17C4150048BECE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50579E042A17C74A0048BECE /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				50579DFF2A17BE9C0048BECE /* Colors.swift */,
+				50579E042A17C74A0048BECE /* BackgroundView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				50579E052A17C74A0048BECE /* BackgroundView.swift in Sources */,
 				507BC37A28F32C9D0052686F /* Strings.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
