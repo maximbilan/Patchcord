@@ -11,4 +11,6 @@ enum Strings {
     static let start = "Start"
     static let speed = "Speed"
     static let results = "Results"
+    static let test = "Test"
+    static let measure = "Measure"
 }
