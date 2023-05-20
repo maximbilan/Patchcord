@@ -23,7 +23,12 @@ struct ConnectionStartButton: View {
     var body: some View {
         ZStack {
             Button {
-                action?()
+                scale = CGSize.zero
+                shadowRadius = 0
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    action?()
+                }
             } label: {
                 Text(text)
                     .font(Font.custom("Impact", size: 20))
