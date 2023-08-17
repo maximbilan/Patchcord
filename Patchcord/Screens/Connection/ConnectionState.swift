@@ -16,6 +16,9 @@ struct ConnectionState {
     var ping: TimeInterval?
     var jitter: TimeInterval?
     var packetLoss: Double?
+    var ip: String?
+    var gateway: String?
+    var netmask: String?
 }
 
 extension ConnectionState {

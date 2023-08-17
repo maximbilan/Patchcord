@@ -17,11 +17,18 @@ struct HistoryView: View {
                 if !state.isLoading {
                     List {
                         ForEach(state.results) { result in
-                            VStack(alignment: .leading) {
-                                if let timestamp = result.timestamp {
-                                    Text(timestamp, formatter: itemFormatter)
-                                    Text("\(result.downloadSpeed)")
-                                    Text("\(result.uploadSpeed)")
+                            NavigationLink {
+                                List {
+                                    ResultView(testResult: result)
+                                }
+                                .navigationTitle("Result")
+                            } label: {
+                                HStack {
+                                    if let timestamp = result.timestamp {
+                                        Text(timestamp.formatted(.dateTime))
+                                    }
+                                    Spacer()
+                                    Text(String(format: "%.0f/%.0f Mbit/s", result.downloadSpeed, result.uploadSpeed))
                                 }
                             }
                         }
@@ -41,10 +48,3 @@ struct HistoryView: View {
         store.dispatch(HistoryStateAction.deleteItems(offsets))
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()

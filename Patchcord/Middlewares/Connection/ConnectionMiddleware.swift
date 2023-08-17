@@ -29,9 +29,14 @@ class ConnectionMiddleware {
                         serverLocation: serverLocation,
                         ping: ping,
                         jitter: jitter,
-                        packetLoss: packetLoss)
+                        packetLoss: packetLoss,
+                        ip: ip,
+                        gateway: gateway,
+                        netmask: netmask)
     }
-    private var publicIP: String?
+    private var ip: String?
+    private var gateway: String?
+    private var netmask: String?
     private var downloadSpeed: Double?
     private var uploadSpeed: Double?
     private var server: String?
@@ -79,7 +84,7 @@ fileprivate extension ConnectionMiddleware {
         state = .started
 
         ipConfig.getPublicIP { [weak self] publicIP in
-            self?.publicIP = publicIP
+            self?.determineIPs(with: publicIP)
             self?.startPinging()
         }
 
@@ -97,6 +102,12 @@ fileprivate extension ConnectionMiddleware {
         pingManager = createPingManager(with: host)
         pingManager?.delegate = self
         pingManager?.start()
+    }
+
+    private func determineIPs(with publicIP: String?) {
+        ip = publicIP ?? ipConfig.getIP()
+        gateway = ipConfig.getGatewayIP()
+        netmask = ipConfig.getNetmask()
     }
 
     func startSpeedTest() {

@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import SwiftIPConfig
 
 struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>
     private var state: ConnectionState? { store.state.screenState(for: .connection) }
+    @State private var isPermitted: Bool = false
 
     private var startButtonText: String {
         switch state?.testState {
@@ -53,51 +53,45 @@ struct ConnectionView: View {
         }
     }
 
+    private var isPermissionChangingActive: Bool {
+        switch state?.testState {
+        case .notStarted, .canceled, .finishedSpeedTest:
+            return true
+        default:
+            return false
+        }
+    }
+
     var body: some View {
         List {
             Section("Make a test") {
                 HStack {
                     Text("Speedtest")
                     Spacer()
-                    Button(startButtonText) {
-                        store.dispatch(startButtonAction)
-                    }
+                    Text(startButtonText)
+                        .foregroundColor(isPermitted ? .accentColor : .secondary)
+                        .onTapGesture {
+                            store.dispatch(startButtonAction)
+                        }
+                        .allowsHitTesting(isPermitted)
                 }
-                NavigationLink("Previous results") {
-                    HistoryView()
-                        .navigationTitle("Previous results")
-                }
+                Toggle("I agree to the data policy, which includes retention and publication of IP addresses.", isOn: $isPermitted)
+                    .foregroundColor(.secondary)
+                    .allowsHitTesting(isPermissionChangingActive)
                 if let statusText {
                     GroupLabelView(left: "Status", right: statusText)
                 }
+
             }
-            if state?.testState != .notStarted {
-                Section("Result") {
-                    if let ip = SwiftIPConfig.getIP() {
-                        GroupLabelView(left: "IP Address", right: ip)
-                    }
-                    if let router = SwiftIPConfig.getGatewayIP() {
-                        GroupLabelView(left: "Router", right: router)
-                    }
-                    if let subnetMask = SwiftIPConfig.getNetmask() {
-                        GroupLabelView(left: "Subnet Mask", right: subnetMask)
-                    }
-                    if let ping = state?.ping {
-                        GroupLabelView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
-                    }
-                    if let jitter = state?.jitter {
-                        GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
-                    }
-                    if let packetLoss = state?.packetLoss {
-                        GroupLabelView(left: "Packet Loss", right: String(format: "%.1f %", packetLoss))
-                    }
-                    if let downloadSpeed = state?.downloadSpeed {
-                        GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
-                    }
-                    if let uploadSpeed = state?.uploadSpeed {
-                        GroupLabelView(left: "Uploading speed", right: "\(uploadSpeed) Mbit/s")
-                    }
+            if let state, state.testState != .notStarted {
+                ResultView(state: state)
+            }
+            Section("Other") {
+                NavigationLink("Results") {
+                    HistoryView()
+                        .navigationTitle("Results")
                 }
+                Link("Data Policy", destination: URL(string: "https://www.measurementlab.net/privacy/")!)
             }
         }
         .navigationTitle("")
