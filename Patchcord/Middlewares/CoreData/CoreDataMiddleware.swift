@@ -23,7 +23,7 @@ final class CoreDataMiddleware {
         case ConnectionStateAction.saveResults(let result):
             return testResultsRepository
                     .save(result)
-                    .map { HistoryStateAction.didReceiveTests(self.testResultsRepository.fetchedItems + [$0]) }
+                    .map { HistoryStateAction.didReceiveTests([$0] + self.testResultsRepository.fetchedItems) }
                     .ignoreError()
                     .eraseToAnyPublisher()
         case HistoryStateAction.fetchHistory:

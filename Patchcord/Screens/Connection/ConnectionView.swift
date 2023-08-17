@@ -55,7 +55,7 @@ struct ConnectionView: View {
 
     var body: some View {
         List {
-            Section {
+            Section("Make a test") {
                 HStack {
                     Text("Speedtest")
                     Spacer()
@@ -83,13 +83,13 @@ struct ConnectionView: View {
                         GroupLabelView(left: "Subnet Mask", right: subnetMask)
                     }
                     if let ping = state?.ping {
-                        GroupLabelView(left: "Ping", right: "\(ping * 1000) ms")
+                        GroupLabelView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
                     }
                     if let jitter = state?.jitter {
-                        GroupLabelView(left: "Jitter", right: "\(jitter * 1000) ms")
+                        GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
                     }
                     if let packetLoss = state?.packetLoss {
-                        GroupLabelView(left: "Packet Loss", right: "\(packetLoss) %")
+                        GroupLabelView(left: "Packet Loss", right: String(format: "%.1f %", packetLoss))
                     }
                     if let downloadSpeed = state?.downloadSpeed {
                         GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
