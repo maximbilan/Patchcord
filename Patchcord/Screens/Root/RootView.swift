@@ -9,15 +9,8 @@ import SwiftUI
 
 struct RootView: View {
     var body: some View {
-        TabView {
+        NavigationStack {
             ConnectionView()
-                .tabItem {
-                    Label(Strings.speed, systemImage: "antenna.radiowaves.left.and.right.circle.fill")
-                }
-            HistoryView()
-                .tabItem {
-                    Label(Strings.results, systemImage: "list.bullet.rectangle.fill")
-                }
         }
     }
 }

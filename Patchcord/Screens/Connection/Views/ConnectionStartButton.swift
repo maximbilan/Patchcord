@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ConnectionStartButton: View {
-    let text: String = Strings.start.uppercased()
+    let text: String = Strings.test.uppercased()
     var action: (() -> Void)? = nil
 
-    private let primaryColor: Color = .accentColor
-    private let secondaryColor: Color = .white
-    private let padding: CGFloat = 32
+    private let primaryColor: Color = Color.button
+    private let secondaryColor: Color = Color.label
+    private let padding: CGFloat = 48
     private let animationDuration: CGFloat = 1.25
-    private let maxShadowRadius: CGFloat = 32
+    private let maxShadowRadius: CGFloat = 48
     private let maxScaleFactor: CGFloat = 1.25
     @State private var shadowRadius: CGFloat = 0
     @State private var scale: CGSize = CGSize(width: 1.0, height: 1.0)
@@ -23,11 +23,16 @@ struct ConnectionStartButton: View {
     var body: some View {
         ZStack {
             Button {
-                action?()
+                scale = CGSize.zero
+                shadowRadius = 0
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    action?()
+                }
             } label: {
                 Text(text)
+                    .font(Font.custom("Impact", size: 20))
                     .foregroundColor(secondaryColor)
-                    .bold()
                     .padding(.all, padding)
             }
             .background(primaryColor)

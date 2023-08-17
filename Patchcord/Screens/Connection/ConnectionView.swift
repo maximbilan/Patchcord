@@ -12,163 +12,95 @@ struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>
     private var state: ConnectionState? { store.state.screenState(for: .connection) }
 
+    private var startButtonText: String {
+        switch state?.testState {
+        case .notStarted, .canceled, .finishedSpeedTest:
+            return "Start"
+        default:
+            return "Cancel"
+        }
+    }
+
+    private var startButtonAction: ConnectionStateAction {
+        switch state?.testState {
+        case .notStarted, .canceled, .finishedSpeedTest:
+            return .startTest
+        default:
+            return .cancelTest
+        }
+    }
+
+    private var statusText: String? {
+        switch state?.testState {
+        case .notStarted, .canceled, .finishedSpeedTest:
+            return nil
+        case .started:
+            return "Starting"
+        case .fetchingPublicIP:
+            return "Fetching public IP..."
+        case .pinging:
+            return "Pinging..."
+        case .startedSpeedTest:
+            return "Speed measuring..."
+        case .downloading:
+            return "Downloading..."
+        case .uploading:
+            return "Uploading..."
+        case .interrupted(let error):
+            return error?.localizedDescription
+        default:
+            return nil
+        }
+    }
+
     var body: some View {
-        VStack {
-            switch state?.testState {
-            case .notStarted, .canceled:
-                Group {
-                    ConnectionStartButton {
-                        store.dispatch(ConnectionStateAction.startTest)
+        List {
+            Section("Make a test") {
+                HStack {
+                    Text("Speedtest")
+                    Spacer()
+                    Button(startButtonText) {
+                        store.dispatch(startButtonAction)
                     }
                 }
-            case .started:
-                Group {
-                    Text("Starting...")
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
-                    }
+                NavigationLink("Previous results") {
+                    HistoryView()
+                        .navigationTitle("Previous results")
                 }
-            case .fetchingPublicIP:
-                Group {
-                    Text("Fetching public IP...")
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
-                    }
+                if let statusText {
+                    GroupLabelView(left: "Status", right: statusText)
                 }
-            case .pinging:
-                Group {
-                    Text("Pinging...")
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
+            }
+            if state?.testState != .notStarted {
+                Section("Result") {
+                    if let ip = SwiftIPConfig.getIP() {
+                        GroupLabelView(left: "IP Address", right: ip)
                     }
-                }
-            case .startedSpeedTest:
-                Group {
-                    Text("Starting speed test...")
+                    if let router = SwiftIPConfig.getGatewayIP() {
+                        GroupLabelView(left: "Router", right: router)
+                    }
+                    if let subnetMask = SwiftIPConfig.getNetmask() {
+                        GroupLabelView(left: "Subnet Mask", right: subnetMask)
+                    }
                     if let ping = state?.ping {
-                        Text("Ping: \(ping * 1000) ms")
+                        GroupLabelView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
                     }
                     if let jitter = state?.jitter {
-                        Text("Jitter: \(jitter * 1000) ms")
+                        GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
                     }
                     if let packetLoss = state?.packetLoss {
-                        Text("Packet loss: \(packetLoss) %")
+                        GroupLabelView(left: "Packet Loss", right: String(format: "%.1f %", packetLoss))
                     }
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
-                    }
-                }
-            case .downloading:
-                Group {
-                    if let ping = state?.ping {
-                        Text("Ping: \(ping * 1000) ms")
-                    }
-                    if let jitter = state?.jitter {
-                        Text("Jitter: \(jitter * 1000) ms")
-                    }
-                    if let packetLoss = state?.packetLoss {
-                        Text("Packet loss: \(packetLoss) %")
-                    }
-                    Divider()
-                    Text("Downloading speed")
                     if let downloadSpeed = state?.downloadSpeed {
-                        Text("\(downloadSpeed) Mbit/s")
-                    } else {
-                        Text("... Mbit/s")
+                        GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
                     }
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
-                    }
-                }
-            case .uploading:
-                Group {
-                    if let ping = state?.ping {
-                        Text("Ping: \(ping * 1000) ms")
-                    }
-                    if let jitter = state?.jitter {
-                        Text("Jitter: \(jitter * 1000) ms")
-                    }
-                    if let packetLoss = state?.packetLoss {
-                        Text("Packet loss: \(packetLoss) %")
-                    }
-                    Divider()
-                    Text("Uploading speed")
                     if let uploadSpeed = state?.uploadSpeed {
-                        Text("\(uploadSpeed) Mbit/s")
-                    } else {
-                        Text("... Mbit/s")
-                    }
-                    Divider()
-                    Button("Cancel") {
-                        store.dispatch(ConnectionStateAction.cancelTest)
-                    }
-                }
-            case .finishedSpeedTest:
-                Group {
-                    Group {
-                        if let ping = state?.ping {
-                            Text("Ping: \(ping * 1000) ms")
-                        }
-                        if let jitter = state?.jitter {
-                            Text("Jitter: \(jitter * 1000) ms")
-                        }
-                        if let packetLoss = state?.packetLoss {
-                            Text("Packet loss: \(packetLoss) %")
-                        }
-                    }
-
-                    Divider()
-
-                    Group {
-                        if let ip = SwiftIPConfig.getIP() {
-                            Text("IP Address: \(ip)")
-                        }
-                        if let router = SwiftIPConfig.getGatewayIP() {
-                            Text("Router: \(router)")
-                        }
-                        if let subnetMask = SwiftIPConfig.getNetmask() {
-                            Text("Subnet Mask: \(subnetMask)")
-                        }
-                    }
-
-                    Divider()
-
-                    Group {
-                        Text("Downloading speed")
-                        if let downloadSpeed = state?.downloadSpeed {
-                            Text("\(downloadSpeed) Mbit/s")
-                        } else {
-                            Text("... Mbit/s")
-                        }
-                        Divider()
-                        Text("Uploading speed")
-                        if let uploadSpeed = state?.uploadSpeed {
-                            Text("\(uploadSpeed) Mbit/s")
-                        } else {
-                            Text("... Mbit/s")
-                        }
-                    }
-
-                    Divider()
-                    Button("Run again") {
-                        store.dispatch(ConnectionStateAction.startTest)
-                    }
-                }
-            default:
-                Group {
-                    Text("Something wrong!")
-                    Divider()
-                    Button("Try again") {
-                        store.dispatch(ConnectionStateAction.startTest)
+                        GroupLabelView(left: "Uploading speed", right: "\(uploadSpeed) Mbit/s")
                     }
                 }
             }
         }
+        .navigationTitle("")
         .onAppear {
             connection.connectStore(store)
         }
