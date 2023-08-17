@@ -63,12 +63,12 @@ struct ConnectionView: View {
                         store.dispatch(startButtonAction)
                     }
                 }
+                if let statusText {
+                    GroupLabelView(left: "Status", right: statusText)
+                }
                 NavigationLink("Results") {
                     HistoryView()
                         .navigationTitle("Results")
-                }
-                if let statusText {
-                    GroupLabelView(left: "Status", right: statusText)
                 }
             }
             if let state, state.testState != .notStarted {
