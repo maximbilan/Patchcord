@@ -54,51 +54,53 @@ struct ConnectionView: View {
     }
 
     var body: some View {
-        Form {
-            Group {
-                Section {
-                    HStack {
-                        Text("Speedtest")
-                        Spacer()
-                        Button(startButtonText) {
-                            store.dispatch(startButtonAction)
-                        }
-                    }
-                    if let statusText {
-                        GroupLabelView(left: "Status", right: statusText)
+        List {
+            Section {
+                HStack {
+                    Text("Speedtest")
+                    Spacer()
+                    Button(startButtonText) {
+                        store.dispatch(startButtonAction)
                     }
                 }
-                if state?.testState != .notStarted {
-                    Section("Result") {
-                        if let ip = SwiftIPConfig.getIP() {
-                            GroupLabelView(left: "IP Address", right: ip)
-                        }
-                        if let router = SwiftIPConfig.getGatewayIP() {
-                            GroupLabelView(left: "Router", right: router)
-                        }
-                        if let subnetMask = SwiftIPConfig.getNetmask() {
-                            GroupLabelView(left: "Subnet Mask", right: subnetMask)
-                        }
-                        if let ping = state?.ping {
-                            GroupLabelView(left: "Ping", right: "\(ping * 1000) ms")
-                        }
-                        if let jitter = state?.jitter {
-                            GroupLabelView(left: "Jitter", right: "\(jitter * 1000) ms")
-                        }
-                        if let packetLoss = state?.packetLoss {
-                            GroupLabelView(left: "Packet Loss", right: "\(packetLoss) %")
-                        }
-                        if let downloadSpeed = state?.downloadSpeed {
-                            GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
-                        }
-                        if let uploadSpeed = state?.uploadSpeed {
-                            GroupLabelView(left: "Uploading speed", right: "\(uploadSpeed) Mbit/s")
-                        }
+                NavigationLink("Previous results") {
+                    HistoryView()
+                        .navigationTitle("Previous results")
+                }
+                if let statusText {
+                    GroupLabelView(left: "Status", right: statusText)
+                }
+            }
+            if state?.testState != .notStarted {
+                Section("Result") {
+                    if let ip = SwiftIPConfig.getIP() {
+                        GroupLabelView(left: "IP Address", right: ip)
+                    }
+                    if let router = SwiftIPConfig.getGatewayIP() {
+                        GroupLabelView(left: "Router", right: router)
+                    }
+                    if let subnetMask = SwiftIPConfig.getNetmask() {
+                        GroupLabelView(left: "Subnet Mask", right: subnetMask)
+                    }
+                    if let ping = state?.ping {
+                        GroupLabelView(left: "Ping", right: "\(ping * 1000) ms")
+                    }
+                    if let jitter = state?.jitter {
+                        GroupLabelView(left: "Jitter", right: "\(jitter * 1000) ms")
+                    }
+                    if let packetLoss = state?.packetLoss {
+                        GroupLabelView(left: "Packet Loss", right: "\(packetLoss) %")
+                    }
+                    if let downloadSpeed = state?.downloadSpeed {
+                        GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
+                    }
+                    if let uploadSpeed = state?.uploadSpeed {
+                        GroupLabelView(left: "Uploading speed", right: "\(uploadSpeed) Mbit/s")
                     }
                 }
             }
         }
-        .navigationTitle("Patchcord")
+        .navigationTitle("")
         .onAppear {
             connection.connectStore(store)
         }

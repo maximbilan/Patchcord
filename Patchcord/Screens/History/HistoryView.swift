@@ -32,6 +32,7 @@ struct HistoryView: View {
                 }
             }
         }
+        .animation(.none)
         .onAppear {
             store.dispatch(HistoryStateAction.fetchHistory)
         }
