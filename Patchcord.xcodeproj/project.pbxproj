@@ -23,11 +23,8 @@
 		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
-		5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */; };
 		50364F012A8E75B500126607 /* ConnectionViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* ConnectionViewLabel.swift */; };
-		50579E002A17BE9C0048BECE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50579DFF2A17BE9C0048BECE /* Colors.swift */; };
 		50579E032A17C4150048BECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50579E022A17C4150048BECE /* LaunchScreen.storyboard */; };
-		50579E052A17C74A0048BECE /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50579E042A17C74A0048BECE /* BackgroundView.swift */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
 		505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */; };
@@ -101,11 +98,8 @@
 		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
-		5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStartButton.swift; sourceTree = "<group>"; };
 		50364F002A8E75B500126607 /* ConnectionViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewLabel.swift; sourceTree = "<group>"; };
-		50579DFF2A17BE9C0048BECE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50579E022A17C4150048BECE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		50579E042A17C74A0048BECE /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
 		505F4D97285CB954006989B1 /* CoreDataMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMiddleware.swift; sourceTree = "<group>"; };
@@ -223,23 +217,6 @@
 			path = PatchcordUITests;
 			sourceTree = "<group>";
 		};
-		5032C2AA28F32BD70034B929 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5032C2AB28F32BEA0034B929 /* ConnectionStartButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		50579DFE2A17BE800048BECE /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				50579DFF2A17BE9C0048BECE /* Colors.swift */,
-				50579E042A17C74A0048BECE /* BackgroundView.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		50579E012A17C4010048BECE /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,7 +300,6 @@
 		50EE81A028565F58008BCEC4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				50579DFE2A17BE800048BECE /* Common */,
 				50579E012A17C4010048BECE /* LaunchScreen */,
 				50EE81B3285676AF008BCEC4 /* Root */,
 				50EE81B4285676B8008BCEC4 /* Connection */,
@@ -387,7 +363,6 @@
 		50EE81B4285676B8008BCEC4 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				5032C2AA28F32BD70034B929 /* Views */,
 				509C0E16285E587B00F2E58F /* TestState.swift */,
 				500687082857B93D005A0520 /* ConnectionState.swift */,
 				5006870C2857BE84005A0520 /* ConnectionStateReducer.swift */,
@@ -583,7 +558,6 @@
 				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */,
-				50579E052A17C74A0048BECE /* BackgroundView.swift in Sources */,
 				507BC37A28F32C9D0052686F /* Strings.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
@@ -598,8 +572,6 @@
 				5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */,
 				502556862859A81D00642B30 /* HistoryState.swift in Sources */,
 				509C0E15285E581100F2E58F /* Screen.swift in Sources */,
-				50579E002A17BE9C0048BECE /* Colors.swift in Sources */,
-				5032C2AC28F32BEA0034B929 /* ConnectionStartButton.swift in Sources */,
 				506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */,
 				505F6FEA285F436D002C1007 /* NDT7TestDependency.swift in Sources */,
 			);
