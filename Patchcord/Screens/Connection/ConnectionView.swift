@@ -14,7 +14,7 @@ struct ConnectionView: View {
 
     private var startButtonText: String {
         switch state?.testState {
-        case .notStarted, .canceled:
+        case .notStarted, .canceled, .finishedSpeedTest:
             return "Start"
         default:
             return "Cancel"
