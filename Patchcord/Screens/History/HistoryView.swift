@@ -17,11 +17,18 @@ struct HistoryView: View {
                 if !state.isLoading {
                     List {
                         ForEach(state.results) { result in
-                            VStack(alignment: .leading) {
-                                if let timestamp = result.timestamp {
-                                    Text(timestamp, formatter: itemFormatter)
-                                    Text("\(result.downloadSpeed)")
-                                    Text("\(result.uploadSpeed)")
+                            NavigationLink {
+                                List {
+                                    ResultView(ip: nil, router: nil, subnetMask: nil, ping: nil, jitter: nil, packetLoss: nil, downloadSpeed: result.downloadSpeed, uploadSpeed: result.uploadSpeed)
+                                }
+                                .navigationTitle("Result")
+                            } label: {
+                                HStack {
+                                    if let timestamp = result.timestamp {
+                                        Text(timestamp, formatter: itemFormatter)
+                                    }
+                                    Spacer()
+                                    Text(String(format: "%.0f/%.0f Mbit/s", result.downloadSpeed, result.uploadSpeed))
                                 }
                             }
                         }

@@ -49,6 +49,7 @@
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
+		50A142532A8EA3D400C5BB90 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A142522A8EA3D400C5BB90 /* ResultView.swift */; };
 		50AE3FBD28DF5BF500735DCD /* NDT7 in Frameworks */ = {isa = PBXBuildFile; productRef = 50AE3FBC28DF5BF500735DCD /* NDT7 */; };
 		50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D62EE7285A4B3600ABD6FB /* Persistence.swift */; };
 		50EE50B62867336600C61080 /* SwiftyPing in Frameworks */ = {isa = PBXBuildFile; productRef = 50EE50B52867336600C61080 /* SwiftyPing */; };
@@ -123,6 +124,7 @@
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
+		50A142522A8EA3D400C5BB90 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		50D62EE7285A4B3600ABD6FB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		50EE819B28565BCC008BCEC4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		50EE81A628566126008BCEC4 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				502556872859A83700642B30 /* HistoryStateReducer.swift */,
 				505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */,
 				500687062857B8E6005A0520 /* HistoryView.swift */,
+				50A142522A8EA3D400C5BB90 /* ResultView.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
 				506A0B66286882E500FD2A24 /* PingManager.swift in Sources */,
 				502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */,
+				50A142532A8EA3D400C5BB90 /* ResultView.swift in Sources */,
 				50EE81A728566126008BCEC4 /* Store.swift in Sources */,
 				500687092857B93D005A0520 /* ConnectionState.swift in Sources */,
 				5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */,
