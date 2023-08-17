@@ -20,9 +20,9 @@ struct ResultView: View {
     let uploadSpeed: Double?
 
     init(testResult: TestResult) {
-        ip = nil
-        router = nil
-        subnetMask = nil
+        ip = testResult.ip
+        router = testResult.gateway
+        subnetMask = testResult.netmask
         ping = testResult.ping
         jitter = testResult.jitter
         packetLoss = testResult.packetLoss
@@ -33,9 +33,9 @@ struct ResultView: View {
     }
 
     init(state: ConnectionState) {
-        ip = nil
-        router = nil
-        subnetMask = nil
+        ip = state.ip
+        router = state.gateway
+        subnetMask = state.netmask
         ping = state.ping
         jitter = state.jitter
         packetLoss = state.packetLoss

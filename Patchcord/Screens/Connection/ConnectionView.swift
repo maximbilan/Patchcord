@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftIPConfig
 
 struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>

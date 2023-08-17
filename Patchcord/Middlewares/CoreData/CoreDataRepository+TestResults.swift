@@ -18,6 +18,9 @@ extension CoreDataRepository {
             test.timestamp = Date()
             test.server = state.server
             test.serverLocation = state.serverLocation
+            test.ip = state.ip
+            test.gateway = state.gateway
+            test.netmask = state.netmask
             if let downloadSpeed = state.downloadSpeed {
                 test.downloadSpeed = downloadSpeed
             }
