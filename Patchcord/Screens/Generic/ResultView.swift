@@ -69,7 +69,7 @@ struct ResultView: View {
                 GroupLabelView(left: "Server", right: server)
             }
             if let serverLocation {
-                GroupLabelView(left: "Location", right: serverLocation)
+                GroupLabelView(left: "Server Location", right: serverLocation)
             }
             if let downloadSpeed {
                 GroupLabelView(left: "Downloading speed", right: String(format: "%.0f Mbit/s", downloadSpeed))
