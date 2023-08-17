@@ -63,41 +63,23 @@ struct ConnectionView: View {
                         store.dispatch(startButtonAction)
                     }
                 }
-                NavigationLink("Previous results") {
+                NavigationLink("Results") {
                     HistoryView()
-                        .navigationTitle("Previous results")
+                        .navigationTitle("Results")
                 }
                 if let statusText {
                     GroupLabelView(left: "Status", right: statusText)
                 }
             }
             if state?.testState != .notStarted {
-                Section("Result") {
-                    if let ip = SwiftIPConfig.getIP() {
-                        GroupLabelView(left: "IP Address", right: ip)
-                    }
-                    if let router = SwiftIPConfig.getGatewayIP() {
-                        GroupLabelView(left: "Router", right: router)
-                    }
-                    if let subnetMask = SwiftIPConfig.getNetmask() {
-                        GroupLabelView(left: "Subnet Mask", right: subnetMask)
-                    }
-                    if let ping = state?.ping {
-                        GroupLabelView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
-                    }
-                    if let jitter = state?.jitter {
-                        GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
-                    }
-                    if let packetLoss = state?.packetLoss {
-                        GroupLabelView(left: "Packet Loss", right: String(format: "%.1f %", packetLoss))
-                    }
-                    if let downloadSpeed = state?.downloadSpeed {
-                        GroupLabelView(left: "Downloading speed", right: "\(downloadSpeed) Mbit/s")
-                    }
-                    if let uploadSpeed = state?.uploadSpeed {
-                        GroupLabelView(left: "Uploading speed", right: "\(uploadSpeed) Mbit/s")
-                    }
-                }
+                ResultView(ip: SwiftIPConfig.getIP(),
+                           router: SwiftIPConfig.getGatewayIP(),
+                           subnetMask: SwiftIPConfig.getNetmask(),
+                           ping: state?.ping,
+                           jitter: state?.jitter,
+                           packetLoss: state?.packetLoss,
+                           downloadSpeed: state?.downloadSpeed,
+                           uploadSpeed: state?.uploadSpeed)
             }
         }
         .navigationTitle("")

@@ -35,7 +35,7 @@ struct ResultView: View {
                 GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
             }
             if let packetLoss {
-                GroupLabelView(left: "Packet Loss", right: String(format: "%.1f /%", packetLoss))
+                GroupLabelView(left: "Packet Loss", right: packetLoss.formatted(.percent))
             }
             if let downloadSpeed {
                 GroupLabelView(left: "Downloading speed", right: String(format: "%.0f Mbit/s", downloadSpeed))

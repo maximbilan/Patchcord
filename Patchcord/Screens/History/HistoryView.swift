@@ -19,13 +19,20 @@ struct HistoryView: View {
                         ForEach(state.results) { result in
                             NavigationLink {
                                 List {
-                                    ResultView(ip: nil, router: nil, subnetMask: nil, ping: nil, jitter: nil, packetLoss: nil, downloadSpeed: result.downloadSpeed, uploadSpeed: result.uploadSpeed)
+                                    ResultView(ip: nil,
+                                               router: nil,
+                                               subnetMask: nil,
+                                               ping: result.ping,
+                                               jitter: result.jitter,
+                                               packetLoss: result.packetLoss,
+                                               downloadSpeed: result.downloadSpeed,
+                                               uploadSpeed: result.uploadSpeed)
                                 }
                                 .navigationTitle("Result")
                             } label: {
                                 HStack {
                                     if let timestamp = result.timestamp {
-                                        Text(timestamp, formatter: itemFormatter)
+                                        Text(timestamp.formatted(.dateTime))
                                     }
                                     Spacer()
                                     Text(String(format: "%.0f/%.0f Mbit/s", result.downloadSpeed, result.uploadSpeed))
@@ -48,10 +55,3 @@ struct HistoryView: View {
         store.dispatch(HistoryStateAction.deleteItems(offsets))
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()

@@ -15,9 +15,24 @@ extension CoreDataRepository {
             guard let test = entity as? TestResult else {
                 return
             }
-            test.downloadSpeed = state.downloadSpeed ?? 0
-            test.uploadSpeed = state.uploadSpeed ?? 0
             test.timestamp = Date()
+            test.server = state.server
+            test.serverLocation = state.serverLocation
+            if let downloadSpeed = state.downloadSpeed {
+                test.downloadSpeed = downloadSpeed
+            }
+            if let uploadSpeed = state.uploadSpeed {
+                test.uploadSpeed = uploadSpeed
+            }
+            if let ping = state.ping {
+                test.ping = ping
+            }
+            if let jitter = state.jitter {
+                test.jitter = jitter
+            }
+            if let packetLoss = state.packetLoss {
+                test.packetLoss = packetLoss
+            }
         }
     }
 
