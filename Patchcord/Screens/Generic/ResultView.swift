@@ -14,8 +14,36 @@ struct ResultView: View {
     let ping: Double?
     let jitter: Double?
     let packetLoss: Double?
+    let server: String?
+    let serverLocation: String?
     let downloadSpeed: Double?
     let uploadSpeed: Double?
+
+    init(testResult: TestResult) {
+        ip = nil
+        router = nil
+        subnetMask = nil
+        ping = testResult.ping
+        jitter = testResult.jitter
+        packetLoss = testResult.packetLoss
+        server = testResult.server
+        serverLocation = testResult.serverLocation
+        downloadSpeed = testResult.downloadSpeed
+        uploadSpeed = testResult.uploadSpeed
+    }
+
+    init(state: ConnectionState) {
+        ip = nil
+        router = nil
+        subnetMask = nil
+        ping = state.ping
+        jitter = state.jitter
+        packetLoss = state.packetLoss
+        server = state.server
+        serverLocation = state.serverLocation
+        downloadSpeed = state.downloadSpeed
+        uploadSpeed = state.uploadSpeed
+    }
 
     var body: some View {
         Section("Result") {
@@ -36,6 +64,12 @@ struct ResultView: View {
             }
             if let packetLoss {
                 GroupLabelView(left: "Packet Loss", right: packetLoss.formatted(.percent))
+            }
+            if let server {
+                GroupLabelView(left: "Server", right: server)
+            }
+            if let serverLocation {
+                GroupLabelView(left: "Location", right: serverLocation)
             }
             if let downloadSpeed {
                 GroupLabelView(left: "Downloading speed", right: String(format: "%.0f Mbit/s", downloadSpeed))

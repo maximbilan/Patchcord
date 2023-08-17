@@ -71,15 +71,8 @@ struct ConnectionView: View {
                     GroupLabelView(left: "Status", right: statusText)
                 }
             }
-            if state?.testState != .notStarted {
-                ResultView(ip: SwiftIPConfig.getIP(),
-                           router: SwiftIPConfig.getGatewayIP(),
-                           subnetMask: SwiftIPConfig.getNetmask(),
-                           ping: state?.ping,
-                           jitter: state?.jitter,
-                           packetLoss: state?.packetLoss,
-                           downloadSpeed: state?.downloadSpeed,
-                           uploadSpeed: state?.uploadSpeed)
+            if let state, state.testState != .notStarted {
+                ResultView(state: state)
             }
         }
         .navigationTitle("")

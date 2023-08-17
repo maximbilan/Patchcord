@@ -19,14 +19,7 @@ struct HistoryView: View {
                         ForEach(state.results) { result in
                             NavigationLink {
                                 List {
-                                    ResultView(ip: nil,
-                                               router: nil,
-                                               subnetMask: nil,
-                                               ping: result.ping,
-                                               jitter: result.jitter,
-                                               packetLoss: result.packetLoss,
-                                               downloadSpeed: result.downloadSpeed,
-                                               uploadSpeed: result.uploadSpeed)
+                                    ResultView(testResult: result)
                                 }
                                 .navigationTitle("Result")
                             } label: {
