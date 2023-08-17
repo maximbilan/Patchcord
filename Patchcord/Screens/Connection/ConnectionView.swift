@@ -10,6 +10,7 @@ import SwiftUI
 struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>
     private var state: ConnectionState? { store.state.screenState(for: .connection) }
+    @State private var isPermitted: Bool = false
 
     private var startButtonText: String {
         switch state?.testState {
@@ -52,26 +53,45 @@ struct ConnectionView: View {
         }
     }
 
+    private var isPermissionChangingActive: Bool {
+        switch state?.testState {
+        case .notStarted, .canceled, .finishedSpeedTest:
+            return true
+        default:
+            return false
+        }
+    }
+
     var body: some View {
         List {
             Section("Make a test") {
                 HStack {
                     Text("Speedtest")
                     Spacer()
-                    Button(startButtonText) {
-                        store.dispatch(startButtonAction)
-                    }
+                    Text(startButtonText)
+                        .foregroundColor(isPermitted ? .accentColor : .secondary)
+                        .onTapGesture {
+                            store.dispatch(startButtonAction)
+                        }
+                        .allowsHitTesting(isPermitted)
                 }
+                Toggle("I agree to the data policy, which includes retention and publication of IP addresses.", isOn: $isPermitted)
+                    .foregroundColor(.secondary)
+                    .allowsHitTesting(isPermissionChangingActive)
                 if let statusText {
                     GroupLabelView(left: "Status", right: statusText)
                 }
+
+            }
+            if let state, state.testState != .notStarted {
+                ResultView(state: state)
+            }
+            Section("Other") {
                 NavigationLink("Results") {
                     HistoryView()
                         .navigationTitle("Results")
                 }
-            }
-            if let state, state.testState != .notStarted {
-                ResultView(state: state)
+                Link("Data Policy", destination: URL(string: "https://www.measurementlab.net/privacy/")!)
             }
         }
         .navigationTitle("")
