@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RootView: View {
     var body: some View {
-        ConnectionView()
+        NavigationStack {
+            ConnectionView()
+        }
     }
 }
 
