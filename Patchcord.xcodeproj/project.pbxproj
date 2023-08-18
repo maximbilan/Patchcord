@@ -15,8 +15,6 @@
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
-		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
-		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
 		502556802859A7A300642B30 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567F2859A7A300642B30 /* ScreenState.swift */; };
 		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
@@ -69,13 +67,6 @@
 			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
 			remoteInfo = Patchcord;
 		};
-		5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5023A0A62854B87D009563B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
-			remoteInfo = Patchcord;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -89,9 +80,6 @@
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
 		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
-		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5025567D2859A77500642B30 /* SceneStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStateReducer.swift; sourceTree = "<group>"; };
 		5025567F2859A7A300642B30 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
@@ -153,13 +141,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5023A0CB2854B87E009563B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -168,7 +149,6 @@
 			children = (
 				5023A0B02854B87D009563B8 /* Patchcord */,
 				5023A0C72854B87E009563B8 /* PatchcordTests */,
-				5023A0D12854B87E009563B8 /* PatchcordUITests */,
 				5023A0AF2854B87D009563B8 /* Products */,
 				50EE50C228673D1500C61080 /* Frameworks */,
 			);
@@ -179,7 +159,6 @@
 			children = (
 				5023A0AE2854B87D009563B8 /* Patchcord.app */,
 				5023A0C42854B87E009563B8 /* PatchcordTests.xctest */,
-				5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,15 +187,6 @@
 				505F6FF6285F9F91002C1007 /* CoreDataTests.swift */,
 			);
 			path = PatchcordTests;
-			sourceTree = "<group>";
-		};
-		5023A0D12854B87E009563B8 /* PatchcordUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5023A0D22854B87E009563B8 /* PatchcordUITests.swift */,
-				5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */,
-			);
-			path = PatchcordUITests;
 			sourceTree = "<group>";
 		};
 		50579E012A17C4010048BECE /* LaunchScreen */ = {
@@ -452,24 +422,6 @@
 			productReference = 5023A0C42854B87E009563B8 /* PatchcordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5023A0CD2854B87E009563B8 /* PatchcordUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */;
-			buildPhases = (
-				5023A0CA2854B87E009563B8 /* Sources */,
-				5023A0CB2854B87E009563B8 /* Frameworks */,
-				5023A0CC2854B87E009563B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5023A0D02854B87E009563B8 /* PBXTargetDependency */,
-			);
-			name = PatchcordUITests;
-			productName = PatchcordUITests;
-			productReference = 5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -484,10 +436,6 @@
 						CreatedOnToolsVersion = 14.0;
 					};
 					5023A0C32854B87E009563B8 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = 5023A0AD2854B87D009563B8;
-					};
-					5023A0CD2854B87E009563B8 = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 5023A0AD2854B87D009563B8;
 					};
@@ -514,7 +462,6 @@
 			targets = (
 				5023A0AD2854B87D009563B8 /* Patchcord */,
 				5023A0C32854B87E009563B8 /* PatchcordTests */,
-				5023A0CD2854B87E009563B8 /* PatchcordUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -531,13 +478,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5023A0C22854B87E009563B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5023A0CC2854B87E009563B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,15 +543,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5023A0CA2854B87E009563B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */,
-				5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -619,11 +550,6 @@
 			isa = PBXTargetDependency;
 			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
 			targetProxy = 5023A0C52854B87E009563B8 /* PBXContainerItemProxy */;
-		};
-		5023A0D02854B87E009563B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
-			targetProxy = 5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -867,52 +793,6 @@
 			};
 			name = Release;
 		};
-		5023A0DF2854B87E009563B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 828XSMPA74;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Patchcord;
-			};
-			name = Debug;
-		};
-		5023A0E02854B87E009563B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 828XSMPA74;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Patchcord;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -939,15 +819,6 @@
 			buildConfigurations = (
 				5023A0DC2854B87E009563B8 /* Debug */,
 				5023A0DD2854B87E009563B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5023A0DF2854B87E009563B8 /* Debug */,
-				5023A0E02854B87E009563B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
