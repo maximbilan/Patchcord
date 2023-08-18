@@ -1,13 +1,13 @@
 # Patchcord
 
-The app tests your internet connection and shows your Internet speed/ping/network data/etc. No ads, no tracking. The app uses [MLab](https://www.measurementlab.net/) servers.
-The project was built with SwiftUI + Combine using the Redux pattern. 
+The app tests your Internet connection and shows your Internet speed/ping/network data/etc. No ads, no tracking. The app uses [MLab](https://www.measurementlab.net/) servers.
+The project represents an example of Redux architecture using SwiftUI + Combine + CoreData.
+
+![Alt text](/img/1.png)
 
 ## Screenshots
 
-![Alt text](/screenshots/1.png)
-![Alt text](/screenshots/2.png)
-![Alt text](/screenshots/3.png)
+![Alt text](/img/2.png)
 
 ## Issues
 
