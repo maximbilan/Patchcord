@@ -14,8 +14,10 @@ struct GroupLabelView: View {
     var body: some View {
         HStack {
             Text(left)
+                .multilineTextAlignment(.leading)
             Spacer()
             Text(right)
+                .multilineTextAlignment(.trailing)
         }
     }
 }
