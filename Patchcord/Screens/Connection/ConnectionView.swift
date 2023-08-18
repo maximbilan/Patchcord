@@ -10,7 +10,7 @@ import SwiftUI
 struct ConnectionView: View {
     @EnvironmentObject var store: Store<SceneState>
     private var state: ConnectionState? { store.state.screenState(for: .connection) }
-    @State private var isPermitted: Bool = false
+    @State private var isPermittedToStart: Bool = false
 
     private var startButtonText: String {
         switch state?.testState {
@@ -69,13 +69,13 @@ struct ConnectionView: View {
                     Text("Speedtest")
                     Spacer()
                     Text(startButtonText)
-                        .foregroundColor(isPermitted ? .accentColor : .secondary)
+                        .foregroundColor(isPermittedToStart ? .accentColor : .secondary)
                         .onTapGesture {
                             store.dispatch(startButtonAction)
                         }
-                        .allowsHitTesting(isPermitted)
+                        .allowsHitTesting(isPermittedToStart)
                 }
-                Toggle("I agree to the data policy, which includes retention and publication of IP addresses.", isOn: $isPermitted)
+                Toggle("I agree to the data policy, which includes retention and publication of IP addresses.", isOn: $isPermittedToStart)
                     .foregroundColor(.secondary)
                     .allowsHitTesting(isPermissionChangingActive)
                 if let statusText {
