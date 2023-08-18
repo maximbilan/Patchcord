@@ -48,34 +48,34 @@ struct ResultView: View {
     var body: some View {
         Section("Result") {
             if let ip {
-                GroupLabelView(left: "IP Address", right: ip)
+                DetailedTextView(left: "IP Address", right: ip)
             }
             if let router {
-                GroupLabelView(left: "Router", right: router)
+                DetailedTextView(left: "Router", right: router)
             }
             if let subnetMask {
-                GroupLabelView(left: "Subnet Mask", right: subnetMask)
+                DetailedTextView(left: "Subnet Mask", right: subnetMask)
             }
             if let ping {
-                GroupLabelView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
+                DetailedTextView(left: "Ping", right: String(format: "%.0f ms", ping * 1000))
             }
             if let jitter {
-                GroupLabelView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
+                DetailedTextView(left: "Jitter", right: String(format: "%.0f ms", jitter * 1000))
             }
             if let packetLoss {
-                GroupLabelView(left: "Packet Loss", right: packetLoss.formatted(.percent))
+                DetailedTextView(left: "Packet Loss", right: packetLoss.formatted(.percent))
             }
             if let server {
-                GroupLabelView(left: "Server", right: server)
+                DetailedTextView(left: "Server", right: server)
             }
             if let serverLocation {
-                GroupLabelView(left: "Server Location", right: serverLocation)
+                DetailedTextView(left: "Server Location", right: serverLocation)
             }
             if let downloadSpeed {
-                GroupLabelView(left: "Downloading speed", right: String(format: "%.0f Mbit/s", downloadSpeed))
+                DetailedTextView(left: "Downloading speed", right: String(format: "%.0f Mbit/s", downloadSpeed))
             }
             if let uploadSpeed {
-                GroupLabelView(left: "Uploading speed", right: String(format: "%.0f Mbit/s", uploadSpeed))
+                DetailedTextView(left: "Uploading speed", right: String(format: "%.0f Mbit/s", uploadSpeed))
             }
         }
     }

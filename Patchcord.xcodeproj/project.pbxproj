@@ -15,15 +15,12 @@
 		5023A0B22854B87D009563B8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B12854B87D009563B8 /* App.swift */; };
 		5023A0B72854B87D009563B8 /* Patchcord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0B52854B87D009563B8 /* Patchcord.xcdatamodeld */; };
 		5023A0BB2854B87E009563B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5023A0BA2854B87E009563B8 /* Assets.xcassets */; };
-		5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D22854B87E009563B8 /* PatchcordUITests.swift */; };
-		5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */; };
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
 		502556802859A7A300642B30 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567F2859A7A300642B30 /* ScreenState.swift */; };
 		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
-		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
-		50364F012A8E75B500126607 /* GroupLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* GroupLabelView.swift */; };
+		50364F012A8E75B500126607 /* DetailedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* DetailedTextView.swift */; };
 		50579E032A17C4150048BECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50579E022A17C4150048BECE /* LaunchScreen.storyboard */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
@@ -45,7 +42,6 @@
 		506A0B6C2868B55A00FD2A24 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */; };
 		5073C4C9290EFC34001E7827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5073C4C8290EFC34001E7827 /* Preview Assets.xcassets */; };
 		50750D4E2867699E009DED05 /* SwiftIPConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 50750D4D2867699E009DED05 /* SwiftIPConfig */; };
-		507BC37A28F32C9D0052686F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BC37928F32C9D0052686F /* Strings.swift */; };
 		5097ED742858F214007F8209 /* ConnectionMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5097ED732858F214007F8209 /* ConnectionMiddleware.swift */; };
 		509C0E15285E581100F2E58F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E14285E581100F2E58F /* Screen.swift */; };
 		509C0E17285E587B00F2E58F /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E16285E587B00F2E58F /* TestState.swift */; };
@@ -69,13 +65,6 @@
 			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
 			remoteInfo = Patchcord;
 		};
-		5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5023A0A62854B87D009563B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5023A0AD2854B87D009563B8;
-			remoteInfo = Patchcord;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -89,17 +78,13 @@
 		5023A0B62854B87D009563B8 /* Patchcord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Patchcord.xcdatamodel; sourceTree = "<group>"; };
 		5023A0BA2854B87E009563B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5023A0C42854B87E009563B8 /* PatchcordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PatchcordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5023A0D22854B87E009563B8 /* PatchcordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITests.swift; sourceTree = "<group>"; };
-		5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchcordUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5023A0E62854BDC1009563B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5025567D2859A77500642B30 /* SceneStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStateReducer.swift; sourceTree = "<group>"; };
 		5025567F2859A7A300642B30 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
 		502556812859A7C700642B30 /* ScreenStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateReducer.swift; sourceTree = "<group>"; };
-		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
-		50364F002A8E75B500126607 /* GroupLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupLabelView.swift; sourceTree = "<group>"; };
+		50364F002A8E75B500126607 /* DetailedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTextView.swift; sourceTree = "<group>"; };
 		50579E022A17C4150048BECE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
@@ -120,7 +105,6 @@
 		506A0B6B2868B55A00FD2A24 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		5073C4C6290EFBB5001E7827 /* Patchcord.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Patchcord.entitlements; sourceTree = "<group>"; };
 		5073C4C8290EFC34001E7827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		507BC37928F32C9D0052686F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5097ED732858F214007F8209 /* ConnectionMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionMiddleware.swift; sourceTree = "<group>"; };
 		509C0E14285E581100F2E58F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		509C0E16285E587B00F2E58F /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
@@ -153,13 +137,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5023A0CB2854B87E009563B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -168,7 +145,6 @@
 			children = (
 				5023A0B02854B87D009563B8 /* Patchcord */,
 				5023A0C72854B87E009563B8 /* PatchcordTests */,
-				5023A0D12854B87E009563B8 /* PatchcordUITests */,
 				5023A0AF2854B87D009563B8 /* Products */,
 				50EE50C228673D1500C61080 /* Frameworks */,
 			);
@@ -179,7 +155,6 @@
 			children = (
 				5023A0AE2854B87D009563B8 /* Patchcord.app */,
 				5023A0C42854B87E009563B8 /* PatchcordTests.xctest */,
-				5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,7 +168,6 @@
 				50EE81A028565F58008BCEC4 /* Screens */,
 				50EE81AE28566BFB008BCEC4 /* Middlewares */,
 				5073C4C7290EFC34001E7827 /* Preview Content */,
-				507BC37828F32C8B0052686F /* Localization */,
 				50EE819F28565EF3008BCEC4 /* Assets */,
 				50EE819D28565E25008BCEC4 /* Supporting Files */,
 			);
@@ -208,15 +182,6 @@
 				505F6FF6285F9F91002C1007 /* CoreDataTests.swift */,
 			);
 			path = PatchcordTests;
-			sourceTree = "<group>";
-		};
-		5023A0D12854B87E009563B8 /* PatchcordUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5023A0D22854B87E009563B8 /* PatchcordUITests.swift */,
-				5023A0D42854B87E009563B8 /* PatchcordUITestsLaunchTests.swift */,
-			);
-			path = PatchcordUITests;
 			sourceTree = "<group>";
 		};
 		50579E012A17C4010048BECE /* LaunchScreen */ = {
@@ -267,18 +232,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		507BC37828F32C8B0052686F /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				507BC37928F32C9D0052686F /* Strings.swift */,
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		50A142542A8EA72500C5BB90 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				50364F002A8E75B500126607 /* GroupLabelView.swift */,
+				50364F002A8E75B500126607 /* DetailedTextView.swift */,
 				50A142522A8EA3D400C5BB90 /* ResultView.swift */,
 			);
 			path = Generic;
@@ -338,7 +295,6 @@
 				5025567D2859A77500642B30 /* SceneStateReducer.swift */,
 				5025567F2859A7A300642B30 /* ScreenState.swift */,
 				502556812859A7C700642B30 /* ScreenStateReducer.swift */,
-				502556832859A7EE00642B30 /* ScreenStateAction.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -452,24 +408,6 @@
 			productReference = 5023A0C42854B87E009563B8 /* PatchcordTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5023A0CD2854B87E009563B8 /* PatchcordUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */;
-			buildPhases = (
-				5023A0CA2854B87E009563B8 /* Sources */,
-				5023A0CB2854B87E009563B8 /* Frameworks */,
-				5023A0CC2854B87E009563B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5023A0D02854B87E009563B8 /* PBXTargetDependency */,
-			);
-			name = PatchcordUITests;
-			productName = PatchcordUITests;
-			productReference = 5023A0CE2854B87E009563B8 /* PatchcordUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -484,10 +422,6 @@
 						CreatedOnToolsVersion = 14.0;
 					};
 					5023A0C32854B87E009563B8 = {
-						CreatedOnToolsVersion = 14.0;
-						TestTargetID = 5023A0AD2854B87D009563B8;
-					};
-					5023A0CD2854B87E009563B8 = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 5023A0AD2854B87D009563B8;
 					};
@@ -514,7 +448,6 @@
 			targets = (
 				5023A0AD2854B87D009563B8 /* Patchcord */,
 				5023A0C32854B87E009563B8 /* PatchcordTests */,
-				5023A0CD2854B87E009563B8 /* PatchcordUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -537,13 +470,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5023A0CC2854B87E009563B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -558,7 +484,6 @@
 				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
 				509C0E17285E587B00F2E58F /* TestState.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
-				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
 				506A0B66286882E500FD2A24 /* PingManager.swift in Sources */,
@@ -570,14 +495,13 @@
 				505F4D9A285CBB5E006989B1 /* CoreDataRepository+TestResults.swift in Sources */,
 				500687072857B8E6005A0520 /* HistoryView.swift in Sources */,
 				505F6FF0285F759F002C1007 /* NSManagedObjectContext+Extensions.swift in Sources */,
-				507BC37A28F32C9D0052686F /* Strings.swift in Sources */,
 				50EE819C28565BCC008BCEC4 /* RootView.swift in Sources */,
 				5006870D2857BE84005A0520 /* ConnectionStateReducer.swift in Sources */,
 				500687052857B7B0005A0520 /* ConnectionView.swift in Sources */,
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
 				505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */,
 				50FAAC83285EEF8400D7D14D /* ProcessInfo+Extensions.swift in Sources */,
-				50364F012A8E75B500126607 /* GroupLabelView.swift in Sources */,
+				50364F012A8E75B500126607 /* DetailedTextView.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
 				502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */,
@@ -603,15 +527,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5023A0CA2854B87E009563B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5023A0D32854B87E009563B8 /* PatchcordUITests.swift in Sources */,
-				5023A0D52854B87E009563B8 /* PatchcordUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -619,11 +534,6 @@
 			isa = PBXTargetDependency;
 			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
 			targetProxy = 5023A0C52854B87E009563B8 /* PBXContainerItemProxy */;
-		};
-		5023A0D02854B87E009563B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5023A0AD2854B87D009563B8 /* Patchcord */;
-			targetProxy = 5023A0CF2854B87E009563B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -775,7 +685,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -815,7 +725,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -835,10 +745,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patchcord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Patchcord";
 			};
 			name = Debug;
@@ -859,57 +771,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Patchcord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Patchcord";
-			};
-			name = Release;
-		};
-		5023A0DF2854B87E009563B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 828XSMPA74;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Patchcord;
-			};
-			name = Debug;
-		};
-		5023A0E02854B87E009563B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 828XSMPA74;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.patchcord.app.uitests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Patchcord;
 			};
 			name = Release;
 		};
@@ -939,15 +807,6 @@
 			buildConfigurations = (
 				5023A0DC2854B87E009563B8 /* Debug */,
 				5023A0DD2854B87E009563B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5023A0DE2854B87E009563B8 /* Build configuration list for PBXNativeTarget "PatchcordUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5023A0DF2854B87E009563B8 /* Debug */,
-				5023A0E02854B87E009563B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

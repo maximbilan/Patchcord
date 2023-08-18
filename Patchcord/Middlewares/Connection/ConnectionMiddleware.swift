@@ -45,6 +45,8 @@ class ConnectionMiddleware {
     private var jitter: TimeInterval?
     private var packetLoss: Double?
 
+    private let hostToPing = "1.1.1.1"
+
     init(queue: DispatchQueue = DispatchQueue.main,
          ipConfig: IPConfig = IPConfig()) {
         self.queue = queue
@@ -98,8 +100,7 @@ fileprivate extension ConnectionMiddleware {
 
         state = .pinging
 
-        let host = "1.1.1.1"
-        pingManager = createPingManager(with: host)
+        pingManager = createPingManager(with: hostToPing)
         pingManager?.delegate = self
         pingManager?.start()
     }
@@ -175,12 +176,15 @@ extension ConnectionMiddleware: NDT7TestInteraction {
             }
         }
 
+        let secondsDelimiter: Int64 = 1000000
+        let bytesDelimiter: Int64 = 125000
+
         if origin == .client,
            let elapsedTime = measurement.appInfo?.elapsedTime,
            let numBytes = measurement.appInfo?.numBytes,
-           elapsedTime >= 1000000 {
-            let seconds = elapsedTime / 1000000
-            let mbit = numBytes / 125000
+           elapsedTime >= secondsDelimiter {
+            let seconds = elapsedTime / secondsDelimiter
+            let mbit = numBytes / bytesDelimiter
             let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
             switch kind {
             case .download:
@@ -190,18 +194,18 @@ extension ConnectionMiddleware: NDT7TestInteraction {
             }
         } else if origin == .server,
                   let elapsedTime = measurement.tcpInfo?.elapsedTime,
-                  elapsedTime >= 1000000 {
-            let seconds = elapsedTime / 1000000
+                  elapsedTime >= secondsDelimiter {
+            let seconds = elapsedTime / secondsDelimiter
             switch kind {
             case .download:
                 if let numBytes = measurement.tcpInfo?.bytesSent {
-                    let mbit = numBytes / 125000
+                    let mbit = numBytes / bytesDelimiter
                     let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
                     downloadSpeed = rounded
                 }
             case .upload:
                 if let numBytes = measurement.tcpInfo?.bytesReceived {
-                    let mbit = numBytes / 125000
+                    let mbit = numBytes / bytesDelimiter
                     let rounded = Double(Float64(mbit)/Float64(seconds)).rounded(toPlaces: 1)
                     uploadSpeed = rounded
                 }

@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-struct GroupLabelView: View {
+struct DetailedTextView: View {
     let left: String
     let right: String
 
     var body: some View {
         HStack {
             Text(left)
+                .multilineTextAlignment(.leading)
             Spacer()
             Text(right)
+                .multilineTextAlignment(.trailing)
+                .textSelection(.enabled)
         }
     }
 }
