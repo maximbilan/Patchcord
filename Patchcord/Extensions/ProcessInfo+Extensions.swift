@@ -13,8 +13,4 @@ extension ProcessInfo {
         ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
 
-    static var isRunningUITests: Bool {
-        ProcessInfo.processInfo.arguments.contains("UITESTS")
-    }
-
 }
