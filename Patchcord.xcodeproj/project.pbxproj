@@ -20,7 +20,7 @@
 		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
-		50364F012A8E75B500126607 /* GroupLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* GroupLabelView.swift */; };
+		50364F012A8E75B500126607 /* DetailedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* DetailedTextView.swift */; };
 		50579E032A17C4150048BECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50579E022A17C4150048BECE /* LaunchScreen.storyboard */; };
 		505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */; };
 		505F4D96285CB8DB006989B1 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */; };
@@ -84,7 +84,7 @@
 		502556812859A7C700642B30 /* ScreenStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateReducer.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
-		50364F002A8E75B500126607 /* GroupLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupLabelView.swift; sourceTree = "<group>"; };
+		50364F002A8E75B500126607 /* DetailedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTextView.swift; sourceTree = "<group>"; };
 		50579E022A17C4150048BECE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		505F4D92285CB1A8006989B1 /* HistoryStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateAction.swift; sourceTree = "<group>"; };
 		505F4D95285CB8DB006989B1 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		50A142542A8EA72500C5BB90 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				50364F002A8E75B500126607 /* GroupLabelView.swift */,
+				50364F002A8E75B500126607 /* DetailedTextView.swift */,
 				50A142522A8EA3D400C5BB90 /* ResultView.swift */,
 			);
 			path = Generic;
@@ -501,7 +501,7 @@
 				502556802859A7A300642B30 /* ScreenState.swift in Sources */,
 				505F6FF3285F9065002C1007 /* LoggerMiddleware.swift in Sources */,
 				50FAAC83285EEF8400D7D14D /* ProcessInfo+Extensions.swift in Sources */,
-				50364F012A8E75B500126607 /* GroupLabelView.swift in Sources */,
+				50364F012A8E75B500126607 /* DetailedTextView.swift in Sources */,
 				5006870B2857BBCB005A0520 /* ConnectionStateAction.swift in Sources */,
 				505F4D98285CB954006989B1 /* CoreDataMiddleware.swift in Sources */,
 				502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */,

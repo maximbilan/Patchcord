@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GroupLabelView: View {
+struct DetailedTextView: View {
     let left: String
     let right: String
 
