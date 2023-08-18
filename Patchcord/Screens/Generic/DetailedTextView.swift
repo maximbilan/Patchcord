@@ -18,6 +18,7 @@ struct DetailedTextView: View {
             Spacer()
             Text(right)
                 .multilineTextAlignment(.trailing)
+                .textSelection(.enabled)
         }
     }
 }
