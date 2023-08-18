@@ -18,7 +18,6 @@
 		5025567E2859A77500642B30 /* SceneStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567D2859A77500642B30 /* SceneStateReducer.swift */; };
 		502556802859A7A300642B30 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025567F2859A7A300642B30 /* ScreenState.swift */; };
 		502556822859A7C700642B30 /* ScreenStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556812859A7C700642B30 /* ScreenStateReducer.swift */; };
-		502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556832859A7EE00642B30 /* ScreenStateAction.swift */; };
 		502556862859A81D00642B30 /* HistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556852859A81D00642B30 /* HistoryState.swift */; };
 		502556882859A83700642B30 /* HistoryStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502556872859A83700642B30 /* HistoryStateReducer.swift */; };
 		50364F012A8E75B500126607 /* GroupLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50364F002A8E75B500126607 /* GroupLabelView.swift */; };
@@ -84,7 +83,6 @@
 		5025567D2859A77500642B30 /* SceneStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStateReducer.swift; sourceTree = "<group>"; };
 		5025567F2859A7A300642B30 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
 		502556812859A7C700642B30 /* ScreenStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateReducer.swift; sourceTree = "<group>"; };
-		502556832859A7EE00642B30 /* ScreenStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStateAction.swift; sourceTree = "<group>"; };
 		502556852859A81D00642B30 /* HistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryState.swift; sourceTree = "<group>"; };
 		502556872859A83700642B30 /* HistoryStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateReducer.swift; sourceTree = "<group>"; };
 		50364F002A8E75B500126607 /* GroupLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupLabelView.swift; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 				5025567D2859A77500642B30 /* SceneStateReducer.swift */,
 				5025567F2859A7A300642B30 /* ScreenState.swift */,
 				502556812859A7C700642B30 /* ScreenStateReducer.swift */,
-				502556832859A7EE00642B30 /* ScreenStateAction.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 				505F4D93285CB1A8006989B1 /* HistoryStateAction.swift in Sources */,
 				509C0E17285E587B00F2E58F /* TestState.swift in Sources */,
 				50EE81AD2856673B008BCEC4 /* SceneState.swift in Sources */,
-				502556842859A7EE00642B30 /* ScreenStateAction.swift in Sources */,
 				50D62EE8285A4B3600ABD6FB /* Persistence.swift in Sources */,
 				50EE81B2285673B3008BCEC4 /* Generics.swift in Sources */,
 				506A0B66286882E500FD2A24 /* PingManager.swift in Sources */,

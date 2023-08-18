@@ -11,7 +11,7 @@ import Combine
 extension CoreDataRepository {
 
     func save(_ state: ConnectionState) -> AnyPublisher<Entity, Error> {
-        return add { entity in
+        add { entity in
             guard let test = entity as? TestResult else {
                 return
             }

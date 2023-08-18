@@ -15,7 +15,9 @@ enum ConnectionStateAction: Action {
 }
 
 extension ConnectionStateAction {
+
     var animated: Bool {
-        return false
+        false
     }
+
 }

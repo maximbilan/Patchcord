@@ -9,7 +9,6 @@ import Foundation
 import NDT7
 
 class NDT7TestDependency {
-
     let test: NDT7Test
 
     init(delegate: NDT7TestInteraction) {

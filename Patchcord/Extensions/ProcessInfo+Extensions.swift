@@ -10,11 +10,11 @@ import Foundation
 extension ProcessInfo {
 
     static var isRunningTests: Bool {
-        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
 
     static var isRunningUITests: Bool {
-        return ProcessInfo.processInfo.arguments.contains("UITESTS")
+        ProcessInfo.processInfo.arguments.contains("UITESTS")
     }
 
 }
