@@ -1,15 +1,13 @@
 # Patchcord
 
-The app that tests your internet connection and show your network data. No ads, no tracking. The app uses [MLab](https://www.measurementlab.net/) servers.
+The app tests your internet connection and shows your network data. No ads, no tracking. The app uses [MLab](https://www.measurementlab.net/) servers.
 The project built with SwiftUI + Combine using Redux pattern. 
 
-## Roadmap
+## Screenshots
 
-- Distribution
-- UI
-- Snapshot testing
-- UI tests
-- Docs
+![alt tag](https://raw.github.com/maximbilan/Patchcord/master/screenshots/1.png)
+![alt tag](https://raw.github.com/maximbilan/Patchcord/master/screenshots/2.png)
+![alt tag](https://raw.github.com/maximbilan/Patchcord/master/screenshots/3.png)
 
 ## Issues
 
