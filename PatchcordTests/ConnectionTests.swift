@@ -11,7 +11,7 @@ import NDT7
 
 final class ConnectionTests: XCTestCase {
 
-    func testStates() {
+    @MainActor func testStates() {
         // Initializes the app components
         let persistance = Persistence(inMemory: true)
         let connection = ConnectionMock(ipConfig: IPConfigMock())

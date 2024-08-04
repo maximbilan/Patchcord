@@ -7,7 +7,7 @@
 
 @testable import Patchcord
 
-final class ConnectionMock: ConnectionMiddleware {
+final class ConnectionMock: ConnectionMiddleware, @unchecked Sendable {
 
     private var latestTest: NDT7TestStub?
 
