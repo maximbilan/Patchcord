@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 /// Redux store ♻️
-final class Store<State>: ObservableObject {
+final class Store<State>: ObservableObject, @unchecked Sendable {
     var isEnabled = true
 
     @Published private(set) var state: State

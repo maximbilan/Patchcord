@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol Action {
+@preconcurrency protocol Action {
     var animated: Bool { get }
 }
 

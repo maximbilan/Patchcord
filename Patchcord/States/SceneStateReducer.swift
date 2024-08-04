@@ -9,7 +9,7 @@ import Foundation
 
 extension SceneState {
 
-    static let reducer: Reducer<Self> = { state, action in
+    @MainActor static let reducer: Reducer<Self> = { state, action in
         SceneState(screens: state.screens.map { ScreenState.reducer($0, action) })
     }
 

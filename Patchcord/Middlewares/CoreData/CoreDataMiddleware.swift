@@ -9,7 +9,7 @@ import CoreData
 import Combine
 
 /// Middleware that handles all operations with the local database 💾
-final class CoreDataMiddleware {
+final class CoreDataMiddleware: @unchecked Sendable {
     let context: NSManagedObjectContext
     let testResultsRepository: CoreDataRepository<TestResult>
 

@@ -10,7 +10,7 @@ import SwiftUI
 import NDT7
 
 /// Middleware that pefrorms all connection tests. Like speed test, ping, fetching public IP, etc 📡🛰
-class ConnectionMiddleware {
+class ConnectionMiddleware: @unchecked Sendable {
     private var connectedStore: Store<SceneState>?
     private let queue: DispatchQueue
     private let ipConfig: IPConfig

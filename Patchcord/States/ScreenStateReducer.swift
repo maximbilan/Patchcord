@@ -9,7 +9,7 @@ import Foundation
 
 extension ScreenState {
 
-    static let reducer: Reducer<Self> = { state, action in
+    @MainActor static let reducer: Reducer<Self> = { state, action in
         switch state {
         case .connection(let state):
             return .connection(ConnectionState.reducer(state, action))

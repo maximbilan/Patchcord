@@ -18,11 +18,11 @@ let connection = ConnectionMiddleware()
 let logger = LoggerMiddleware()
 
 /// Redux store ♻️
-let store = Store(initial: SceneState(),
-                  reducer: SceneState.reducer,
-                  middlewares: [connection.middleware,
-                                coreData.middleware,
-                                logger.middleware])
+@MainActor let store = Store(initial: SceneState(),
+                             reducer: SceneState.reducer,
+                             middlewares: [connection.middleware,
+                                           coreData.middleware,
+                                           logger.middleware])
 
 /// App Instance 📱
 @main

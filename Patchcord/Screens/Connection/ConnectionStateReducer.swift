@@ -9,7 +9,7 @@ import Foundation
 
 extension ConnectionState {
 
-    static let reducer: Reducer<Self> = { state, action in
+    @MainActor static let reducer: Reducer<Self> = { state, action in
         switch action {
         case ConnectionStateAction.startTest:
             return ConnectionState(testState: .started)
