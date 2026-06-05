@@ -1,0 +1,47 @@
+name: Update Swift Packages
+
+# Manually-triggered job that bumps the SPM pins in Patchcord.xcodeproj to the
+# latest versions allowed by the constraints in project.pbxproj, then opens a
+# PR with the new Package.resolved. Dispatch from the Actions tab when you
+# want to refresh dependencies.
+#
+# Implementation: maximbilan/xcode-spm-update. Required on Xcode 16+ because
+# `xcodebuild -resolvePackageDependencies` stopped reliably bumping versions
+# there; the action routes around it via `swift package update` on a synthetic
+# manifest.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: update
+        uses: maximbilan/xcode-spm-update@v1
+        with:
+          project: Patchcord.xcodeproj
+          # Once you've confirmed which Xcode versions the runner offers, pin
+          # the one your team uses so Package.resolved's format/originHash
+          # matches what local Xcode expects. Example: xcode-version: '16.4'.
+          # Leaving it unset uses the runner's default Xcode.
+
+      - name: Open pull request
+        if: steps.update.outputs.dependencies-changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: deps/spm-update
+          delete-branch: true
+          commit-message: 'chore: update Swift package dependencies'
+          title: 'Update Swift package dependencies'
+          body: |
+            Automated bump of Swift Package Manager pins.
+
+            ${{ steps.update.outputs.changed-count }} package(s) changed.
+          labels: dependencies
